@@ -1,0 +1,14 @@
+AUX FILE FORMAT VERSION 1:
+
+VERSION - int32
+RAIL COUNT - int32
+{
+    RAIL SIZE - int32
+    RAIL SPEED - float32
+    RAIL CYCLE - bool
+    RAIL NODE COUNT - int32
+    {
+        POINT X - int32
+        POINT Y - int32
+    }
+}
