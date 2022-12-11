@@ -2,37 +2,33 @@
 {
 	class RailNode
 	{
-		Point mPoint;
+		public Point Point { get; set; }
+		public float Speed { get; set; }
+		public float WaitTime { get; set; }
+		public UInt32 Flags { get; set; }
 
 		public RailNode(Point point)
 		{
-			mPoint = point;
-		}
-
-		public Point GetPoint()
-		{
-			return mPoint;
-		}
-
-		public void SetPoint(Point newValue)
-		{
-			mPoint = newValue;
+			Point = point;
+			Speed = 1;
+			WaitTime = 0;
+			Flags = 0;
 		}
 	}
 
 	class LinearRail
 	{
-		List<RailNode> mNodes;
-		float mSpeed;
-		int mSize;
-		bool mCycle;
+		public const UInt32 RAIL_CYCLE_FLAG = 0b0000_0001;
 
-		public LinearRail(float speed)
+		List<RailNode> mNodes;
+		int mSize;
+		UInt32 mFlags;
+
+		public LinearRail()
 		{
 			mNodes = new List<RailNode>();
-			mSpeed = speed;
 			mSize = 1;
-			mCycle = false;
+			mFlags = 0;
 		}
 
 		public void AddNode(Point newPoint)
@@ -40,14 +36,14 @@
 			mNodes.Add(new RailNode(newPoint));
 		}
 
-		public bool GetCylce()
+		public UInt32 GetFlags()
 		{
-			return mCycle;
+			return mFlags;
 		}
 
-		public void SetCycle(bool cycle)
+		public void SetFlags(UInt32 flags)
 		{
-			mCycle = cycle;
+			mFlags = flags;
 		}
 
 		public void SetSize(int size)
@@ -60,41 +56,31 @@
 			return mSize;
 		}
 
-		public float GetSpeed()
-		{
-			return mSpeed;
-		}
-
-		public void ChangeSpeed(float newSpeed)
-		{
-			mSpeed = newSpeed;
-		}
-
 		public List<RailNode> GetNodes()
 		{
 			return mNodes;
 		}
 
-		public bool HasNodeAtPoint(Point point)
+		public RailNode? GetNodeAtPoint(Point point)
 		{
 			for (int i = 0; i < mNodes.Count; i++)
 			{
-				if (mNodes[i].GetPoint() == point)
+				if (mNodes[i].Point == point)
 				{
-					return true;
+					return mNodes[i];
 				}
 			}
 
-			return false;
+			return null;
 		}
 
 		public void MoveNode(Point start, Point end)
 		{
 			for (int i = 0; i < mNodes.Count; i++)
 			{
-				if (mNodes[i].GetPoint() == start)
+				if (mNodes[i].Point == start)
 				{
-					mNodes[i].SetPoint(end);
+					mNodes[i].Point = end;
 					break;
 				}
 			}
@@ -104,7 +90,7 @@
 		{
 			for (int i = 0; i < mNodes.Count; i++)
 			{
-				if (mNodes[i].GetPoint() == position)
+				if (mNodes[i].Point == position)
 				{
 					mNodes.RemoveAt(i);
 					break;

@@ -48,14 +48,14 @@
 
 					for (int j = 0; j < railNodes.Count; j++)
 					{
-						Point point = railNodes[j].GetPoint();
+						Point point = railNodes[j].Point;
 
 						point.X = point.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
 						point.Y = point.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
 
 						if (j > 0)
 						{
-							Point prevPoint = railNodes[j - 1].GetPoint();
+							Point prevPoint = railNodes[j - 1].Point;
 
 							prevPoint.X = prevPoint.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
 							prevPoint.Y = prevPoint.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
@@ -68,10 +68,10 @@
 						e.Graphics.DrawRectangle(nodePen, new Rectangle(point.X - 5, point.Y - 5, 10, 10));
 					}
 
-					if (mAuxData.LinearRails[i].GetCylce())
+					if ((mAuxData.LinearRails[i].GetFlags() & LinearRail.RAIL_CYCLE_FLAG) != 0)
 					{
-						Point point = railNodes[0].GetPoint();
-						Point prevPoint = railNodes[railNodes.Count - 1].GetPoint();
+						Point point = railNodes[0].Point;
+						Point prevPoint = railNodes[railNodes.Count - 1].Point;
 
 						prevPoint.X = prevPoint.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
 						prevPoint.Y = prevPoint.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;

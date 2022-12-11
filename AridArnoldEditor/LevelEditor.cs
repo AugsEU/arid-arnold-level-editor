@@ -115,10 +115,28 @@ namespace AridArnoldEditor
 		#endregion rInitialisation
 
 
+
+
+
 		#region rForm
 
+		private void InvalidateAll()
+		{
+			for (int x = 0; x < NUM_TILES; x++)
+			{
+				for (int y = 0; y < NUM_TILES; y++)
+				{
+					mPanels[x, y].Invalidate();
+				}
+			}
+
+			mDrawLevelArea.Invalidate();
+			mSelectionPanel.Invalidate();
+		}
 
 		#endregion rForm
+
+
 
 
 
@@ -163,6 +181,16 @@ namespace AridArnoldEditor
 			SetAction(FormActionState.AddingRail);
 		}
 
+		private void ClickOnSelectTile(object? sender, MouseEventArgs e)
+		{
+			OnClickTile(mSelectedTileCoord);
+		}
+
+		#endregion rWidgets
+
+
+		#region rRailWidgets
+
 		private void wAddNode_Click(object sender, EventArgs e)
 		{
 			SetAction(FormActionState.AddingNode);
@@ -191,36 +219,22 @@ namespace AridArnoldEditor
 			SetAction(FormActionState.MovingNode);
 		}
 
-		private void ClickOnSelectTile(object? sender, MouseEventArgs e)
-		{
-			OnClickTile(mSelectedTileCoord);
-		}
-
 		private void UpdateRailPanel()
 		{
 			wRailPanel.Enabled = mSelectedRailIdx != -1;
-			if(mSelectedRailIdx != -1)
+			if(mSelectedRailIdx != -1 && mAuxData != null)
 			{
-				wRailSpeedIn.Value = (decimal)mAuxData.LinearRails[mSelectedRailIdx].GetSpeed();
+				RailNode? selectedNode = mAuxData.LinearRails[mSelectedRailIdx].GetNodeAtPoint(mSelectedTileCoord);
+
+				if (selectedNode != null)
+				{
+					wRailSpeedIn.Value = (decimal)selectedNode.Speed;
+					wRailWaitIn.Value = (decimal)selectedNode.WaitTime;
+					wNodeFlagsIn.Value = (decimal)(selectedNode.Flags);
+				}
+
 				wRailSizeIn.Value = (decimal)mAuxData.LinearRails[mSelectedRailIdx].GetSize();
-				wCycleRailIn.Checked = mAuxData.LinearRails[mSelectedRailIdx].GetCylce();
-			}
-		}
-
-		private void wCycleRailIn_CheckedChanged(object sender, EventArgs e)
-		{
-			if (mSelectedRailIdx != -1)
-			{
-				mAuxData.LinearRails[mSelectedRailIdx].SetCycle((bool)wCycleRailIn.Checked);
-				InvalidateAll();
-			}
-		}
-
-		private void wRailSpeedIn_ValueChanged(object sender, EventArgs e)
-		{
-			if (mSelectedRailIdx != -1)
-			{
-				mAuxData.LinearRails[mSelectedRailIdx].ChangeSpeed((float)wRailSpeedIn.Value);
+				wRailFlagsIn.Value = mAuxData.LinearRails[mSelectedRailIdx].GetFlags();
 			}
 		}
 
@@ -232,22 +246,56 @@ namespace AridArnoldEditor
 			}
 		}
 
-
-		private void InvalidateAll()
+		private void wRailFlagsIn_ValueChanged(object sender, EventArgs e)
 		{
-			for (int x = 0; x < NUM_TILES; x++)
+			if (mSelectedRailIdx != -1)
 			{
-				for (int y = 0; y < NUM_TILES; y++)
-				{
-					mPanels[x, y].Invalidate();
-				}
+				mAuxData.LinearRails[mSelectedRailIdx].SetFlags((UInt32)wRailFlagsIn.Value);
+				InvalidateAll();
 			}
-
-			mDrawLevelArea.Invalidate();
-			mSelectionPanel.Invalidate();
 		}
 
-		#endregion rWidgets
+		private void wRailWaitIn_ValueChanged(object sender, EventArgs e)
+		{
+			if (mSelectedRailIdx != -1)
+			{
+				RailNode? selectedNode = mAuxData.LinearRails[mSelectedRailIdx].GetNodeAtPoint(mSelectedTileCoord);
+
+				if (selectedNode != null)
+				{
+					selectedNode.WaitTime = ((float)wRailWaitIn.Value);
+				}
+			}
+		}
+
+		private void wRailSpeedIn_ValueChanged(object sender, EventArgs e)
+		{
+			if (mSelectedRailIdx != -1)
+			{
+				RailNode? selectedNode = mAuxData.LinearRails[mSelectedRailIdx].GetNodeAtPoint(mSelectedTileCoord);
+
+				if (selectedNode != null)
+				{
+					selectedNode.Speed = ((float)wRailSpeedIn.Value);
+				}
+			}
+		}
+
+
+		private void wNodeFlagsIn_ValueChanged(object sender, EventArgs e)
+		{
+			if (mSelectedRailIdx != -1)
+			{
+				RailNode? selectedNode = mAuxData.LinearRails[mSelectedRailIdx].GetNodeAtPoint(mSelectedTileCoord);
+
+				if (selectedNode != null)
+				{
+					selectedNode.Flags = ((UInt32)wNodeFlagsIn.Value);
+				}
+			}
+		}
+
+		#endregion rRailWidgets
 
 
 
@@ -281,7 +329,6 @@ namespace AridArnoldEditor
 
 			//Rail
 			mSelectedRailIdx = GetRailIdxAtPoint(tileClicked);
-			UpdateRailPanel();
 
 			//Update selection point
 			mSelectedTileCoord = tileClicked;
@@ -290,6 +337,8 @@ namespace AridArnoldEditor
 			{
 				mSelectionPanel.BackColor = mPanels[tileClicked.X, tileClicked.Y].BackColor;
 			}
+
+			UpdateRailPanel();
 		}
 
 		private void DoAction(FormActionState action, Point tile)
@@ -299,7 +348,7 @@ namespace AridArnoldEditor
 				case FormActionState.AddingRail:
 					if (GetRailIdxAtPoint(tile) == -1)
 					{
-						LinearRail newRail = new LinearRail(1.0f);
+						LinearRail newRail = new LinearRail();
 						newRail.AddNode(tile);
 						mAuxData.LinearRails.Add(newRail);
 					}
@@ -334,7 +383,7 @@ namespace AridArnoldEditor
 		{
 			for (int i = 0; i < mAuxData.LinearRails.Count; i++)
 			{
-				if (mAuxData.LinearRails[i].HasNodeAtPoint(tile))
+				if (mAuxData.LinearRails[i].GetNodeAtPoint(tile) != null)
 				{
 					return i;
 				}

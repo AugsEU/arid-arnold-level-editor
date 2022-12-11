@@ -1,14 +1,20 @@
 AUX FILE FORMAT VERSION 1:
 
 VERSION - int32
+
 RAIL COUNT - int32
 {
     RAIL SIZE - int32
-    RAIL SPEED - float32
-    RAIL CYCLE - bool
+    RAIL FLAGS - uint32
+        0000_0001 - Cycle bit
+        0000_0010 - Repeat
+
     RAIL NODE COUNT - int32
     {
         POINT X - int32
         POINT Y - int32
+        SPEED - float32
+        WAIT TIME - float32
+        FLAGS - UInt32
     }
 }

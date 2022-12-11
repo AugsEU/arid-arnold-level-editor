@@ -65,8 +65,7 @@ namespace AridArnoldEditor
 		private void WriteRail(BinaryWriter bw, LinearRail linearRail)
 		{
 			bw.Write(linearRail.GetSize());
-			bw.Write(linearRail.GetSpeed());
-			bw.Write(linearRail.GetCylce());
+			bw.Write(linearRail.GetFlags());
 
 			//Nodes
 			List<RailNode> nodes = linearRail.GetNodes();
@@ -74,8 +73,11 @@ namespace AridArnoldEditor
 
 			for(int i = 0; i < nodes.Count; i++)
 			{
-				bw.Write(nodes[i].GetPoint().X);
-				bw.Write(nodes[i].GetPoint().Y);
+				bw.Write(nodes[i].Point.X);
+				bw.Write(nodes[i].Point.Y);
+				bw.Write(nodes[i].Speed);
+				bw.Write(nodes[i].WaitTime);
+				bw.Write(nodes[i].Flags);
 			}
 		}
 
@@ -138,11 +140,10 @@ namespace AridArnoldEditor
 
 		private LinearRail ReadRail(BinaryReader br)
 		{
-			LinearRail resultRail = new LinearRail(0.0f);
+			LinearRail resultRail = new LinearRail();
 
 			resultRail.SetSize(br.ReadInt32());
-			resultRail.ChangeSpeed(br.ReadSingle());
-			resultRail.SetCycle(br.ReadBoolean());
+			resultRail.SetFlags(br.ReadUInt32());
 
 			//Nodes
 			int numNodes = br.ReadInt32();
@@ -152,7 +153,12 @@ namespace AridArnoldEditor
 				int ptX = br.ReadInt32();
 				int ptY = br.ReadInt32();
 
-				resultRail.GetNodes().Add(new RailNode(new Point(ptX, ptY)));
+				RailNode node = new RailNode(new Point(ptX, ptY));
+				node.Speed = br.ReadSingle();
+				node.WaitTime = br.ReadSingle();
+				node.WaitTime = br.ReadUInt32();
+
+				resultRail.GetNodes().Add(node);
 			}
 
 			return resultRail;
