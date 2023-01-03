@@ -156,7 +156,7 @@ namespace AridArnoldEditor
 				RailNode node = new RailNode(new Point(ptX, ptY));
 				node.Speed = br.ReadSingle();
 				node.WaitTime = br.ReadSingle();
-				node.WaitTime = br.ReadUInt32();
+				node.Flags = br.ReadUInt32();
 
 				resultRail.GetNodes().Add(node);
 			}
