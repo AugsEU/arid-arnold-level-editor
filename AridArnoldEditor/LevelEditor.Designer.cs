@@ -166,7 +166,13 @@
 			// 
 			// wNodeFlagsIn
 			// 
+			this.wNodeFlagsIn.Hexadecimal = true;
 			this.wNodeFlagsIn.Location = new System.Drawing.Point(50, 183);
+			this.wNodeFlagsIn.Maximum = new decimal(new int[] {
+            0,
+            1,
+            0,
+            0});
 			this.wNodeFlagsIn.Name = "wNodeFlagsIn";
 			this.wNodeFlagsIn.Size = new System.Drawing.Size(120, 23);
 			this.wNodeFlagsIn.TabIndex = 15;

@@ -40,11 +40,12 @@
 			{
 				//Draw rails
 				Pen railPen = new Pen(Color.OrangeRed);
-				Pen nodePen = new Pen(Color.Green);
 
 				for (int i = 0; i < mAuxData.LinearRails.Count; i++)
 				{
 					List<RailNode> railNodes = mAuxData.LinearRails[i].GetNodes();
+
+					Pen nodePen = new Pen(Color.Green);
 
 					for (int j = 0; j < railNodes.Count; j++)
 					{
