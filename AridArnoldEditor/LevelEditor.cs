@@ -10,6 +10,9 @@ namespace AridArnoldEditor
 		#endregion rConstants
 
 
+
+
+
 		#region rTypes
 
 		enum FormActionState
@@ -17,10 +20,13 @@ namespace AridArnoldEditor
 			None,
 			AddingRail,
 			AddingNode,
-			MovingNode
+			MovingNode,
+			AddingEntity
 		}
 
 		#endregion rTypes
+
+
 
 
 
@@ -43,6 +49,9 @@ namespace AridArnoldEditor
 
 		//Rails
 		int mSelectedRailIdx;
+
+		//NPCs
+		int mSelectedEntityIdx;
 
 		//Data
 		AuxData mAuxData;
@@ -68,6 +77,10 @@ namespace AridArnoldEditor
 
 			//Rails
 			mSelectedRailIdx = -1;
+
+			//Entity
+			mSelectedEntityIdx = -1;
+
 			mAuxData = new AuxData();
 
 			//Tiles
@@ -105,6 +118,7 @@ namespace AridArnoldEditor
 			SetAction(FormActionState.None);
 
 			UpdateRailPanel();
+			UpdateEntityPanel();
 		}
 
 		private void LevelEditor_Load(object sender, EventArgs e)
@@ -132,6 +146,14 @@ namespace AridArnoldEditor
 
 			mDrawLevelArea.Invalidate();
 			mSelectionPanel.Invalidate();
+		}
+
+		private void LevelEditor_KeyDown(object sender, KeyEventArgs e)
+		{
+			if(e.KeyCode == Keys.Escape)
+			{
+				SetAction(FormActionState.None);
+			}
 		}
 
 		#endregion rForm
@@ -176,11 +198,6 @@ namespace AridArnoldEditor
 			}
 		}
 
-		private void linearToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			SetAction(FormActionState.AddingRail);
-		}
-
 		private void ClickOnSelectTile(object? sender, MouseEventArgs e)
 		{
 			OnClickTile(mSelectedTileCoord);
@@ -189,7 +206,14 @@ namespace AridArnoldEditor
 		#endregion rWidgets
 
 
+
+
+
 		#region rRailWidgets
+		private void linearToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SetAction(FormActionState.AddingRail);
+		}
 
 		private void wAddNode_Click(object sender, EventArgs e)
 		{
@@ -301,6 +325,80 @@ namespace AridArnoldEditor
 
 
 
+		#region rEntityWidgets
+
+		private void UpdateEntityPanel()
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+
+			if (selectedEntity != null)
+			{
+				wEntityClassCombo.SelectedIndex = EntityClassIndexFromEnum(selectedEntity.mEntityClass);
+				wEntityFacingCombo.SelectedIndex = (int)selectedEntity.mStartDirection;
+				wEntityGravityCombo.SelectedIndex = (int)selectedEntity.mGravityDirection;
+
+				if(selectedEntity.GetEntityType() == Entity.EntityType.kSimpleNPC)
+				{
+					SimpleNPC? simpleNPC = selectedEntity as SimpleNPC;
+
+					if (simpleNPC != null)
+					{
+						wSNPCPanel.Enabled = true;
+						wNPCHeckleTxt.Text = simpleNPC.mHeckleText;
+						wNPCTalkTxt.Text = simpleNPC.mTalkText;
+					}
+				}
+				else
+				{
+					wSNPCPanel.Enabled = false;
+				}
+			}
+			else
+			{
+				wEntityPanel.Enabled = false;
+				wSNPCPanel.Enabled = false;
+			}
+
+			wSNPCPanel.Enabled = mSelectedRailIdx != -1;
+			if (mSelectedRailIdx != -1 && mAuxData != null)
+			{
+				RailNode? selectedNode = mAuxData.LinearRails[mSelectedRailIdx].GetNodeAtPoint(mSelectedTileCoord);
+
+				if (selectedNode != null)
+				{
+					wRailSpeedIn.Value = (decimal)selectedNode.Speed;
+					wRailWaitIn.Value = (decimal)selectedNode.WaitTime;
+					wNodeFlagsIn.Value = (decimal)(selectedNode.Flags);
+				}
+
+				wRailSizeIn.Value = (decimal)mAuxData.LinearRails[mSelectedRailIdx].GetSize();
+				wRailFlagsIn.Value = mAuxData.LinearRails[mSelectedRailIdx].GetFlags();
+			}
+		}
+
+		private int EntityClassIndexFromEnum(Entity.EntityClass myEnum)
+		{
+			int enumInt = (int)myEnum;
+
+			return enumInt / Entity.kClassSpacing + (enumInt % Entity.kClassSpacing);
+		}
+
+		private Entity? GetSelectedEntity()
+		{
+			if(mSelectedEntityIdx != -1)
+			{
+				return mAuxData.Entities[mSelectedEntityIdx];
+			}
+
+			return null;
+		}
+
+		#endregion rEntityWidgets
+
+
+
+
+
 		#region rLevelEditing
 
 		private void LoadLevel(string filePath)
@@ -339,6 +437,7 @@ namespace AridArnoldEditor
 			}
 
 			UpdateRailPanel();
+			UpdateEntityPanel();
 		}
 
 		private void DoAction(FormActionState action, Point tile)
@@ -393,6 +492,7 @@ namespace AridArnoldEditor
 		}
 
 		#endregion rLevelEditing
+
 
 
 

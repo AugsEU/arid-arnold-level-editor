@@ -15,10 +15,12 @@ namespace AridArnoldEditor
 		#endregion rConstants
 
 		public List<LinearRail> LinearRails { get; set; }
+		public List<Entity> Entities { get; set; }
 
 		public AuxData()
 		{
 			LinearRails = new List<LinearRail>();
+			Entities = new List<Entity>();
 		}
 
 		#region rWrite
@@ -62,6 +64,7 @@ namespace AridArnoldEditor
 			}
 		}
 
+		// TO DO: Move this to the rail class
 		private void WriteRail(BinaryWriter bw, LinearRail linearRail)
 		{
 			bw.Write(linearRail.GetSize());
@@ -82,6 +85,10 @@ namespace AridArnoldEditor
 		}
 
 		#endregion rWrite
+
+
+
+
 
 		#region rRead
 
@@ -138,6 +145,7 @@ namespace AridArnoldEditor
 			}
 		}
 
+		// TO DO: Add this to the rail class
 		private LinearRail ReadRail(BinaryReader br)
 		{
 			LinearRail resultRail = new LinearRail();
