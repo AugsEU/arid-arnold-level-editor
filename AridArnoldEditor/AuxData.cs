@@ -60,27 +60,14 @@ namespace AridArnoldEditor
 			bw.Write(LinearRails.Count);
 			for (int i = 0; i < LinearRails.Count; i++)
 			{
-				WriteRail(bw, LinearRails[i]);
+				LinearRails[i].WriteRail(bw);
 			}
-		}
 
-		// TO DO: Move this to the rail class
-		private void WriteRail(BinaryWriter bw, LinearRail linearRail)
-		{
-			bw.Write(linearRail.GetSize());
-			bw.Write(linearRail.GetFlags());
-
-			//Nodes
-			List<RailNode> nodes = linearRail.GetNodes();
-			bw.Write(nodes.Count);
-
-			for(int i = 0; i < nodes.Count; i++)
+			//Entities
+			bw.Write(Entities.Count);
+			for (int i = 0; i < Entities.Count; i++)
 			{
-				bw.Write(nodes[i].Point.X);
-				bw.Write(nodes[i].Point.Y);
-				bw.Write(nodes[i].Speed);
-				bw.Write(nodes[i].WaitTime);
-				bw.Write(nodes[i].Flags);
+				Entities[i].WriteEntity(bw);
 			}
 		}
 
@@ -141,35 +128,23 @@ namespace AridArnoldEditor
 			int numRails = br.ReadInt32();
 			for (int i = 0; i < numRails; i++)
 			{
-				LinearRails.Add(ReadRail(br));
+				LinearRail linearRail = new LinearRail(br);
+				LinearRails.Add(linearRail);
 			}
-		}
 
-		// TO DO: Add this to the rail class
-		private LinearRail ReadRail(BinaryReader br)
-		{
-			LinearRail resultRail = new LinearRail();
-
-			resultRail.SetSize(br.ReadInt32());
-			resultRail.SetFlags(br.ReadUInt32());
-
-			//Nodes
-			int numNodes = br.ReadInt32();
-
-			for (int i = 0; i < numNodes; i++)
+			//Check end of file
+			if(br.BaseStream.Position == br.BaseStream.Length)
 			{
-				int ptX = br.ReadInt32();
-				int ptY = br.ReadInt32();
-
-				RailNode node = new RailNode(new Point(ptX, ptY));
-				node.Speed = br.ReadSingle();
-				node.WaitTime = br.ReadSingle();
-				node.Flags = br.ReadUInt32();
-
-				resultRail.GetNodes().Add(node);
+				return;
 			}
 
-			return resultRail;
+			//Entities
+			int numEntities = br.ReadInt32();
+			for (int i = 0; i < numEntities; i++)
+			{
+				Entity entity = new Entity(br);
+				Entities.Add(entity);
+			}
 		}
 
 		#endregion rRead

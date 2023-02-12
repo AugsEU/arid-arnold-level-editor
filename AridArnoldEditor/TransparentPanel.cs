@@ -49,17 +49,11 @@
 
 					for (int j = 0; j < railNodes.Count; j++)
 					{
-						Point point = railNodes[j].Point;
-
-						point.X = point.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
-						point.Y = point.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
+						Point point = GetPixelPositionFromCoordinate(railNodes[j].Point);
 
 						if (j > 0)
 						{
-							Point prevPoint = railNodes[j - 1].Point;
-
-							prevPoint.X = prevPoint.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
-							prevPoint.Y = prevPoint.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
+							Point prevPoint = GetPixelPositionFromCoordinate(railNodes[j - 1].Point);
 
 							e.Graphics.DrawLine(railPen, prevPoint, point);
 
@@ -71,19 +65,36 @@
 
 					if ((mAuxData.LinearRails[i].GetFlags() & LinearRail.RAIL_CYCLE_FLAG) != 0)
 					{
-						Point point = railNodes[0].Point;
-						Point prevPoint = railNodes[railNodes.Count - 1].Point;
-
-						prevPoint.X = prevPoint.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
-						prevPoint.Y = prevPoint.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
-
-						point.X = point.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
-						point.Y = point.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
+						Point point = GetPixelPositionFromCoordinate(railNodes[0].Point);
+						Point prevPoint = GetPixelPositionFromCoordinate(railNodes[railNodes.Count - 1].Point);
 
 						e.Graphics.DrawLine(railPen, prevPoint, point);
 					}
 				}
+
+				//Draw entities
+				for (int i = 0; i < mAuxData.Entities.Count; i++)
+				{
+					Entity entity = mAuxData.Entities[i];
+
+					Point point = GetPixelPositionFromCoordinate(entity.mPosition);
+					Image entitySprite = entity.mImage;
+
+					point.X -= entitySprite.Width / 2;
+					point.Y += LevelEditor.TILE_SIZE / 2 - entitySprite.Height;
+
+					e.Graphics.DrawImage(entitySprite, point);
+				}
 			}
+		}
+
+		Point GetPixelPositionFromCoordinate(Point tileCoord)
+		{
+			Point point = new Point();
+			point.X = tileCoord.X * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
+			point.Y = tileCoord.Y * LevelEditor.TILE_SIZE + LevelEditor.TILE_SIZE / 2;
+
+			return point;
 		}
 
 		protected override void OnMouseClick(MouseEventArgs e)

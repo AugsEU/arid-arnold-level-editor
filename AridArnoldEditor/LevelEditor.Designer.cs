@@ -148,6 +148,7 @@
 			this.entityToolStripMenuItem.Name = "entityToolStripMenuItem";
 			this.entityToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
 			this.entityToolStripMenuItem.Text = "Entity";
+			this.entityToolStripMenuItem.Click += new System.EventHandler(this.entityToolStripMenuItem_Click);
 			// 
 			// wImageArea
 			// 
@@ -356,22 +357,24 @@
 			// 
 			// wNPCHeckleTxt
 			// 
-			this.wNPCHeckleTxt.Location = new System.Drawing.Point(59, 65);
+			this.wNPCHeckleTxt.Location = new System.Drawing.Point(49, 65);
 			this.wNPCHeckleTxt.Name = "wNPCHeckleTxt";
-			this.wNPCHeckleTxt.Size = new System.Drawing.Size(140, 23);
+			this.wNPCHeckleTxt.Size = new System.Drawing.Size(176, 23);
 			this.wNPCHeckleTxt.TabIndex = 16;
+			this.wNPCHeckleTxt.TextChanged += new System.EventHandler(this.wNPCHeckleTxt_TextChanged);
 			// 
 			// wNPCTalkTxt
 			// 
-			this.wNPCTalkTxt.Location = new System.Drawing.Point(59, 37);
+			this.wNPCTalkTxt.Location = new System.Drawing.Point(49, 37);
 			this.wNPCTalkTxt.Name = "wNPCTalkTxt";
-			this.wNPCTalkTxt.Size = new System.Drawing.Size(140, 23);
+			this.wNPCTalkTxt.Size = new System.Drawing.Size(176, 23);
 			this.wNPCTalkTxt.TabIndex = 15;
+			this.wNPCTalkTxt.TextChanged += new System.EventHandler(this.wNPCTalkTxt_TextChanged);
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(23, 40);
+			this.label3.Location = new System.Drawing.Point(13, 40);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(30, 15);
 			this.label3.TabIndex = 13;
@@ -380,7 +383,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(7, 68);
+			this.label6.Location = new System.Drawing.Point(3, 68);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(46, 15);
 			this.label6.TabIndex = 3;
@@ -427,6 +430,7 @@
 			this.wEntityGravityCombo.Name = "wEntityGravityCombo";
 			this.wEntityGravityCombo.Size = new System.Drawing.Size(176, 23);
 			this.wEntityGravityCombo.TabIndex = 18;
+			this.wEntityGravityCombo.SelectedIndexChanged += new System.EventHandler(this.wEntityGravityCombo_SelectedIndexChanged);
 			// 
 			// label2
 			// 
@@ -449,6 +453,7 @@
 			this.wEntityFacingCombo.Name = "wEntityFacingCombo";
 			this.wEntityFacingCombo.Size = new System.Drawing.Size(176, 23);
 			this.wEntityFacingCombo.TabIndex = 16;
+			this.wEntityFacingCombo.SelectedIndexChanged += new System.EventHandler(this.wEntityFacingCombo_SelectedIndexChanged);
 			// 
 			// label1
 			// 
@@ -477,6 +482,7 @@
 			this.wEntityClassCombo.Name = "wEntityClassCombo";
 			this.wEntityClassCombo.Size = new System.Drawing.Size(176, 23);
 			this.wEntityClassCombo.TabIndex = 14;
+			this.wEntityClassCombo.SelectedIndexChanged += new System.EventHandler(this.wEntityClassCombo_SelectedIndexChanged);
 			// 
 			// label8
 			// 
@@ -495,6 +501,7 @@
 			this.wEntityRemoveBtn.TabIndex = 5;
 			this.wEntityRemoveBtn.Text = "Remove";
 			this.wEntityRemoveBtn.UseVisualStyleBackColor = true;
+			this.wEntityRemoveBtn.Click += new System.EventHandler(this.wEntityRemoveBtn_Click);
 			// 
 			// wEntityMoveBtn
 			// 
@@ -504,6 +511,7 @@
 			this.wEntityMoveBtn.TabIndex = 2;
 			this.wEntityMoveBtn.Text = "Move";
 			this.wEntityMoveBtn.UseVisualStyleBackColor = true;
+			this.wEntityMoveBtn.Click += new System.EventHandler(this.wEntityMoveBtn_Click);
 			// 
 			// label10
 			// 

@@ -21,7 +21,8 @@ namespace AridArnoldEditor
 			AddingRail,
 			AddingNode,
 			MovingNode,
-			AddingEntity
+			AddingEntity,
+			MovingEntity
 		}
 
 		#endregion rTypes
@@ -333,24 +334,22 @@ namespace AridArnoldEditor
 
 			if (selectedEntity != null)
 			{
+				wEntityPanel.Enabled = true;
 				wEntityClassCombo.SelectedIndex = EntityClassIndexFromEnum(selectedEntity.mEntityClass);
 				wEntityFacingCombo.SelectedIndex = (int)selectedEntity.mStartDirection;
 				wEntityGravityCombo.SelectedIndex = (int)selectedEntity.mGravityDirection;
 
 				if(selectedEntity.GetEntityType() == Entity.EntityType.kSimpleNPC)
 				{
-					SimpleNPC? simpleNPC = selectedEntity as SimpleNPC;
-
-					if (simpleNPC != null)
-					{
-						wSNPCPanel.Enabled = true;
-						wNPCHeckleTxt.Text = simpleNPC.mHeckleText;
-						wNPCTalkTxt.Text = simpleNPC.mTalkText;
-					}
+					wSNPCPanel.Enabled = true;
+					wNPCHeckleTxt.Text = selectedEntity.mHeckleText;
+					wNPCTalkTxt.Text = selectedEntity.mTalkText;
 				}
 				else
 				{
 					wSNPCPanel.Enabled = false;
+					wNPCHeckleTxt.Text = "";
+					wNPCTalkTxt.Text = "";
 				}
 			}
 			else
@@ -358,29 +357,133 @@ namespace AridArnoldEditor
 				wEntityPanel.Enabled = false;
 				wSNPCPanel.Enabled = false;
 			}
+		}
 
-			wSNPCPanel.Enabled = mSelectedRailIdx != -1;
-			if (mSelectedRailIdx != -1 && mAuxData != null)
+		private void entityToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SetAction(FormActionState.AddingEntity);
+		}
+
+		private void wEntityMoveBtn_Click(object sender, EventArgs e)
+		{
+			SetAction(FormActionState.MovingEntity);
+		}
+
+		private void wEntityClassCombo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+			if(selectedEntity != null)
 			{
-				RailNode? selectedNode = mAuxData.LinearRails[mSelectedRailIdx].GetNodeAtPoint(mSelectedTileCoord);
-
-				if (selectedNode != null)
-				{
-					wRailSpeedIn.Value = (decimal)selectedNode.Speed;
-					wRailWaitIn.Value = (decimal)selectedNode.WaitTime;
-					wNodeFlagsIn.Value = (decimal)(selectedNode.Flags);
-				}
-
-				wRailSizeIn.Value = (decimal)mAuxData.LinearRails[mSelectedRailIdx].GetSize();
-				wRailFlagsIn.Value = mAuxData.LinearRails[mSelectedRailIdx].GetFlags();
+				Entity.EntityClass entityClass = EntityClassEnumFromIdx(wEntityClassCombo.SelectedIndex);
+				selectedEntity.SetClass(entityClass);
+				
+				InvalidateAll();
+				UpdateEntityPanel();
 			}
+		}
+
+		private void wEntityFacingCombo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+			if (selectedEntity != null)
+			{
+				selectedEntity.mStartDirection = (WalkDirection)wEntityFacingCombo.SelectedIndex;
+				
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private void wEntityGravityCombo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+			if (selectedEntity != null)
+			{
+				selectedEntity.mGravityDirection = (CardinalDirection)wEntityGravityCombo.SelectedIndex;
+				
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private void wNPCTalkTxt_TextChanged(object sender, EventArgs e)
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+			if (selectedEntity != null)
+			{
+				selectedEntity.mTalkText = wNPCTalkTxt.Text;
+
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private void wEntityRemoveBtn_Click(object sender, EventArgs e)
+		{
+			if(mSelectedEntityIdx != -1)
+			{
+				mAuxData.Entities.RemoveAt(mSelectedEntityIdx);
+				mSelectedEntityIdx = -1;
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private void wNPCHeckleTxt_TextChanged(object sender, EventArgs e)
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+			if (selectedEntity != null)
+			{
+				selectedEntity.mHeckleText = wNPCHeckleTxt.Text;
+
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private Entity.EntityClass EntityClassEnumFromIdx(int idx)
+		{
+			if(idx < (int)Entity.EntityClass.kPlayerClassEnd)
+			{
+				return (Entity.EntityClass)idx;
+			}
+
+			idx -= (int)Entity.EntityClass.kPlayerClassEnd - Entity.kPlayerClassStart;
+			idx += Entity.kClassSpacing;
+
+			if (idx < (int)Entity.EntityClass.kEnemyClassEnd)
+			{
+				return (Entity.EntityClass)idx;
+			}
+
+			idx -= (int)Entity.EntityClass.kEnemyClassEnd - Entity.kEnemyClassStart;
+			idx += Entity.kClassSpacing;
+
+			return (Entity.EntityClass)idx;
 		}
 
 		private int EntityClassIndexFromEnum(Entity.EntityClass myEnum)
 		{
 			int enumInt = (int)myEnum;
+			int subclassIdx = enumInt % Entity.kClassSpacing;
+			int offset = 0;
 
-			return enumInt / Entity.kClassSpacing + (enumInt % Entity.kClassSpacing);
+			if (enumInt > (int)Entity.EntityClass.kPlayerClassEnd)
+			{
+				offset += (int)Entity.EntityClass.kPlayerClassEnd - Entity.kPlayerClassStart;
+			}
+
+			if (enumInt > (int)Entity.EntityClass.kEnemyClassEnd)
+			{
+				offset += (int)Entity.EntityClass.kEnemyClassEnd - Entity.kEnemyClassStart;
+			}
+
+			if (enumInt > (int)Entity.EntityClass.kNPCClassEnd)
+			{
+				offset += (int)Entity.EntityClass.kNPCClassEnd - Entity.kNPCClassStart;
+			}
+
+			return offset + subclassIdx;
 		}
 
 		private Entity? GetSelectedEntity()
@@ -428,6 +531,9 @@ namespace AridArnoldEditor
 			//Rail
 			mSelectedRailIdx = GetRailIdxAtPoint(tileClicked);
 
+			//Entity
+			mSelectedEntityIdx = GetEntityIdxAtPoint(tileClicked);
+
 			//Update selection point
 			mSelectedTileCoord = tileClicked;
 			mSelectionPanel.Location = new Point(tileClicked.X * TILE_SIZE, tileClicked.Y * TILE_SIZE);
@@ -442,10 +548,14 @@ namespace AridArnoldEditor
 
 		private void DoAction(FormActionState action, Point tile)
 		{
+			int railIdx = GetRailIdxAtPoint(tile);
+			int entityIdx = GetEntityIdxAtPoint(tile);
+			bool tileEmpty = railIdx == -1 && entityIdx == -1;
+
 			switch (action)
 			{
 				case FormActionState.AddingRail:
-					if (GetRailIdxAtPoint(tile) == -1)
+					if (tileEmpty)
 					{
 						LinearRail newRail = new LinearRail();
 						newRail.AddNode(tile);
@@ -453,17 +563,30 @@ namespace AridArnoldEditor
 					}
 					break;
 				case FormActionState.AddingNode:
-					int railIdx = GetRailIdxAtPoint(mSelectedTileCoord);
-					if (railIdx != -1)
+					if (tileEmpty)
 					{
-						mAuxData.LinearRails[railIdx].AddNode(tile);
+						mAuxData.LinearRails[mSelectedRailIdx].AddNode(tile);
 					}
 					break;
 				case FormActionState.MovingNode:
-					railIdx = GetRailIdxAtPoint(mSelectedTileCoord);
-					if(railIdx != -1)
+					if(tileEmpty)
 					{
-						mAuxData.LinearRails[railIdx].MoveNode(mSelectedTileCoord, tile);
+						mAuxData.LinearRails[mSelectedRailIdx].MoveNode(mSelectedTileCoord, tile);
+					}
+					break;
+				case FormActionState.AddingEntity:
+					if (tileEmpty)
+					{
+						Entity newEntity = new Entity(tile);
+						mAuxData.Entities.Add(newEntity);
+					}
+					break;
+				case FormActionState.MovingEntity:
+					Entity? selectedEntity = GetSelectedEntity();
+
+					if (tileEmpty && selectedEntity != null)
+					{
+						selectedEntity.mPosition = tile;
 					}
 					break;
 				case FormActionState.None:
@@ -491,6 +614,20 @@ namespace AridArnoldEditor
 			return -1;
 		}
 
+		private int GetEntityIdxAtPoint(Point tile)
+		{
+			for (int i = 0; i < mAuxData.Entities.Count; i++)
+			{
+				if (mAuxData.Entities[i].mPosition == tile)
+				{
+					return i;
+				}
+			}
+
+			return -1;
+		}
+
+
 		#endregion rLevelEditing
 
 
@@ -511,6 +648,10 @@ namespace AridArnoldEditor
 					return "Adding Node...";
 				case FormActionState.MovingNode:
 					return "Moving Node...";
+				case FormActionState.AddingEntity:
+					return "Adding Entity...";
+				case FormActionState.MovingEntity:
+					return "Moving Entity...";
 				default:
 					break;
 			}

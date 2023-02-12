@@ -18,3 +18,20 @@ RAIL COUNT - int32
         FLAGS - UInt32
     }
 }
+
+File End?
+
+ENTITY COUNT - int32
+{
+    POINT X - int32
+    POINT Y - int32
+    ENTITY CLASS - uint32
+    START DIRECTION - uint32
+    GRAVITY DIRECTION - uint32
+
+    IF(CLASS_IS_SNPC)
+    {
+        TALK_ID - String
+        HECKLE - String
+    }
+}

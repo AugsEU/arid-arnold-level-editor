@@ -31,6 +31,12 @@
 			mFlags = 0;
 		}
 
+		public LinearRail(BinaryReader br)
+		{
+			mNodes = new List<RailNode>();
+			ReadRail(br);
+		}
+
 		public void AddNode(Point newPoint)
 		{
 			mNodes.Add(new RailNode(newPoint));
@@ -97,5 +103,50 @@
 				}
 			}
 		}
+
+
+		#region rReadWrite
+
+		public void WriteRail(BinaryWriter bw)
+		{
+			bw.Write(mSize);
+			bw.Write((UInt32)mFlags);
+
+			//Nodes
+			bw.Write(mNodes.Count);
+
+			for (int i = 0; i < mNodes.Count; i++)
+			{
+				bw.Write(mNodes[i].Point.X);
+				bw.Write(mNodes[i].Point.Y);
+				bw.Write(mNodes[i].Speed);
+				bw.Write(mNodes[i].WaitTime);
+				bw.Write(mNodes[i].Flags);
+			}
+		}
+
+		public void ReadRail(BinaryReader br)
+		{
+			mSize = br.ReadInt32();
+			mFlags = br.ReadUInt32();
+
+			//Nodes
+			int numNodes = br.ReadInt32();
+
+			for (int i = 0; i < numNodes; i++)
+			{
+				int ptX = br.ReadInt32();
+				int ptY = br.ReadInt32();
+
+				RailNode node = new RailNode(new Point(ptX, ptY));
+				node.Speed = br.ReadSingle();
+				node.WaitTime = br.ReadSingle();
+				node.Flags = br.ReadUInt32();
+
+				mNodes.Add(node);
+			}
+		}
+
+		#endregion rReadWrite
 	}
 }
