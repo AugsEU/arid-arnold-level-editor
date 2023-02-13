@@ -153,6 +153,7 @@ namespace AridArnoldEditor
 		private void Clear()
 		{
 			LinearRails.Clear();
+			Entities.Clear();
 		}
 	}
 }

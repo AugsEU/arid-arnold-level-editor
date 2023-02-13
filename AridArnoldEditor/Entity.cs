@@ -174,7 +174,7 @@ namespace AridArnoldEditor
 		}
 
 
-		public virtual EntityType GetEntityType()
+		public EntityType GetEntityType()
 		{
 			if((int)mEntityClass >= kNPCClassStart)
 			{

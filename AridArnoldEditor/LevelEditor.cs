@@ -506,6 +506,8 @@ namespace AridArnoldEditor
 
 		private void LoadLevel(string filePath)
 		{
+			this.Text = "Level Editor - " + Path.GetFileName(filePath);
+
 			mLoadedImage = new Bitmap(filePath);
 
 			for (int x = 0; x < NUM_TILES; x++)
