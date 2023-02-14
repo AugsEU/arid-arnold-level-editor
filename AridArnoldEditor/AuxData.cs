@@ -42,6 +42,7 @@ namespace AridArnoldEditor
 				return;
 			}
 
+			SanitiseBeforeWrite();
 
 			using (FileStream stream = File.OpenWrite(filePath))
 			{
@@ -69,6 +70,29 @@ namespace AridArnoldEditor
 			{
 				Entities[i].WriteEntity(bw);
 			}
+		}
+
+		private void SanitiseBeforeWrite()
+		{
+			for (int i = 0; i < Entities.Count; i++)
+			{
+				if (Entities[i].ValidateEntity() == false)
+				{
+					DialogResult dialogResult = PromptError(Entities[i].mPosition, "entity");
+
+					if (dialogResult != DialogResult.Yes)
+					{
+						Entities.RemoveAt(i);
+						i--;
+					}
+				}
+			}
+		}
+
+		private DialogResult PromptError(Point pos, string objectName)
+		{
+			string errorStr = "Invalid " + objectName + " at: " + pos.ToString() + ". Do you want to save it?";
+			return MessageBox.Show(errorStr, "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 		}
 
 		#endregion rWrite

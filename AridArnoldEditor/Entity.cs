@@ -183,6 +183,33 @@ namespace AridArnoldEditor
 			return EntityType.kBasic;
 		}
 
+		public bool ValidateEntity()
+		{
+			if (mPosition.X < 0 || mPosition.X >= LevelEditor.NUM_TILES)
+			{
+				return false;
+			}
+
+			if (mPosition.Y < 0 || mPosition.Y >= LevelEditor.NUM_TILES)
+			{
+				return false;
+			}
+
+			int entityClass = (int)mEntityClass;
+
+			if((int)EntityClass.kPlayerClassEnd <= entityClass && entityClass < kEnemyClassStart)
+			{
+				return false;
+			}
+
+			if ((int)EntityClass.kEnemyClassEnd <= entityClass && entityClass < kNPCClassStart)
+			{
+				return false;
+			}
+
+			return true;
+		}
+
 
 		#region rReadWrite
 
