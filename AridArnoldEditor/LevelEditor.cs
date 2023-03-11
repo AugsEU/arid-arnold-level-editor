@@ -199,6 +199,15 @@ namespace AridArnoldEditor
 			}
 		}
 
+		private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			DialogResult result = MessageBox.Show("Are you sure?", "Clear", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+			if (result == DialogResult.Yes)
+			{
+				mAuxData.Clear();
+			}
+		}
+
 		private void ClickOnSelectTile(object? sender, MouseEventArgs e)
 		{
 			OnClickTile(mSelectedTileCoord);

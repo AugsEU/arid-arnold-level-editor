@@ -174,7 +174,7 @@ namespace AridArnoldEditor
 		#endregion rRead
 
 
-		private void Clear()
+		public void Clear()
 		{
 			LinearRails.Clear();
 			Entities.Clear();
