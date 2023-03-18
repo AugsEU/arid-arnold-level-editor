@@ -1,4 +1,4 @@
-AUX FILE FORMAT VERSION 1:
+AUX FILE FORMAT VERSION 2:
 
 VERSION - int32
 
@@ -28,6 +28,23 @@ ENTITY COUNT - int32
     ENTITY CLASS - uint32
     START DIRECTION - uint32
     GRAVITY DIRECTION - uint32
+
+    FLOAT PARAM 0 - float32
+    INT PARAM 0 - int32
+    FLOAT PARAM 1 - float32
+    INT PARAM 1 - int32
+    FLOAT PARAM 2 - float32
+    INT PARAM 2 - int32
+    FLOAT PARAM 3 - float32
+    INT PARAM 3 - int32
+    FLOAT PARAM 4 - float32
+    INT PARAM 4 - int32
+    FLOAT PARAM 5 - float32
+    INT PARAM 5 - int32
+    FLOAT PARAM 6 - float32
+    INT PARAM 6 - int32
+    FLOAT PARAM 7 - float32
+    INT PARAM 7 - int32
 
     IF(CLASS_IS_SNPC)
     {

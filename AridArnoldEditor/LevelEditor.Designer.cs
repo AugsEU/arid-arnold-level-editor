@@ -32,6 +32,7 @@
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.railToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.linearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +63,24 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.wEntityPanel = new System.Windows.Forms.Panel();
+			this.wEntityIP6 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP4 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP2 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP0 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP7 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP5 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP3 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP1 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP7 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP5 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP3 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityIP1 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP6 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP4 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP2 = new System.Windows.Forms.NumericUpDown();
+			this.wEntityFP0 = new System.Windows.Forms.NumericUpDown();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.wEntityGravityCombo = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.wEntityFacingCombo = new System.Windows.Forms.ComboBox();
@@ -71,7 +90,6 @@
 			this.wEntityRemoveBtn = new System.Windows.Forms.Button();
 			this.wEntityMoveBtn = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
-			this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.wMenuStrip.SuspendLayout();
 			this.wRailPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.wNodeFlagsIn)).BeginInit();
@@ -82,6 +100,22 @@
 			this.wStatusPanel.SuspendLayout();
 			this.wSNPCPanel.SuspendLayout();
 			this.wEntityPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP0)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP0)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// wMenuStrip
@@ -108,7 +142,7 @@
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.openToolStripMenuItem.Text = "Open";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
 			// 
@@ -116,10 +150,17 @@
 			// 
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
 			this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.saveToolStripMenuItem.Text = "Save";
 			this.saveToolStripMenuItem.ToolTipText = "Save file";
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+			// 
+			// clearToolStripMenuItem
+			// 
+			this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+			this.clearToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.clearToolStripMenuItem.Text = "Clear";
+			this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
 			// 
 			// addToolStripMenuItem
 			// 
@@ -352,7 +393,7 @@
 			this.wSNPCPanel.Controls.Add(this.label3);
 			this.wSNPCPanel.Controls.Add(this.label6);
 			this.wSNPCPanel.Controls.Add(this.label7);
-			this.wSNPCPanel.Location = new System.Drawing.Point(6, 156);
+			this.wSNPCPanel.Location = new System.Drawing.Point(6, 300);
 			this.wSNPCPanel.Name = "wSNPCPanel";
 			this.wSNPCPanel.Size = new System.Drawing.Size(232, 111);
 			this.wSNPCPanel.TabIndex = 17;
@@ -404,6 +445,24 @@
 			// wEntityPanel
 			// 
 			this.wEntityPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.wEntityPanel.Controls.Add(this.wEntityIP6);
+			this.wEntityPanel.Controls.Add(this.wEntityIP4);
+			this.wEntityPanel.Controls.Add(this.wEntityIP2);
+			this.wEntityPanel.Controls.Add(this.wEntityIP0);
+			this.wEntityPanel.Controls.Add(this.wEntityFP7);
+			this.wEntityPanel.Controls.Add(this.wEntityFP5);
+			this.wEntityPanel.Controls.Add(this.wEntityFP3);
+			this.wEntityPanel.Controls.Add(this.wEntityFP1);
+			this.wEntityPanel.Controls.Add(this.wEntityIP7);
+			this.wEntityPanel.Controls.Add(this.wEntityIP5);
+			this.wEntityPanel.Controls.Add(this.wEntityIP3);
+			this.wEntityPanel.Controls.Add(this.wEntityIP1);
+			this.wEntityPanel.Controls.Add(this.wEntityFP6);
+			this.wEntityPanel.Controls.Add(this.wEntityFP4);
+			this.wEntityPanel.Controls.Add(this.wEntityFP2);
+			this.wEntityPanel.Controls.Add(this.wEntityFP0);
+			this.wEntityPanel.Controls.Add(this.label5);
+			this.wEntityPanel.Controls.Add(this.label4);
 			this.wEntityPanel.Controls.Add(this.wEntityGravityCombo);
 			this.wEntityPanel.Controls.Add(this.wSNPCPanel);
 			this.wEntityPanel.Controls.Add(this.label2);
@@ -416,8 +475,306 @@
 			this.wEntityPanel.Controls.Add(this.label10);
 			this.wEntityPanel.Location = new System.Drawing.Point(787, 27);
 			this.wEntityPanel.Name = "wEntityPanel";
-			this.wEntityPanel.Size = new System.Drawing.Size(246, 274);
+			this.wEntityPanel.Size = new System.Drawing.Size(246, 448);
 			this.wEntityPanel.TabIndex = 17;
+			// 
+			// wEntityIP6
+			// 
+			this.wEntityIP6.Location = new System.Drawing.Point(127, 235);
+			this.wEntityIP6.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP6.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP6.Name = "wEntityIP6";
+			this.wEntityIP6.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP6.TabIndex = 36;
+			// 
+			// wEntityIP4
+			// 
+			this.wEntityIP4.Location = new System.Drawing.Point(127, 206);
+			this.wEntityIP4.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP4.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP4.Name = "wEntityIP4";
+			this.wEntityIP4.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP4.TabIndex = 35;
+			// 
+			// wEntityIP2
+			// 
+			this.wEntityIP2.Location = new System.Drawing.Point(127, 177);
+			this.wEntityIP2.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP2.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP2.Name = "wEntityIP2";
+			this.wEntityIP2.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP2.TabIndex = 34;
+			// 
+			// wEntityIP0
+			// 
+			this.wEntityIP0.Location = new System.Drawing.Point(127, 148);
+			this.wEntityIP0.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP0.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP0.Name = "wEntityIP0";
+			this.wEntityIP0.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP0.TabIndex = 33;
+			// 
+			// wEntityFP7
+			// 
+			this.wEntityFP7.DecimalPlaces = 2;
+			this.wEntityFP7.Location = new System.Drawing.Point(63, 235);
+			this.wEntityFP7.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP7.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP7.Name = "wEntityFP7";
+			this.wEntityFP7.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP7.TabIndex = 32;
+			// 
+			// wEntityFP5
+			// 
+			this.wEntityFP5.DecimalPlaces = 2;
+			this.wEntityFP5.Location = new System.Drawing.Point(63, 206);
+			this.wEntityFP5.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP5.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP5.Name = "wEntityFP5";
+			this.wEntityFP5.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP5.TabIndex = 31;
+			// 
+			// wEntityFP3
+			// 
+			this.wEntityFP3.DecimalPlaces = 2;
+			this.wEntityFP3.Location = new System.Drawing.Point(63, 177);
+			this.wEntityFP3.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP3.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP3.Name = "wEntityFP3";
+			this.wEntityFP3.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP3.TabIndex = 30;
+			// 
+			// wEntityFP1
+			// 
+			this.wEntityFP1.DecimalPlaces = 2;
+			this.wEntityFP1.Location = new System.Drawing.Point(63, 148);
+			this.wEntityFP1.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP1.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP1.Name = "wEntityFP1";
+			this.wEntityFP1.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP1.TabIndex = 29;
+			// 
+			// wEntityIP7
+			// 
+			this.wEntityIP7.Location = new System.Drawing.Point(183, 235);
+			this.wEntityIP7.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP7.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP7.Name = "wEntityIP7";
+			this.wEntityIP7.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP7.TabIndex = 28;
+			// 
+			// wEntityIP5
+			// 
+			this.wEntityIP5.Location = new System.Drawing.Point(183, 206);
+			this.wEntityIP5.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP5.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP5.Name = "wEntityIP5";
+			this.wEntityIP5.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP5.TabIndex = 27;
+			// 
+			// wEntityIP3
+			// 
+			this.wEntityIP3.Location = new System.Drawing.Point(183, 177);
+			this.wEntityIP3.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP3.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP3.Name = "wEntityIP3";
+			this.wEntityIP3.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP3.TabIndex = 26;
+			// 
+			// wEntityIP1
+			// 
+			this.wEntityIP1.Location = new System.Drawing.Point(183, 148);
+			this.wEntityIP1.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityIP1.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityIP1.Name = "wEntityIP1";
+			this.wEntityIP1.Size = new System.Drawing.Size(50, 23);
+			this.wEntityIP1.TabIndex = 25;
+			// 
+			// wEntityFP6
+			// 
+			this.wEntityFP6.DecimalPlaces = 2;
+			this.wEntityFP6.Location = new System.Drawing.Point(7, 235);
+			this.wEntityFP6.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP6.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP6.Name = "wEntityFP6";
+			this.wEntityFP6.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP6.TabIndex = 24;
+			// 
+			// wEntityFP4
+			// 
+			this.wEntityFP4.DecimalPlaces = 2;
+			this.wEntityFP4.Location = new System.Drawing.Point(7, 206);
+			this.wEntityFP4.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP4.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP4.Name = "wEntityFP4";
+			this.wEntityFP4.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP4.TabIndex = 23;
+			// 
+			// wEntityFP2
+			// 
+			this.wEntityFP2.DecimalPlaces = 2;
+			this.wEntityFP2.Location = new System.Drawing.Point(7, 177);
+			this.wEntityFP2.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP2.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP2.Name = "wEntityFP2";
+			this.wEntityFP2.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP2.TabIndex = 22;
+			// 
+			// wEntityFP0
+			// 
+			this.wEntityFP0.DecimalPlaces = 2;
+			this.wEntityFP0.Location = new System.Drawing.Point(7, 148);
+			this.wEntityFP0.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+			this.wEntityFP0.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            -2147483648});
+			this.wEntityFP0.Name = "wEntityFP0";
+			this.wEntityFP0.Size = new System.Drawing.Size(50, 23);
+			this.wEntityFP0.TabIndex = 21;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(155, 125);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(63, 15);
+			this.label5.TabIndex = 20;
+			this.label5.Text = "Int Params";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(22, 125);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(75, 15);
+			this.label4.TabIndex = 19;
+			this.label4.Text = "Float Params";
 			// 
 			// wEntityGravityCombo
 			// 
@@ -475,6 +832,8 @@
             "Androld",
             "Trundle",
             "Roboto",
+            "FutronGun",
+            "FutronRocket",
             "Barbara",
             "Zippy",
             "Dok",
@@ -497,7 +856,7 @@
 			// 
 			// wEntityRemoveBtn
 			// 
-			this.wEntityRemoveBtn.Location = new System.Drawing.Point(6, 127);
+			this.wEntityRemoveBtn.Location = new System.Drawing.Point(7, 271);
 			this.wEntityRemoveBtn.Name = "wEntityRemoveBtn";
 			this.wEntityRemoveBtn.Size = new System.Drawing.Size(100, 23);
 			this.wEntityRemoveBtn.TabIndex = 5;
@@ -507,7 +866,7 @@
 			// 
 			// wEntityMoveBtn
 			// 
-			this.wEntityMoveBtn.Location = new System.Drawing.Point(138, 127);
+			this.wEntityMoveBtn.Location = new System.Drawing.Point(133, 271);
 			this.wEntityMoveBtn.Name = "wEntityMoveBtn";
 			this.wEntityMoveBtn.Size = new System.Drawing.Size(100, 23);
 			this.wEntityMoveBtn.TabIndex = 2;
@@ -524,13 +883,6 @@
 			this.label10.TabIndex = 0;
 			this.label10.Text = "Entity";
 			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// clearToolStripMenuItem
-			// 
-			this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-			this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.clearToolStripMenuItem.Text = "Clear";
-			this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
 			// 
 			// LevelEditor
 			// 
@@ -562,6 +914,22 @@
 			this.wSNPCPanel.PerformLayout();
 			this.wEntityPanel.ResumeLayout(false);
 			this.wEntityPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP0)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityIP1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wEntityFP0)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -613,5 +981,23 @@
 		private Label label1;
 		private ToolStripMenuItem entityToolStripMenuItem;
 		private ToolStripMenuItem clearToolStripMenuItem;
+		private NumericUpDown wEntityIP6;
+		private NumericUpDown wEntityIP4;
+		private NumericUpDown wEntityIP2;
+		private NumericUpDown wEntityIP0;
+		private NumericUpDown wEntityFP7;
+		private NumericUpDown wEntityFP5;
+		private NumericUpDown wEntityFP3;
+		private NumericUpDown wEntityFP1;
+		private NumericUpDown wEntityIP7;
+		private NumericUpDown wEntityIP5;
+		private NumericUpDown wEntityIP3;
+		private NumericUpDown wEntityIP1;
+		private NumericUpDown wEntityFP6;
+		private NumericUpDown wEntityFP4;
+		private NumericUpDown wEntityFP2;
+		private NumericUpDown wEntityFP0;
+		private Label label5;
+		private Label label4;
 	}
 }

@@ -10,7 +10,7 @@ namespace AridArnoldEditor
 	{
 		#region rConstants
 
-		const int FILE_VER = 1;
+		const int FILE_VER = 2;
 
 		#endregion rConstants
 
@@ -145,7 +145,6 @@ namespace AridArnoldEditor
 			if(fileVersion != FILE_VER)
 			{
 				Console.WriteLine("ERROR: WRONG FILE VERSION!");
-				return;
 			}
 
 			//Rails
@@ -166,7 +165,7 @@ namespace AridArnoldEditor
 			int numEntities = br.ReadInt32();
 			for (int i = 0; i < numEntities; i++)
 			{
-				Entity entity = new Entity(br);
+				Entity entity = new Entity(br, fileVersion);
 				Entities.Add(entity);
 			}
 		}

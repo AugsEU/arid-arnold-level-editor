@@ -51,8 +51,10 @@ namespace AridArnoldEditor
 		//Rails
 		int mSelectedRailIdx;
 
-		//NPCs
+		// Entities
 		int mSelectedEntityIdx;
+		NumericUpDown[] mFloatParamsUpDown;
+		NumericUpDown[] mIntParamsUpDown;
 
 		//Data
 		AuxData mAuxData;
@@ -81,6 +83,33 @@ namespace AridArnoldEditor
 
 			//Entity
 			mSelectedEntityIdx = -1;
+			mFloatParamsUpDown = new NumericUpDown[16];
+			mIntParamsUpDown = new NumericUpDown[16];
+
+			mFloatParamsUpDown[0] = wEntityFP0;
+			mFloatParamsUpDown[1] = wEntityFP1;
+			mFloatParamsUpDown[2] = wEntityFP2;
+			mFloatParamsUpDown[3] = wEntityFP3;
+			mFloatParamsUpDown[4] = wEntityFP4;
+			mFloatParamsUpDown[5] = wEntityFP5;
+			mFloatParamsUpDown[6] = wEntityFP6;
+			mFloatParamsUpDown[7] = wEntityFP7;
+
+			mIntParamsUpDown[0] = wEntityIP0;
+			mIntParamsUpDown[1] = wEntityIP1;
+			mIntParamsUpDown[2] = wEntityIP2;
+			mIntParamsUpDown[3] = wEntityIP3;
+			mIntParamsUpDown[4] = wEntityIP4;
+			mIntParamsUpDown[5] = wEntityIP5;
+			mIntParamsUpDown[6] = wEntityIP6;
+			mIntParamsUpDown[7] = wEntityIP7;
+
+			for(int i = 0; i < 8; i++)
+			{
+				int dumbAssCopyWhyIsCSharpLikeThisPleaseSamirYouAreWreckingTheLanguage = i;
+				mFloatParamsUpDown[i].ValueChanged += (sender, e) => SetEntityFloatParam(dumbAssCopyWhyIsCSharpLikeThisPleaseSamirYouAreWreckingTheLanguage, mFloatParamsUpDown[dumbAssCopyWhyIsCSharpLikeThisPleaseSamirYouAreWreckingTheLanguage]);
+				mIntParamsUpDown[i].ValueChanged += (sender, e) => SetEntityIntParam(dumbAssCopyWhyIsCSharpLikeThisPleaseSamirYouAreWreckingTheLanguage, mIntParamsUpDown[dumbAssCopyWhyIsCSharpLikeThisPleaseSamirYouAreWreckingTheLanguage]);
+			}
 
 			mAuxData = new AuxData();
 
@@ -114,6 +143,8 @@ namespace AridArnoldEditor
 			wImageArea.Controls.Add(mSelectionPanel);
 			mSelectionPanel.BringToFront();
 			mDrawLevelArea.BringToFront();
+
+
 
 			//State
 			SetAction(FormActionState.None);
@@ -348,6 +379,12 @@ namespace AridArnoldEditor
 				wEntityFacingCombo.SelectedIndex = (int)selectedEntity.mStartDirection;
 				wEntityGravityCombo.SelectedIndex = (int)selectedEntity.mGravityDirection;
 
+				for(int i = 0; i < 8; i++)
+				{
+					mFloatParamsUpDown[i].Value = (decimal)selectedEntity.mFloatParams[i];
+					mIntParamsUpDown[i].Value = (decimal)selectedEntity.mIntParams[i];
+				}
+
 				if(selectedEntity.GetEntityType() == Entity.EntityType.kSimpleNPC)
 				{
 					wSNPCPanel.Enabled = true;
@@ -415,6 +452,35 @@ namespace AridArnoldEditor
 			}
 		}
 
+		private void wEntityRemoveBtn_Click(object sender, EventArgs e)
+		{
+			if (mSelectedEntityIdx != -1)
+			{
+				mAuxData.Entities.RemoveAt(mSelectedEntityIdx);
+				mSelectedEntityIdx = -1;
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private void SetEntityFloatParam(int idx, NumericUpDown widget)
+		{
+			Entity? entity = GetSelectedEntity();
+			if(entity != null)
+			{
+				entity.mFloatParams[idx] = (float)widget.Value;
+			}
+		}
+
+		private void SetEntityIntParam(int idx, NumericUpDown widget)
+		{
+			Entity? entity = GetSelectedEntity();
+			if (entity != null)
+			{
+				entity.mIntParams[idx] = (int)widget.Value;
+			}
+		}
+
 		private void wNPCTalkTxt_TextChanged(object sender, EventArgs e)
 		{
 			Entity? selectedEntity = GetSelectedEntity();
@@ -422,17 +488,6 @@ namespace AridArnoldEditor
 			{
 				selectedEntity.mTalkText = wNPCTalkTxt.Text;
 
-				InvalidateAll();
-				UpdateEntityPanel();
-			}
-		}
-
-		private void wEntityRemoveBtn_Click(object sender, EventArgs e)
-		{
-			if(mSelectedEntityIdx != -1)
-			{
-				mAuxData.Entities.RemoveAt(mSelectedEntityIdx);
-				mSelectedEntityIdx = -1;
 				InvalidateAll();
 				UpdateEntityPanel();
 			}

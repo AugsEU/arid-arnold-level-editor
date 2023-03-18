@@ -44,6 +44,8 @@ namespace AridArnoldEditor
 			// Enemy
 			kTrundle = kEnemyClassStart,
 			kRoboto,
+			kFutronGun,
+			kFutronRocket,
 			kEnemyClassEnd,
 
 			//NPC
@@ -63,6 +65,8 @@ namespace AridArnoldEditor
 		public EntityClass mEntityClass;
 		public WalkDirection mStartDirection;
 		public CardinalDirection mGravityDirection;
+		public float[] mFloatParams;
+		public int[] mIntParams;
 
 		// Only NPC data
 		public string mTalkText;
@@ -75,15 +79,23 @@ namespace AridArnoldEditor
 			mStartDirection = WalkDirection.kRight;
 			mGravityDirection = CardinalDirection.kDown;
 
+			mFloatParams = new float[8];
+			mIntParams = new int[8];
+
 			mTalkText = "";
 			mHeckleText = "";
 
 			LoadImage();
 		}
 
-		public Entity(BinaryReader br)
+		public Entity(BinaryReader br, int fileVer)
 		{
-			ReadEntity(br);
+			mFloatParams = new float[8];
+			mIntParams = new int[8];
+			mTalkText = "";
+			mHeckleText = "";
+
+			ReadEntity(br, fileVer);
 			LoadImage();
 		}
 
@@ -91,18 +103,26 @@ namespace AridArnoldEditor
 		{
 			switch (mEntityClass)
 			{
+				// Player
 				case EntityClass.kArnold:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.arnold);
 					break;
 				case EntityClass.kAndrold:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.androld);
 					break;
+
+				// Enemy
 				case EntityClass.kTrundle:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.trundle);
 					break;
 				case EntityClass.kRoboto:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.roboto);
 					break;
+				case EntityClass.kFutronGun:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.FutronGun);
+					break;
+
+				// NPC
 				case EntityClass.kBarbara:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.barbara);
 					break;
@@ -227,7 +247,13 @@ namespace AridArnoldEditor
 			bw.Write((UInt32)mStartDirection);
 			bw.Write((UInt32)mGravityDirection);
 
-			if(GetEntityType() == EntityType.kSimpleNPC)
+			for (int i = 0; i < mFloatParams.Length; i++)
+			{
+				bw.Write(mFloatParams[i]);
+				bw.Write(mIntParams[i]);
+			}
+
+			if (GetEntityType() == EntityType.kSimpleNPC)
 			{
 				bw.Write(mTalkText);
 				bw.Write(mHeckleText);
@@ -235,13 +261,23 @@ namespace AridArnoldEditor
 		}
 
 
-		public void ReadEntity(BinaryReader br)
+		public void ReadEntity(BinaryReader br, int fileVer)
 		{
 			mPosition.X = br.ReadInt32();
 			mPosition.Y = br.ReadInt32();
 			mEntityClass = (EntityClass)br.ReadUInt32();
 			mStartDirection = (WalkDirection)br.ReadUInt32();
 			mGravityDirection = (CardinalDirection)br.ReadUInt32();
+
+			// Read generic params
+			if (fileVer != 1)
+			{
+				for (int i = 0; i < mFloatParams.Length; i++)
+				{
+					mFloatParams[i] = br.ReadSingle();
+					mIntParams[i] = br.ReadInt32();
+				}
+			}
 
 			if (GetEntityType() == EntityType.kSimpleNPC)
 			{
