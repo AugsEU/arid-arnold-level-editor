@@ -121,6 +121,9 @@ namespace AridArnoldEditor
 				case EntityClass.kFutronGun:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.FutronGun);
 					break;
+				case EntityClass.kFutronRocket:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.FutronRocket);
+					break;
 
 				// NPC
 				case EntityClass.kBarbara:

@@ -123,6 +123,16 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FutronRocket {
+            get {
+                object obj = ResourceManager.GetObject("FutronRocket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grillvogel {
             get {
                 object obj = ResourceManager.GetObject("grillvogel", resourceCulture);
