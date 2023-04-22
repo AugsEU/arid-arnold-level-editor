@@ -10,7 +10,7 @@ namespace AridArnoldEditor
 	{
 		#region rConstants
 
-		const int FILE_VER = 2;
+		const int FILE_VER = 3;
 
 		#endregion rConstants
 
@@ -144,14 +144,14 @@ namespace AridArnoldEditor
 			int fileVersion = br.ReadInt32();
 			if(fileVersion != FILE_VER)
 			{
-				Console.WriteLine("ERROR: WRONG FILE VERSION!");
+				Console.WriteLine("WARNING: Old file version. Attempting to convert.");
 			}
 
 			//Rails
 			int numRails = br.ReadInt32();
 			for (int i = 0; i < numRails; i++)
 			{
-				LinearRail linearRail = new LinearRail(br);
+				LinearRail linearRail = new LinearRail(br, fileVersion);
 				LinearRails.Add(linearRail);
 			}
 

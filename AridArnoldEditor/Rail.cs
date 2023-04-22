@@ -31,10 +31,10 @@
 			mFlags = 0;
 		}
 
-		public LinearRail(BinaryReader br)
+		public LinearRail(BinaryReader br, int fileVer)
 		{
 			mNodes = new List<RailNode>();
-			ReadRail(br);
+			ReadRail(br, fileVer);
 		}
 
 		public void AddNode(Point newPoint)
@@ -125,7 +125,7 @@
 			}
 		}
 
-		public void ReadRail(BinaryReader br)
+		public void ReadRail(BinaryReader br, int fileVer)
 		{
 			mSize = br.ReadInt32();
 			mFlags = br.ReadUInt32();
@@ -137,6 +137,12 @@
 			{
 				int ptX = br.ReadInt32();
 				int ptY = br.ReadInt32();
+
+				if(fileVer <= 2)
+				{
+					ptX += 2;
+					ptY += 2;
+				}
 
 				RailNode node = new RailNode(new Point(ptX, ptY));
 				node.Speed = br.ReadSingle();

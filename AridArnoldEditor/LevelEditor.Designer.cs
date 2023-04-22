@@ -28,911 +28,752 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.wMenuStrip = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.railToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.linearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.entityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.wImageArea = new System.Windows.Forms.Panel();
-			this.wRailPanel = new System.Windows.Forms.Panel();
-			this.wNode = new System.Windows.Forms.Label();
-			this.wNodeFlagsIn = new System.Windows.Forms.NumericUpDown();
-			this.wNodeFlags = new System.Windows.Forms.Label();
-			this.wFlagsLbl = new System.Windows.Forms.Label();
-			this.wRailFlagsIn = new System.Windows.Forms.NumericUpDown();
-			this.wRailWaitIn = new System.Windows.Forms.NumericUpDown();
-			this.wWaitTimeLbl = new System.Windows.Forms.Label();
-			this.wRailSizeIn = new System.Windows.Forms.NumericUpDown();
-			this.wRailSizeLbl = new System.Windows.Forms.Label();
-			this.wRemoveNodeBtn = new System.Windows.Forms.Button();
-			this.wRailSpeedIn = new System.Windows.Forms.NumericUpDown();
-			this.wRailSpeedLbl = new System.Windows.Forms.Label();
-			this.wMoveNodeBtn = new System.Windows.Forms.Button();
-			this.wAddNode = new System.Windows.Forms.Button();
-			this.wRailLbl = new System.Windows.Forms.Label();
-			this.wStatusPanel = new System.Windows.Forms.Panel();
-			this.wStatusText = new System.Windows.Forms.Label();
-			this.wSNPCPanel = new System.Windows.Forms.Panel();
-			this.wNPCHeckleTxt = new System.Windows.Forms.TextBox();
-			this.wNPCTalkTxt = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.wEntityPanel = new System.Windows.Forms.Panel();
-			this.wEntityIP6 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP4 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP2 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP0 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP7 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP5 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP3 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP1 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP7 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP5 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP3 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityIP1 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP6 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP4 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP2 = new System.Windows.Forms.NumericUpDown();
-			this.wEntityFP0 = new System.Windows.Forms.NumericUpDown();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.wEntityGravityCombo = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.wEntityFacingCombo = new System.Windows.Forms.ComboBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.wEntityClassCombo = new System.Windows.Forms.ComboBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.wEntityRemoveBtn = new System.Windows.Forms.Button();
-			this.wEntityMoveBtn = new System.Windows.Forms.Button();
-			this.label10 = new System.Windows.Forms.Label();
-			this.wMenuStrip.SuspendLayout();
-			this.wRailPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.wNodeFlagsIn)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailFlagsIn)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailWaitIn)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailSizeIn)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailSpeedIn)).BeginInit();
-			this.wStatusPanel.SuspendLayout();
-			this.wSNPCPanel.SuspendLayout();
-			this.wEntityPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP0)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP7)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP7)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP6)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP0)).BeginInit();
-			this.SuspendLayout();
+			wMenuStrip = new MenuStrip();
+			fileToolStripMenuItem = new ToolStripMenuItem();
+			openToolStripMenuItem = new ToolStripMenuItem();
+			saveToolStripMenuItem = new ToolStripMenuItem();
+			clearToolStripMenuItem = new ToolStripMenuItem();
+			addToolStripMenuItem = new ToolStripMenuItem();
+			railToolStripMenuItem = new ToolStripMenuItem();
+			linearToolStripMenuItem = new ToolStripMenuItem();
+			entityToolStripMenuItem = new ToolStripMenuItem();
+			wImageArea = new Panel();
+			wRailPanel = new Panel();
+			wNode = new Label();
+			wNodeFlagsIn = new NumericUpDown();
+			wNodeFlags = new Label();
+			wFlagsLbl = new Label();
+			wRailFlagsIn = new NumericUpDown();
+			wRailWaitIn = new NumericUpDown();
+			wWaitTimeLbl = new Label();
+			wRailSizeIn = new NumericUpDown();
+			wRailSizeLbl = new Label();
+			wRemoveNodeBtn = new Button();
+			wRailSpeedIn = new NumericUpDown();
+			wRailSpeedLbl = new Label();
+			wMoveNodeBtn = new Button();
+			wAddNode = new Button();
+			wRailLbl = new Label();
+			wStatusPanel = new Panel();
+			wStatusText = new Label();
+			wSNPCPanel = new Panel();
+			wNPCHeckleTxt = new TextBox();
+			wNPCTalkTxt = new TextBox();
+			label3 = new Label();
+			label6 = new Label();
+			label7 = new Label();
+			wEntityPanel = new Panel();
+			wEntityIP6 = new NumericUpDown();
+			wEntityIP4 = new NumericUpDown();
+			wEntityIP2 = new NumericUpDown();
+			wEntityIP0 = new NumericUpDown();
+			wEntityFP7 = new NumericUpDown();
+			wEntityFP5 = new NumericUpDown();
+			wEntityFP3 = new NumericUpDown();
+			wEntityFP1 = new NumericUpDown();
+			wEntityIP7 = new NumericUpDown();
+			wEntityIP5 = new NumericUpDown();
+			wEntityIP3 = new NumericUpDown();
+			wEntityIP1 = new NumericUpDown();
+			wEntityFP6 = new NumericUpDown();
+			wEntityFP4 = new NumericUpDown();
+			wEntityFP2 = new NumericUpDown();
+			wEntityFP0 = new NumericUpDown();
+			label5 = new Label();
+			label4 = new Label();
+			wEntityGravityCombo = new ComboBox();
+			label2 = new Label();
+			wEntityFacingCombo = new ComboBox();
+			label1 = new Label();
+			wEntityClassCombo = new ComboBox();
+			label8 = new Label();
+			wEntityRemoveBtn = new Button();
+			wEntityMoveBtn = new Button();
+			label10 = new Label();
+			wMenuStrip.SuspendLayout();
+			wRailPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wRailFlagsIn).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wRailWaitIn).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wRailSizeIn).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wRailSpeedIn).BeginInit();
+			wStatusPanel.SuspendLayout();
+			wSNPCPanel.SuspendLayout();
+			wEntityPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)wEntityIP6).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP4).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP2).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP0).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP7).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP5).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP3).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP7).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP5).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP3).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP6).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP4).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP2).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP0).BeginInit();
+			SuspendLayout();
 			// 
 			// wMenuStrip
 			// 
-			this.wMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.addToolStripMenuItem});
-			this.wMenuStrip.Location = new System.Drawing.Point(0, 0);
-			this.wMenuStrip.Name = "wMenuStrip";
-			this.wMenuStrip.Size = new System.Drawing.Size(1039, 24);
-			this.wMenuStrip.TabIndex = 0;
-			this.wMenuStrip.Text = "menuStrip1";
+			wMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, addToolStripMenuItem });
+			wMenuStrip.Location = new Point(0, 0);
+			wMenuStrip.Name = "wMenuStrip";
+			wMenuStrip.Size = new Size(1108, 24);
+			wMenuStrip.TabIndex = 0;
+			wMenuStrip.Text = "menuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.clearToolStripMenuItem});
-			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-			this.fileToolStripMenuItem.Text = "File";
+			fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, saveToolStripMenuItem, clearToolStripMenuItem });
+			fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+			fileToolStripMenuItem.Size = new Size(37, 20);
+			fileToolStripMenuItem.Text = "File";
 			// 
 			// openToolStripMenuItem
 			// 
-			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-			this.openToolStripMenuItem.Text = "Open";
-			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+			openToolStripMenuItem.Name = "openToolStripMenuItem";
+			openToolStripMenuItem.Size = new Size(138, 22);
+			openToolStripMenuItem.Text = "Open";
+			openToolStripMenuItem.Click += openToolStripMenuItem_Click;
 			// 
 			// saveToolStripMenuItem
 			// 
-			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-			this.saveToolStripMenuItem.Text = "Save";
-			this.saveToolStripMenuItem.ToolTipText = "Save file";
-			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+			saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+			saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+			saveToolStripMenuItem.Size = new Size(138, 22);
+			saveToolStripMenuItem.Text = "Save";
+			saveToolStripMenuItem.ToolTipText = "Save file";
+			saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
 			// 
 			// clearToolStripMenuItem
 			// 
-			this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-			this.clearToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-			this.clearToolStripMenuItem.Text = "Clear";
-			this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
+			clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+			clearToolStripMenuItem.Size = new Size(138, 22);
+			clearToolStripMenuItem.Text = "Clear";
+			clearToolStripMenuItem.Click += clearToolStripMenuItem_Click;
 			// 
 			// addToolStripMenuItem
 			// 
-			this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.railToolStripMenuItem,
-            this.entityToolStripMenuItem});
-			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-			this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-			this.addToolStripMenuItem.Text = "Add";
+			addToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { railToolStripMenuItem, entityToolStripMenuItem });
+			addToolStripMenuItem.Name = "addToolStripMenuItem";
+			addToolStripMenuItem.Size = new Size(41, 20);
+			addToolStripMenuItem.Text = "Add";
 			// 
 			// railToolStripMenuItem
 			// 
-			this.railToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.linearToolStripMenuItem});
-			this.railToolStripMenuItem.Name = "railToolStripMenuItem";
-			this.railToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-			this.railToolStripMenuItem.Text = "Rail";
+			railToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { linearToolStripMenuItem });
+			railToolStripMenuItem.Name = "railToolStripMenuItem";
+			railToolStripMenuItem.Size = new Size(104, 22);
+			railToolStripMenuItem.Text = "Rail";
 			// 
 			// linearToolStripMenuItem
 			// 
-			this.linearToolStripMenuItem.Name = "linearToolStripMenuItem";
-			this.linearToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-			this.linearToolStripMenuItem.Text = "Linear";
-			this.linearToolStripMenuItem.Click += new System.EventHandler(this.linearToolStripMenuItem_Click);
+			linearToolStripMenuItem.Name = "linearToolStripMenuItem";
+			linearToolStripMenuItem.Size = new Size(106, 22);
+			linearToolStripMenuItem.Text = "Linear";
+			linearToolStripMenuItem.Click += linearToolStripMenuItem_Click;
 			// 
 			// entityToolStripMenuItem
 			// 
-			this.entityToolStripMenuItem.Name = "entityToolStripMenuItem";
-			this.entityToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-			this.entityToolStripMenuItem.Text = "Entity";
-			this.entityToolStripMenuItem.Click += new System.EventHandler(this.entityToolStripMenuItem_Click);
+			entityToolStripMenuItem.Name = "entityToolStripMenuItem";
+			entityToolStripMenuItem.Size = new Size(104, 22);
+			entityToolStripMenuItem.Text = "Entity";
+			entityToolStripMenuItem.Click += entityToolStripMenuItem_Click;
 			// 
 			// wImageArea
 			// 
-			this.wImageArea.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.wImageArea.Location = new System.Drawing.Point(12, 27);
-			this.wImageArea.Name = "wImageArea";
-			this.wImageArea.Size = new System.Drawing.Size(517, 517);
-			this.wImageArea.TabIndex = 1;
+			wImageArea.BorderStyle = BorderStyle.Fixed3D;
+			wImageArea.Location = new Point(12, 27);
+			wImageArea.Name = "wImageArea";
+			wImageArea.Size = new Size(581, 581);
+			wImageArea.TabIndex = 1;
 			// 
 			// wRailPanel
 			// 
-			this.wRailPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.wRailPanel.Controls.Add(this.wNode);
-			this.wRailPanel.Controls.Add(this.wNodeFlagsIn);
-			this.wRailPanel.Controls.Add(this.wNodeFlags);
-			this.wRailPanel.Controls.Add(this.wFlagsLbl);
-			this.wRailPanel.Controls.Add(this.wRailFlagsIn);
-			this.wRailPanel.Controls.Add(this.wRailWaitIn);
-			this.wRailPanel.Controls.Add(this.wWaitTimeLbl);
-			this.wRailPanel.Controls.Add(this.wRailSizeIn);
-			this.wRailPanel.Controls.Add(this.wRailSizeLbl);
-			this.wRailPanel.Controls.Add(this.wRemoveNodeBtn);
-			this.wRailPanel.Controls.Add(this.wRailSpeedIn);
-			this.wRailPanel.Controls.Add(this.wRailSpeedLbl);
-			this.wRailPanel.Controls.Add(this.wMoveNodeBtn);
-			this.wRailPanel.Controls.Add(this.wAddNode);
-			this.wRailPanel.Controls.Add(this.wRailLbl);
-			this.wRailPanel.Location = new System.Drawing.Point(535, 27);
-			this.wRailPanel.Name = "wRailPanel";
-			this.wRailPanel.Size = new System.Drawing.Size(246, 246);
-			this.wRailPanel.TabIndex = 2;
+			wRailPanel.BorderStyle = BorderStyle.Fixed3D;
+			wRailPanel.Controls.Add(wNode);
+			wRailPanel.Controls.Add(wNodeFlagsIn);
+			wRailPanel.Controls.Add(wNodeFlags);
+			wRailPanel.Controls.Add(wFlagsLbl);
+			wRailPanel.Controls.Add(wRailFlagsIn);
+			wRailPanel.Controls.Add(wRailWaitIn);
+			wRailPanel.Controls.Add(wWaitTimeLbl);
+			wRailPanel.Controls.Add(wRailSizeIn);
+			wRailPanel.Controls.Add(wRailSizeLbl);
+			wRailPanel.Controls.Add(wRemoveNodeBtn);
+			wRailPanel.Controls.Add(wRailSpeedIn);
+			wRailPanel.Controls.Add(wRailSpeedLbl);
+			wRailPanel.Controls.Add(wMoveNodeBtn);
+			wRailPanel.Controls.Add(wAddNode);
+			wRailPanel.Controls.Add(wRailLbl);
+			wRailPanel.Location = new Point(602, 27);
+			wRailPanel.Name = "wRailPanel";
+			wRailPanel.Size = new Size(246, 246);
+			wRailPanel.TabIndex = 2;
 			// 
 			// wNode
 			// 
-			this.wNode.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.wNode.Location = new System.Drawing.Point(-1, 90);
-			this.wNode.Name = "wNode";
-			this.wNode.Size = new System.Drawing.Size(245, 32);
-			this.wNode.TabIndex = 16;
-			this.wNode.Text = "Node";
-			this.wNode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			wNode.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			wNode.Location = new Point(-1, 90);
+			wNode.Name = "wNode";
+			wNode.Size = new Size(245, 32);
+			wNode.TabIndex = 16;
+			wNode.Text = "Node";
+			wNode.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// wNodeFlagsIn
 			// 
-			this.wNodeFlagsIn.Hexadecimal = true;
-			this.wNodeFlagsIn.Location = new System.Drawing.Point(50, 183);
-			this.wNodeFlagsIn.Maximum = new decimal(new int[] {
-            0,
-            1,
-            0,
-            0});
-			this.wNodeFlagsIn.Name = "wNodeFlagsIn";
-			this.wNodeFlagsIn.Size = new System.Drawing.Size(189, 23);
-			this.wNodeFlagsIn.TabIndex = 15;
-			this.wNodeFlagsIn.ValueChanged += new System.EventHandler(this.wNodeFlagsIn_ValueChanged);
+			wNodeFlagsIn.Hexadecimal = true;
+			wNodeFlagsIn.Location = new Point(50, 183);
+			wNodeFlagsIn.Maximum = new decimal(new int[] { 0, 1, 0, 0 });
+			wNodeFlagsIn.Name = "wNodeFlagsIn";
+			wNodeFlagsIn.Size = new Size(189, 23);
+			wNodeFlagsIn.TabIndex = 15;
+			wNodeFlagsIn.ValueChanged += wNodeFlagsIn_ValueChanged;
 			// 
 			// wNodeFlags
 			// 
-			this.wNodeFlags.AutoSize = true;
-			this.wNodeFlags.Location = new System.Drawing.Point(10, 185);
-			this.wNodeFlags.Name = "wNodeFlags";
-			this.wNodeFlags.Size = new System.Drawing.Size(37, 15);
-			this.wNodeFlags.TabIndex = 14;
-			this.wNodeFlags.Text = "Flags:";
+			wNodeFlags.AutoSize = true;
+			wNodeFlags.Location = new Point(10, 185);
+			wNodeFlags.Name = "wNodeFlags";
+			wNodeFlags.Size = new Size(37, 15);
+			wNodeFlags.TabIndex = 14;
+			wNodeFlags.Text = "Flags:";
 			// 
 			// wFlagsLbl
 			// 
-			this.wFlagsLbl.AutoSize = true;
-			this.wFlagsLbl.Location = new System.Drawing.Point(7, 64);
-			this.wFlagsLbl.Name = "wFlagsLbl";
-			this.wFlagsLbl.Size = new System.Drawing.Size(37, 15);
-			this.wFlagsLbl.TabIndex = 13;
-			this.wFlagsLbl.Text = "Flags:";
+			wFlagsLbl.AutoSize = true;
+			wFlagsLbl.Location = new Point(7, 64);
+			wFlagsLbl.Name = "wFlagsLbl";
+			wFlagsLbl.Size = new Size(37, 15);
+			wFlagsLbl.TabIndex = 13;
+			wFlagsLbl.Text = "Flags:";
 			// 
 			// wRailFlagsIn
 			// 
-			this.wRailFlagsIn.Hexadecimal = true;
-			this.wRailFlagsIn.Location = new System.Drawing.Point(50, 64);
-			this.wRailFlagsIn.Name = "wRailFlagsIn";
-			this.wRailFlagsIn.Size = new System.Drawing.Size(189, 23);
-			this.wRailFlagsIn.TabIndex = 12;
-			this.wRailFlagsIn.ValueChanged += new System.EventHandler(this.wRailFlagsIn_ValueChanged);
+			wRailFlagsIn.Hexadecimal = true;
+			wRailFlagsIn.Location = new Point(50, 64);
+			wRailFlagsIn.Name = "wRailFlagsIn";
+			wRailFlagsIn.Size = new Size(189, 23);
+			wRailFlagsIn.TabIndex = 12;
+			wRailFlagsIn.ValueChanged += wRailFlagsIn_ValueChanged;
 			// 
 			// wRailWaitIn
 			// 
-			this.wRailWaitIn.Location = new System.Drawing.Point(50, 154);
-			this.wRailWaitIn.Name = "wRailWaitIn";
-			this.wRailWaitIn.Size = new System.Drawing.Size(189, 23);
-			this.wRailWaitIn.TabIndex = 11;
-			this.wRailWaitIn.ValueChanged += new System.EventHandler(this.wRailWaitIn_ValueChanged);
+			wRailWaitIn.Location = new Point(50, 154);
+			wRailWaitIn.Name = "wRailWaitIn";
+			wRailWaitIn.Size = new Size(189, 23);
+			wRailWaitIn.TabIndex = 11;
+			wRailWaitIn.ValueChanged += wRailWaitIn_ValueChanged;
 			// 
 			// wWaitTimeLbl
 			// 
-			this.wWaitTimeLbl.AutoSize = true;
-			this.wWaitTimeLbl.Location = new System.Drawing.Point(10, 156);
-			this.wWaitTimeLbl.Name = "wWaitTimeLbl";
-			this.wWaitTimeLbl.Size = new System.Drawing.Size(34, 15);
-			this.wWaitTimeLbl.TabIndex = 10;
-			this.wWaitTimeLbl.Text = "Wait:";
+			wWaitTimeLbl.AutoSize = true;
+			wWaitTimeLbl.Location = new Point(10, 156);
+			wWaitTimeLbl.Name = "wWaitTimeLbl";
+			wWaitTimeLbl.Size = new Size(34, 15);
+			wWaitTimeLbl.TabIndex = 10;
+			wWaitTimeLbl.Text = "Wait:";
 			// 
 			// wRailSizeIn
 			// 
-			this.wRailSizeIn.Location = new System.Drawing.Point(50, 35);
-			this.wRailSizeIn.Name = "wRailSizeIn";
-			this.wRailSizeIn.Size = new System.Drawing.Size(189, 23);
-			this.wRailSizeIn.TabIndex = 7;
-			this.wRailSizeIn.ValueChanged += new System.EventHandler(this.wRailSizeIn_ValueChanged);
+			wRailSizeIn.Location = new Point(50, 35);
+			wRailSizeIn.Name = "wRailSizeIn";
+			wRailSizeIn.Size = new Size(189, 23);
+			wRailSizeIn.TabIndex = 7;
+			wRailSizeIn.ValueChanged += wRailSizeIn_ValueChanged;
 			// 
 			// wRailSizeLbl
 			// 
-			this.wRailSizeLbl.AutoSize = true;
-			this.wRailSizeLbl.Location = new System.Drawing.Point(14, 37);
-			this.wRailSizeLbl.Name = "wRailSizeLbl";
-			this.wRailSizeLbl.Size = new System.Drawing.Size(30, 15);
-			this.wRailSizeLbl.TabIndex = 6;
-			this.wRailSizeLbl.Text = "Size:";
+			wRailSizeLbl.AutoSize = true;
+			wRailSizeLbl.Location = new Point(14, 37);
+			wRailSizeLbl.Name = "wRailSizeLbl";
+			wRailSizeLbl.Size = new Size(30, 15);
+			wRailSizeLbl.TabIndex = 6;
+			wRailSizeLbl.Text = "Size:";
 			// 
 			// wRemoveNodeBtn
 			// 
-			this.wRemoveNodeBtn.Location = new System.Drawing.Point(3, 212);
-			this.wRemoveNodeBtn.Name = "wRemoveNodeBtn";
-			this.wRemoveNodeBtn.Size = new System.Drawing.Size(75, 23);
-			this.wRemoveNodeBtn.TabIndex = 5;
-			this.wRemoveNodeBtn.Text = "Remove";
-			this.wRemoveNodeBtn.UseVisualStyleBackColor = true;
-			this.wRemoveNodeBtn.Click += new System.EventHandler(this.wRemoveNodeBtn_Click);
+			wRemoveNodeBtn.Location = new Point(3, 212);
+			wRemoveNodeBtn.Name = "wRemoveNodeBtn";
+			wRemoveNodeBtn.Size = new Size(75, 23);
+			wRemoveNodeBtn.TabIndex = 5;
+			wRemoveNodeBtn.Text = "Remove";
+			wRemoveNodeBtn.UseVisualStyleBackColor = true;
+			wRemoveNodeBtn.Click += wRemoveNodeBtn_Click;
 			// 
 			// wRailSpeedIn
 			// 
-			this.wRailSpeedIn.Location = new System.Drawing.Point(50, 125);
-			this.wRailSpeedIn.Name = "wRailSpeedIn";
-			this.wRailSpeedIn.Size = new System.Drawing.Size(189, 23);
-			this.wRailSpeedIn.TabIndex = 4;
-			this.wRailSpeedIn.ValueChanged += new System.EventHandler(this.wRailSpeedIn_ValueChanged);
+			wRailSpeedIn.Location = new Point(50, 125);
+			wRailSpeedIn.Name = "wRailSpeedIn";
+			wRailSpeedIn.Size = new Size(189, 23);
+			wRailSpeedIn.TabIndex = 4;
+			wRailSpeedIn.ValueChanged += wRailSpeedIn_ValueChanged;
 			// 
 			// wRailSpeedLbl
 			// 
-			this.wRailSpeedLbl.AutoSize = true;
-			this.wRailSpeedLbl.Location = new System.Drawing.Point(3, 127);
-			this.wRailSpeedLbl.Name = "wRailSpeedLbl";
-			this.wRailSpeedLbl.Size = new System.Drawing.Size(42, 15);
-			this.wRailSpeedLbl.TabIndex = 3;
-			this.wRailSpeedLbl.Text = "Speed:";
+			wRailSpeedLbl.AutoSize = true;
+			wRailSpeedLbl.Location = new Point(3, 127);
+			wRailSpeedLbl.Name = "wRailSpeedLbl";
+			wRailSpeedLbl.Size = new Size(42, 15);
+			wRailSpeedLbl.TabIndex = 3;
+			wRailSpeedLbl.Text = "Speed:";
 			// 
 			// wMoveNodeBtn
 			// 
-			this.wMoveNodeBtn.Location = new System.Drawing.Point(84, 212);
-			this.wMoveNodeBtn.Name = "wMoveNodeBtn";
-			this.wMoveNodeBtn.Size = new System.Drawing.Size(75, 23);
-			this.wMoveNodeBtn.TabIndex = 2;
-			this.wMoveNodeBtn.Text = "Move";
-			this.wMoveNodeBtn.UseVisualStyleBackColor = true;
-			this.wMoveNodeBtn.Click += new System.EventHandler(this.wMoveNodeBtn_Click);
+			wMoveNodeBtn.Location = new Point(84, 212);
+			wMoveNodeBtn.Name = "wMoveNodeBtn";
+			wMoveNodeBtn.Size = new Size(75, 23);
+			wMoveNodeBtn.TabIndex = 2;
+			wMoveNodeBtn.Text = "Move";
+			wMoveNodeBtn.UseVisualStyleBackColor = true;
+			wMoveNodeBtn.Click += wMoveNodeBtn_Click;
 			// 
 			// wAddNode
 			// 
-			this.wAddNode.Location = new System.Drawing.Point(165, 212);
-			this.wAddNode.Name = "wAddNode";
-			this.wAddNode.Size = new System.Drawing.Size(75, 23);
-			this.wAddNode.TabIndex = 1;
-			this.wAddNode.Text = "Add Node";
-			this.wAddNode.UseVisualStyleBackColor = true;
-			this.wAddNode.Click += new System.EventHandler(this.wAddNode_Click);
+			wAddNode.Location = new Point(165, 212);
+			wAddNode.Name = "wAddNode";
+			wAddNode.Size = new Size(75, 23);
+			wAddNode.TabIndex = 1;
+			wAddNode.Text = "Add Node";
+			wAddNode.UseVisualStyleBackColor = true;
+			wAddNode.Click += wAddNode_Click;
 			// 
 			// wRailLbl
 			// 
-			this.wRailLbl.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.wRailLbl.Location = new System.Drawing.Point(3, 0);
-			this.wRailLbl.Name = "wRailLbl";
-			this.wRailLbl.Size = new System.Drawing.Size(237, 32);
-			this.wRailLbl.TabIndex = 0;
-			this.wRailLbl.Text = "Rail";
-			this.wRailLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			wRailLbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			wRailLbl.Location = new Point(3, 0);
+			wRailLbl.Name = "wRailLbl";
+			wRailLbl.Size = new Size(237, 32);
+			wRailLbl.TabIndex = 0;
+			wRailLbl.Text = "Rail";
+			wRailLbl.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// wStatusPanel
 			// 
-			this.wStatusPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.wStatusPanel.Controls.Add(this.wStatusText);
-			this.wStatusPanel.Location = new System.Drawing.Point(12, 550);
-			this.wStatusPanel.Name = "wStatusPanel";
-			this.wStatusPanel.Size = new System.Drawing.Size(1021, 54);
-			this.wStatusPanel.TabIndex = 3;
+			wStatusPanel.BorderStyle = BorderStyle.Fixed3D;
+			wStatusPanel.Controls.Add(wStatusText);
+			wStatusPanel.Location = new Point(12, 611);
+			wStatusPanel.Name = "wStatusPanel";
+			wStatusPanel.Size = new Size(1088, 54);
+			wStatusPanel.TabIndex = 3;
 			// 
 			// wStatusText
 			// 
-			this.wStatusText.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.wStatusText.Location = new System.Drawing.Point(3, -2);
-			this.wStatusText.Name = "wStatusText";
-			this.wStatusText.Size = new System.Drawing.Size(1016, 52);
-			this.wStatusText.TabIndex = 1;
-			this.wStatusText.Text = "Status:";
-			this.wStatusText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			wStatusText.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			wStatusText.Location = new Point(3, 0);
+			wStatusText.Name = "wStatusText";
+			wStatusText.Size = new Size(1083, 52);
+			wStatusText.TabIndex = 1;
+			wStatusText.Text = "Status:";
+			wStatusText.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// wSNPCPanel
 			// 
-			this.wSNPCPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.wSNPCPanel.Controls.Add(this.wNPCHeckleTxt);
-			this.wSNPCPanel.Controls.Add(this.wNPCTalkTxt);
-			this.wSNPCPanel.Controls.Add(this.label3);
-			this.wSNPCPanel.Controls.Add(this.label6);
-			this.wSNPCPanel.Controls.Add(this.label7);
-			this.wSNPCPanel.Location = new System.Drawing.Point(6, 300);
-			this.wSNPCPanel.Name = "wSNPCPanel";
-			this.wSNPCPanel.Size = new System.Drawing.Size(232, 111);
-			this.wSNPCPanel.TabIndex = 17;
+			wSNPCPanel.BorderStyle = BorderStyle.Fixed3D;
+			wSNPCPanel.Controls.Add(wNPCHeckleTxt);
+			wSNPCPanel.Controls.Add(wNPCTalkTxt);
+			wSNPCPanel.Controls.Add(label3);
+			wSNPCPanel.Controls.Add(label6);
+			wSNPCPanel.Controls.Add(label7);
+			wSNPCPanel.Location = new Point(6, 300);
+			wSNPCPanel.Name = "wSNPCPanel";
+			wSNPCPanel.Size = new Size(232, 111);
+			wSNPCPanel.TabIndex = 17;
 			// 
 			// wNPCHeckleTxt
 			// 
-			this.wNPCHeckleTxt.Location = new System.Drawing.Point(49, 65);
-			this.wNPCHeckleTxt.Name = "wNPCHeckleTxt";
-			this.wNPCHeckleTxt.Size = new System.Drawing.Size(176, 23);
-			this.wNPCHeckleTxt.TabIndex = 16;
-			this.wNPCHeckleTxt.TextChanged += new System.EventHandler(this.wNPCHeckleTxt_TextChanged);
+			wNPCHeckleTxt.Location = new Point(49, 65);
+			wNPCHeckleTxt.Name = "wNPCHeckleTxt";
+			wNPCHeckleTxt.Size = new Size(176, 23);
+			wNPCHeckleTxt.TabIndex = 16;
+			wNPCHeckleTxt.TextChanged += wNPCHeckleTxt_TextChanged;
 			// 
 			// wNPCTalkTxt
 			// 
-			this.wNPCTalkTxt.Location = new System.Drawing.Point(49, 37);
-			this.wNPCTalkTxt.Name = "wNPCTalkTxt";
-			this.wNPCTalkTxt.Size = new System.Drawing.Size(176, 23);
-			this.wNPCTalkTxt.TabIndex = 15;
-			this.wNPCTalkTxt.TextChanged += new System.EventHandler(this.wNPCTalkTxt_TextChanged);
+			wNPCTalkTxt.Location = new Point(49, 37);
+			wNPCTalkTxt.Name = "wNPCTalkTxt";
+			wNPCTalkTxt.Size = new Size(176, 23);
+			wNPCTalkTxt.TabIndex = 15;
+			wNPCTalkTxt.TextChanged += wNPCTalkTxt_TextChanged;
 			// 
 			// label3
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(13, 40);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(30, 15);
-			this.label3.TabIndex = 13;
-			this.label3.Text = "Talk:";
+			label3.AutoSize = true;
+			label3.Location = new Point(13, 40);
+			label3.Name = "label3";
+			label3.Size = new Size(30, 15);
+			label3.TabIndex = 13;
+			label3.Text = "Talk:";
 			// 
 			// label6
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(3, 68);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(46, 15);
-			this.label6.TabIndex = 3;
-			this.label6.Text = "Heckle:";
+			label6.AutoSize = true;
+			label6.Location = new Point(3, 68);
+			label6.Name = "label6";
+			label6.Size = new Size(46, 15);
+			label6.TabIndex = 3;
+			label6.Text = "Heckle:";
 			// 
 			// label7
 			// 
-			this.label7.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label7.Location = new System.Drawing.Point(3, 2);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(222, 32);
-			this.label7.TabIndex = 0;
-			this.label7.Text = "Simple NPC";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			label7.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			label7.Location = new Point(3, 2);
+			label7.Name = "label7";
+			label7.Size = new Size(222, 32);
+			label7.TabIndex = 0;
+			label7.Text = "Simple NPC";
+			label7.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// wEntityPanel
 			// 
-			this.wEntityPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.wEntityPanel.Controls.Add(this.wEntityIP6);
-			this.wEntityPanel.Controls.Add(this.wEntityIP4);
-			this.wEntityPanel.Controls.Add(this.wEntityIP2);
-			this.wEntityPanel.Controls.Add(this.wEntityIP0);
-			this.wEntityPanel.Controls.Add(this.wEntityFP7);
-			this.wEntityPanel.Controls.Add(this.wEntityFP5);
-			this.wEntityPanel.Controls.Add(this.wEntityFP3);
-			this.wEntityPanel.Controls.Add(this.wEntityFP1);
-			this.wEntityPanel.Controls.Add(this.wEntityIP7);
-			this.wEntityPanel.Controls.Add(this.wEntityIP5);
-			this.wEntityPanel.Controls.Add(this.wEntityIP3);
-			this.wEntityPanel.Controls.Add(this.wEntityIP1);
-			this.wEntityPanel.Controls.Add(this.wEntityFP6);
-			this.wEntityPanel.Controls.Add(this.wEntityFP4);
-			this.wEntityPanel.Controls.Add(this.wEntityFP2);
-			this.wEntityPanel.Controls.Add(this.wEntityFP0);
-			this.wEntityPanel.Controls.Add(this.label5);
-			this.wEntityPanel.Controls.Add(this.label4);
-			this.wEntityPanel.Controls.Add(this.wEntityGravityCombo);
-			this.wEntityPanel.Controls.Add(this.wSNPCPanel);
-			this.wEntityPanel.Controls.Add(this.label2);
-			this.wEntityPanel.Controls.Add(this.wEntityFacingCombo);
-			this.wEntityPanel.Controls.Add(this.label1);
-			this.wEntityPanel.Controls.Add(this.wEntityClassCombo);
-			this.wEntityPanel.Controls.Add(this.label8);
-			this.wEntityPanel.Controls.Add(this.wEntityRemoveBtn);
-			this.wEntityPanel.Controls.Add(this.wEntityMoveBtn);
-			this.wEntityPanel.Controls.Add(this.label10);
-			this.wEntityPanel.Location = new System.Drawing.Point(787, 27);
-			this.wEntityPanel.Name = "wEntityPanel";
-			this.wEntityPanel.Size = new System.Drawing.Size(246, 448);
-			this.wEntityPanel.TabIndex = 17;
+			wEntityPanel.BorderStyle = BorderStyle.Fixed3D;
+			wEntityPanel.Controls.Add(wEntityIP6);
+			wEntityPanel.Controls.Add(wEntityIP4);
+			wEntityPanel.Controls.Add(wEntityIP2);
+			wEntityPanel.Controls.Add(wEntityIP0);
+			wEntityPanel.Controls.Add(wEntityFP7);
+			wEntityPanel.Controls.Add(wEntityFP5);
+			wEntityPanel.Controls.Add(wEntityFP3);
+			wEntityPanel.Controls.Add(wEntityFP1);
+			wEntityPanel.Controls.Add(wEntityIP7);
+			wEntityPanel.Controls.Add(wEntityIP5);
+			wEntityPanel.Controls.Add(wEntityIP3);
+			wEntityPanel.Controls.Add(wEntityIP1);
+			wEntityPanel.Controls.Add(wEntityFP6);
+			wEntityPanel.Controls.Add(wEntityFP4);
+			wEntityPanel.Controls.Add(wEntityFP2);
+			wEntityPanel.Controls.Add(wEntityFP0);
+			wEntityPanel.Controls.Add(label5);
+			wEntityPanel.Controls.Add(label4);
+			wEntityPanel.Controls.Add(wEntityGravityCombo);
+			wEntityPanel.Controls.Add(wSNPCPanel);
+			wEntityPanel.Controls.Add(label2);
+			wEntityPanel.Controls.Add(wEntityFacingCombo);
+			wEntityPanel.Controls.Add(label1);
+			wEntityPanel.Controls.Add(wEntityClassCombo);
+			wEntityPanel.Controls.Add(label8);
+			wEntityPanel.Controls.Add(wEntityRemoveBtn);
+			wEntityPanel.Controls.Add(wEntityMoveBtn);
+			wEntityPanel.Controls.Add(label10);
+			wEntityPanel.Location = new Point(854, 27);
+			wEntityPanel.Name = "wEntityPanel";
+			wEntityPanel.Size = new Size(246, 448);
+			wEntityPanel.TabIndex = 17;
 			// 
 			// wEntityIP6
 			// 
-			this.wEntityIP6.Location = new System.Drawing.Point(127, 235);
-			this.wEntityIP6.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP6.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP6.Name = "wEntityIP6";
-			this.wEntityIP6.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP6.TabIndex = 36;
+			wEntityIP6.Location = new Point(127, 235);
+			wEntityIP6.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP6.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP6.Name = "wEntityIP6";
+			wEntityIP6.Size = new Size(50, 23);
+			wEntityIP6.TabIndex = 36;
 			// 
 			// wEntityIP4
 			// 
-			this.wEntityIP4.Location = new System.Drawing.Point(127, 206);
-			this.wEntityIP4.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP4.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP4.Name = "wEntityIP4";
-			this.wEntityIP4.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP4.TabIndex = 35;
+			wEntityIP4.Location = new Point(127, 206);
+			wEntityIP4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP4.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP4.Name = "wEntityIP4";
+			wEntityIP4.Size = new Size(50, 23);
+			wEntityIP4.TabIndex = 35;
 			// 
 			// wEntityIP2
 			// 
-			this.wEntityIP2.Location = new System.Drawing.Point(127, 177);
-			this.wEntityIP2.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP2.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP2.Name = "wEntityIP2";
-			this.wEntityIP2.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP2.TabIndex = 34;
+			wEntityIP2.Location = new Point(127, 177);
+			wEntityIP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP2.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP2.Name = "wEntityIP2";
+			wEntityIP2.Size = new Size(50, 23);
+			wEntityIP2.TabIndex = 34;
 			// 
 			// wEntityIP0
 			// 
-			this.wEntityIP0.Location = new System.Drawing.Point(127, 148);
-			this.wEntityIP0.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP0.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP0.Name = "wEntityIP0";
-			this.wEntityIP0.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP0.TabIndex = 33;
+			wEntityIP0.Location = new Point(127, 148);
+			wEntityIP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP0.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP0.Name = "wEntityIP0";
+			wEntityIP0.Size = new Size(50, 23);
+			wEntityIP0.TabIndex = 33;
 			// 
 			// wEntityFP7
 			// 
-			this.wEntityFP7.DecimalPlaces = 2;
-			this.wEntityFP7.Location = new System.Drawing.Point(63, 235);
-			this.wEntityFP7.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP7.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP7.Name = "wEntityFP7";
-			this.wEntityFP7.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP7.TabIndex = 32;
+			wEntityFP7.DecimalPlaces = 2;
+			wEntityFP7.Location = new Point(63, 235);
+			wEntityFP7.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP7.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP7.Name = "wEntityFP7";
+			wEntityFP7.Size = new Size(50, 23);
+			wEntityFP7.TabIndex = 32;
 			// 
 			// wEntityFP5
 			// 
-			this.wEntityFP5.DecimalPlaces = 2;
-			this.wEntityFP5.Location = new System.Drawing.Point(63, 206);
-			this.wEntityFP5.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP5.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP5.Name = "wEntityFP5";
-			this.wEntityFP5.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP5.TabIndex = 31;
+			wEntityFP5.DecimalPlaces = 2;
+			wEntityFP5.Location = new Point(63, 206);
+			wEntityFP5.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP5.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP5.Name = "wEntityFP5";
+			wEntityFP5.Size = new Size(50, 23);
+			wEntityFP5.TabIndex = 31;
 			// 
 			// wEntityFP3
 			// 
-			this.wEntityFP3.DecimalPlaces = 2;
-			this.wEntityFP3.Location = new System.Drawing.Point(63, 177);
-			this.wEntityFP3.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP3.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP3.Name = "wEntityFP3";
-			this.wEntityFP3.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP3.TabIndex = 30;
+			wEntityFP3.DecimalPlaces = 2;
+			wEntityFP3.Location = new Point(63, 177);
+			wEntityFP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP3.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP3.Name = "wEntityFP3";
+			wEntityFP3.Size = new Size(50, 23);
+			wEntityFP3.TabIndex = 30;
 			// 
 			// wEntityFP1
 			// 
-			this.wEntityFP1.DecimalPlaces = 2;
-			this.wEntityFP1.Location = new System.Drawing.Point(63, 148);
-			this.wEntityFP1.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP1.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP1.Name = "wEntityFP1";
-			this.wEntityFP1.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP1.TabIndex = 29;
+			wEntityFP1.DecimalPlaces = 2;
+			wEntityFP1.Location = new Point(63, 148);
+			wEntityFP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP1.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP1.Name = "wEntityFP1";
+			wEntityFP1.Size = new Size(50, 23);
+			wEntityFP1.TabIndex = 29;
 			// 
 			// wEntityIP7
 			// 
-			this.wEntityIP7.Location = new System.Drawing.Point(183, 235);
-			this.wEntityIP7.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP7.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP7.Name = "wEntityIP7";
-			this.wEntityIP7.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP7.TabIndex = 28;
+			wEntityIP7.Location = new Point(183, 235);
+			wEntityIP7.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP7.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP7.Name = "wEntityIP7";
+			wEntityIP7.Size = new Size(50, 23);
+			wEntityIP7.TabIndex = 28;
 			// 
 			// wEntityIP5
 			// 
-			this.wEntityIP5.Location = new System.Drawing.Point(183, 206);
-			this.wEntityIP5.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP5.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP5.Name = "wEntityIP5";
-			this.wEntityIP5.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP5.TabIndex = 27;
+			wEntityIP5.Location = new Point(183, 206);
+			wEntityIP5.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP5.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP5.Name = "wEntityIP5";
+			wEntityIP5.Size = new Size(50, 23);
+			wEntityIP5.TabIndex = 27;
 			// 
 			// wEntityIP3
 			// 
-			this.wEntityIP3.Location = new System.Drawing.Point(183, 177);
-			this.wEntityIP3.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP3.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP3.Name = "wEntityIP3";
-			this.wEntityIP3.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP3.TabIndex = 26;
+			wEntityIP3.Location = new Point(183, 177);
+			wEntityIP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP3.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP3.Name = "wEntityIP3";
+			wEntityIP3.Size = new Size(50, 23);
+			wEntityIP3.TabIndex = 26;
 			// 
 			// wEntityIP1
 			// 
-			this.wEntityIP1.Location = new System.Drawing.Point(183, 148);
-			this.wEntityIP1.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityIP1.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityIP1.Name = "wEntityIP1";
-			this.wEntityIP1.Size = new System.Drawing.Size(50, 23);
-			this.wEntityIP1.TabIndex = 25;
+			wEntityIP1.Location = new Point(183, 148);
+			wEntityIP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP1.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityIP1.Name = "wEntityIP1";
+			wEntityIP1.Size = new Size(50, 23);
+			wEntityIP1.TabIndex = 25;
 			// 
 			// wEntityFP6
 			// 
-			this.wEntityFP6.DecimalPlaces = 2;
-			this.wEntityFP6.Location = new System.Drawing.Point(7, 235);
-			this.wEntityFP6.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP6.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP6.Name = "wEntityFP6";
-			this.wEntityFP6.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP6.TabIndex = 24;
+			wEntityFP6.DecimalPlaces = 2;
+			wEntityFP6.Location = new Point(7, 235);
+			wEntityFP6.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP6.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP6.Name = "wEntityFP6";
+			wEntityFP6.Size = new Size(50, 23);
+			wEntityFP6.TabIndex = 24;
 			// 
 			// wEntityFP4
 			// 
-			this.wEntityFP4.DecimalPlaces = 2;
-			this.wEntityFP4.Location = new System.Drawing.Point(7, 206);
-			this.wEntityFP4.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP4.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP4.Name = "wEntityFP4";
-			this.wEntityFP4.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP4.TabIndex = 23;
+			wEntityFP4.DecimalPlaces = 2;
+			wEntityFP4.Location = new Point(7, 206);
+			wEntityFP4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP4.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP4.Name = "wEntityFP4";
+			wEntityFP4.Size = new Size(50, 23);
+			wEntityFP4.TabIndex = 23;
 			// 
 			// wEntityFP2
 			// 
-			this.wEntityFP2.DecimalPlaces = 2;
-			this.wEntityFP2.Location = new System.Drawing.Point(7, 177);
-			this.wEntityFP2.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP2.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP2.Name = "wEntityFP2";
-			this.wEntityFP2.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP2.TabIndex = 22;
+			wEntityFP2.DecimalPlaces = 2;
+			wEntityFP2.Location = new Point(7, 177);
+			wEntityFP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP2.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP2.Name = "wEntityFP2";
+			wEntityFP2.Size = new Size(50, 23);
+			wEntityFP2.TabIndex = 22;
 			// 
 			// wEntityFP0
 			// 
-			this.wEntityFP0.DecimalPlaces = 2;
-			this.wEntityFP0.Location = new System.Drawing.Point(7, 148);
-			this.wEntityFP0.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-			this.wEntityFP0.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            -2147483648});
-			this.wEntityFP0.Name = "wEntityFP0";
-			this.wEntityFP0.Size = new System.Drawing.Size(50, 23);
-			this.wEntityFP0.TabIndex = 21;
+			wEntityFP0.DecimalPlaces = 2;
+			wEntityFP0.Location = new Point(7, 148);
+			wEntityFP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP0.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
+			wEntityFP0.Name = "wEntityFP0";
+			wEntityFP0.Size = new Size(50, 23);
+			wEntityFP0.TabIndex = 21;
 			// 
 			// label5
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(155, 125);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(63, 15);
-			this.label5.TabIndex = 20;
-			this.label5.Text = "Int Params";
+			label5.AutoSize = true;
+			label5.Location = new Point(155, 125);
+			label5.Name = "label5";
+			label5.Size = new Size(63, 15);
+			label5.TabIndex = 20;
+			label5.Text = "Int Params";
 			// 
 			// label4
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(22, 125);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(75, 15);
-			this.label4.TabIndex = 19;
-			this.label4.Text = "Float Params";
+			label4.AutoSize = true;
+			label4.Location = new Point(22, 125);
+			label4.Name = "label4";
+			label4.Size = new Size(75, 15);
+			label4.TabIndex = 19;
+			label4.Text = "Float Params";
 			// 
 			// wEntityGravityCombo
 			// 
-			this.wEntityGravityCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.wEntityGravityCombo.FormattingEnabled = true;
-			this.wEntityGravityCombo.Items.AddRange(new object[] {
-            "Up",
-            "Right",
-            "Down",
-            "Left"});
-			this.wEntityGravityCombo.Location = new System.Drawing.Point(57, 93);
-			this.wEntityGravityCombo.Name = "wEntityGravityCombo";
-			this.wEntityGravityCombo.Size = new System.Drawing.Size(176, 23);
-			this.wEntityGravityCombo.TabIndex = 18;
-			this.wEntityGravityCombo.SelectedIndexChanged += new System.EventHandler(this.wEntityGravityCombo_SelectedIndexChanged);
+			wEntityGravityCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+			wEntityGravityCombo.FormattingEnabled = true;
+			wEntityGravityCombo.Items.AddRange(new object[] { "Up", "Right", "Down", "Left" });
+			wEntityGravityCombo.Location = new Point(57, 93);
+			wEntityGravityCombo.Name = "wEntityGravityCombo";
+			wEntityGravityCombo.Size = new Size(176, 23);
+			wEntityGravityCombo.TabIndex = 18;
+			wEntityGravityCombo.SelectedIndexChanged += wEntityGravityCombo_SelectedIndexChanged;
 			// 
 			// label2
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(4, 96);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(47, 15);
-			this.label2.TabIndex = 17;
-			this.label2.Text = "Gravity:";
+			label2.AutoSize = true;
+			label2.Location = new Point(4, 96);
+			label2.Name = "label2";
+			label2.Size = new Size(47, 15);
+			label2.TabIndex = 17;
+			label2.Text = "Gravity:";
 			// 
 			// wEntityFacingCombo
 			// 
-			this.wEntityFacingCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.wEntityFacingCombo.FormattingEnabled = true;
-			this.wEntityFacingCombo.Items.AddRange(new object[] {
-            "Left",
-            "Right",
-            "None"});
-			this.wEntityFacingCombo.Location = new System.Drawing.Point(57, 64);
-			this.wEntityFacingCombo.Name = "wEntityFacingCombo";
-			this.wEntityFacingCombo.Size = new System.Drawing.Size(176, 23);
-			this.wEntityFacingCombo.TabIndex = 16;
-			this.wEntityFacingCombo.SelectedIndexChanged += new System.EventHandler(this.wEntityFacingCombo_SelectedIndexChanged);
+			wEntityFacingCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+			wEntityFacingCombo.FormattingEnabled = true;
+			wEntityFacingCombo.Items.AddRange(new object[] { "Left", "Right", "None" });
+			wEntityFacingCombo.Location = new Point(57, 64);
+			wEntityFacingCombo.Name = "wEntityFacingCombo";
+			wEntityFacingCombo.Size = new Size(176, 23);
+			wEntityFacingCombo.TabIndex = 16;
+			wEntityFacingCombo.SelectedIndexChanged += wEntityFacingCombo_SelectedIndexChanged;
 			// 
 			// label1
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 67);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(45, 15);
-			this.label1.TabIndex = 15;
-			this.label1.Text = "Facing:";
+			label1.AutoSize = true;
+			label1.Location = new Point(6, 67);
+			label1.Name = "label1";
+			label1.Size = new Size(45, 15);
+			label1.TabIndex = 15;
+			label1.Text = "Facing:";
 			// 
 			// wEntityClassCombo
 			// 
-			this.wEntityClassCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.wEntityClassCombo.FormattingEnabled = true;
-			this.wEntityClassCombo.Items.AddRange(new object[] {
-            "Arnold",
-            "Androld",
-            "Trundle",
-            "Roboto",
-            "FutronGun",
-            "FutronRocket",
-            "Barbara",
-            "Zippy",
-            "Dok",
-            "BickDogel",
-            "Electrent"});
-			this.wEntityClassCombo.Location = new System.Drawing.Point(57, 34);
-			this.wEntityClassCombo.Name = "wEntityClassCombo";
-			this.wEntityClassCombo.Size = new System.Drawing.Size(176, 23);
-			this.wEntityClassCombo.TabIndex = 14;
-			this.wEntityClassCombo.SelectedIndexChanged += new System.EventHandler(this.wEntityClassCombo_SelectedIndexChanged);
+			wEntityClassCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+			wEntityClassCombo.FormattingEnabled = true;
+			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent" });
+			wEntityClassCombo.Location = new Point(57, 34);
+			wEntityClassCombo.Name = "wEntityClassCombo";
+			wEntityClassCombo.Size = new Size(176, 23);
+			wEntityClassCombo.TabIndex = 14;
+			wEntityClassCombo.SelectedIndexChanged += wEntityClassCombo_SelectedIndexChanged;
 			// 
 			// label8
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(14, 37);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(37, 15);
-			this.label8.TabIndex = 6;
-			this.label8.Text = "Class:";
+			label8.AutoSize = true;
+			label8.Location = new Point(14, 37);
+			label8.Name = "label8";
+			label8.Size = new Size(37, 15);
+			label8.TabIndex = 6;
+			label8.Text = "Class:";
 			// 
 			// wEntityRemoveBtn
 			// 
-			this.wEntityRemoveBtn.Location = new System.Drawing.Point(7, 271);
-			this.wEntityRemoveBtn.Name = "wEntityRemoveBtn";
-			this.wEntityRemoveBtn.Size = new System.Drawing.Size(100, 23);
-			this.wEntityRemoveBtn.TabIndex = 5;
-			this.wEntityRemoveBtn.Text = "Remove";
-			this.wEntityRemoveBtn.UseVisualStyleBackColor = true;
-			this.wEntityRemoveBtn.Click += new System.EventHandler(this.wEntityRemoveBtn_Click);
+			wEntityRemoveBtn.Location = new Point(7, 271);
+			wEntityRemoveBtn.Name = "wEntityRemoveBtn";
+			wEntityRemoveBtn.Size = new Size(100, 23);
+			wEntityRemoveBtn.TabIndex = 5;
+			wEntityRemoveBtn.Text = "Remove";
+			wEntityRemoveBtn.UseVisualStyleBackColor = true;
+			wEntityRemoveBtn.Click += wEntityRemoveBtn_Click;
 			// 
 			// wEntityMoveBtn
 			// 
-			this.wEntityMoveBtn.Location = new System.Drawing.Point(133, 271);
-			this.wEntityMoveBtn.Name = "wEntityMoveBtn";
-			this.wEntityMoveBtn.Size = new System.Drawing.Size(100, 23);
-			this.wEntityMoveBtn.TabIndex = 2;
-			this.wEntityMoveBtn.Text = "Move";
-			this.wEntityMoveBtn.UseVisualStyleBackColor = true;
-			this.wEntityMoveBtn.Click += new System.EventHandler(this.wEntityMoveBtn_Click);
+			wEntityMoveBtn.Location = new Point(133, 271);
+			wEntityMoveBtn.Name = "wEntityMoveBtn";
+			wEntityMoveBtn.Size = new Size(100, 23);
+			wEntityMoveBtn.TabIndex = 2;
+			wEntityMoveBtn.Text = "Move";
+			wEntityMoveBtn.UseVisualStyleBackColor = true;
+			wEntityMoveBtn.Click += wEntityMoveBtn_Click;
 			// 
 			// label10
 			// 
-			this.label10.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label10.Location = new System.Drawing.Point(3, 0);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(237, 32);
-			this.label10.TabIndex = 0;
-			this.label10.Text = "Entity";
-			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			label10.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			label10.Location = new Point(3, 0);
+			label10.Name = "label10";
+			label10.Size = new Size(237, 32);
+			label10.TabIndex = 0;
+			label10.Text = "Entity";
+			label10.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// LevelEditor
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1039, 614);
-			this.Controls.Add(this.wEntityPanel);
-			this.Controls.Add(this.wStatusPanel);
-			this.Controls.Add(this.wRailPanel);
-			this.Controls.Add(this.wImageArea);
-			this.Controls.Add(this.wMenuStrip);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.MainMenuStrip = this.wMenuStrip;
-			this.Name = "LevelEditor";
-			this.Text = "Level editor";
-			this.Load += new System.EventHandler(this.LevelEditor_Load);
-			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LevelEditor_KeyDown);
-			this.wMenuStrip.ResumeLayout(false);
-			this.wMenuStrip.PerformLayout();
-			this.wRailPanel.ResumeLayout(false);
-			this.wRailPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.wNodeFlagsIn)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailFlagsIn)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailWaitIn)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailSizeIn)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wRailSpeedIn)).EndInit();
-			this.wStatusPanel.ResumeLayout(false);
-			this.wSNPCPanel.ResumeLayout(false);
-			this.wSNPCPanel.PerformLayout();
-			this.wEntityPanel.ResumeLayout(false);
-			this.wEntityPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP0)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP7)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP7)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityIP1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP6)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wEntityFP0)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
-
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(1108, 675);
+			Controls.Add(wEntityPanel);
+			Controls.Add(wStatusPanel);
+			Controls.Add(wRailPanel);
+			Controls.Add(wImageArea);
+			Controls.Add(wMenuStrip);
+			FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			MainMenuStrip = wMenuStrip;
+			Name = "LevelEditor";
+			Text = "Level editor";
+			Load += LevelEditor_Load;
+			KeyDown += LevelEditor_KeyDown;
+			wMenuStrip.ResumeLayout(false);
+			wMenuStrip.PerformLayout();
+			wRailPanel.ResumeLayout(false);
+			wRailPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).EndInit();
+			((System.ComponentModel.ISupportInitialize)wRailFlagsIn).EndInit();
+			((System.ComponentModel.ISupportInitialize)wRailWaitIn).EndInit();
+			((System.ComponentModel.ISupportInitialize)wRailSizeIn).EndInit();
+			((System.ComponentModel.ISupportInitialize)wRailSpeedIn).EndInit();
+			wStatusPanel.ResumeLayout(false);
+			wSNPCPanel.ResumeLayout(false);
+			wSNPCPanel.PerformLayout();
+			wEntityPanel.ResumeLayout(false);
+			wEntityPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)wEntityIP6).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP4).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP2).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP0).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP7).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP5).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP3).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP1).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP7).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP5).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP3).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityIP1).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP6).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP4).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP2).EndInit();
+			((System.ComponentModel.ISupportInitialize)wEntityFP0).EndInit();
+			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion

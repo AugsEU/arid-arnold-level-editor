@@ -268,6 +268,14 @@ namespace AridArnoldEditor
 		{
 			mPosition.X = br.ReadInt32();
 			mPosition.Y = br.ReadInt32();
+
+			// Adjust for new tile size
+			if(fileVer <= 2)
+			{
+				mPosition.X += 2;
+				mPosition.Y += 2;
+			}
+
 			mEntityClass = (EntityClass)br.ReadUInt32();
 			mStartDirection = (WalkDirection)br.ReadUInt32();
 			mGravityDirection = (CardinalDirection)br.ReadUInt32();
