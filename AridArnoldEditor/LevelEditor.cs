@@ -34,7 +34,6 @@ namespace AridArnoldEditor
 		#region rMembers
 
 		//Current level
-		Bitmap? mLoadedImage;
 		string mFilePath;
 
 		//State
@@ -75,7 +74,6 @@ namespace AridArnoldEditor
 			MinimumSize = Size;
 
 			//Loaded level
-			mLoadedImage = null;
 			mFilePath = "";
 
 			//Rails
@@ -144,13 +142,12 @@ namespace AridArnoldEditor
 			mSelectionPanel.BringToFront();
 			mDrawLevelArea.BringToFront();
 
-
-
 			//State
 			SetAction(FormActionState.None);
 
 			UpdateRailPanel();
 			UpdateEntityPanel();
+			UpdateMetaPanel();
 		}
 
 		private void LevelEditor_Load(object sender, EventArgs e)
@@ -564,6 +561,65 @@ namespace AridArnoldEditor
 
 
 
+		#region rMeta
+
+		private void UpdateMetaPanel()
+		{
+			wMetaPanel.Enabled = mFilePath != "";
+
+			if (wMetaPanel.Enabled)
+			{
+				wLevelName.Text = mAuxData.mMetaData.mName;
+				wLevelSubName.Text = mAuxData.mMetaData.mSubName;
+				wLevelType.SelectedIndex = (int)mAuxData.mMetaData.mLevelType;
+				wLevelTheme.Text = mAuxData.mMetaData.mTheme;
+				wLevelOther.Text = mAuxData.mMetaData.mOther;
+			}
+			else
+			{
+				wLevelName.Text = "";
+				wLevelSubName.Text = "";
+				wLevelType.SelectedIndex = 0;
+				wLevelTheme.Text = "";
+				wLevelOther.Text = "";
+			}
+		}
+
+		private void wLevelName_TextChanged(object sender, EventArgs e)
+		{
+			mAuxData.mMetaData.mName = wLevelName.Text;
+		}
+
+		private void wLevelSubName_TextChanged(object sender, EventArgs e)
+		{
+			mAuxData.mMetaData.mSubName = wLevelSubName.Text;
+		}
+
+		private void wLevelType_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			mAuxData.mMetaData.mLevelType = (LevelMetaData.LevelType)wLevelType.SelectedIndex;
+		}
+
+		private void wLevelTheme_TextChanged(object sender, EventArgs e)
+		{
+			mAuxData.mMetaData.mTheme = wLevelTheme.Text;
+		}
+
+		private void wLevelOther_TextChanged(object sender, EventArgs e)
+		{
+			mAuxData.mMetaData.mOther = wLevelOther.Text;
+		}
+
+		// Yeah I know...
+		private void wLevelIntP0_ValueChanged(object sender, EventArgs e) { mAuxData.mMetaData.mIntParams[0] = (int)wLevelIntP0.Value; }
+		private void wLevelIntP1_ValueChanged(object sender, EventArgs e) { mAuxData.mMetaData.mIntParams[1] = (int)wLevelIntP1.Value; }
+		private void wLevelIntP2_ValueChanged(object sender, EventArgs e) { mAuxData.mMetaData.mIntParams[2] = (int)wLevelIntP2.Value; }
+		private void wLevelIntP3_ValueChanged(object sender, EventArgs e) { mAuxData.mMetaData.mIntParams[3] = (int)wLevelIntP3.Value; }
+
+		#endregion rMeta
+
+
+
 
 
 		#region rLevelEditing
@@ -572,17 +628,20 @@ namespace AridArnoldEditor
 		{
 			this.Text = "Level Editor - " + Path.GetFileName(filePath);
 
-			mLoadedImage = new Bitmap(filePath);
-
-			for (int x = 0; x < NUM_TILES; x++)
+			using (Bitmap loadedImage = new Bitmap(filePath))
 			{
-				for (int y = 0; y < NUM_TILES; y++)
+				for (int x = 0; x < NUM_TILES; x++)
 				{
-					mPanels[x, y].BackColor = mLoadedImage.GetPixel(x, y);
+					for (int y = 0; y < NUM_TILES; y++)
+					{
+						mPanels[x, y].BackColor = loadedImage.GetPixel(x, y);
+					}
 				}
 			}
 
 			mAuxData.LoadFile(filePath);
+
+			UpdateMetaPanel();
 
 			SetAction(FormActionState.None);
 			OnClickTile(mSelectedTileCoord);
@@ -741,5 +800,6 @@ namespace AridArnoldEditor
 		}
 
 		#endregion rUtility
+
 	}
 }

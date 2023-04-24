@@ -90,6 +90,22 @@
 			wEntityRemoveBtn = new Button();
 			wEntityMoveBtn = new Button();
 			label10 = new Label();
+			wMetaPanel = new Panel();
+			wLevelOther = new TextBox();
+			label13 = new Label();
+			wLevelSubName = new TextBox();
+			label9 = new Label();
+			wLevelIntP2 = new NumericUpDown();
+			wLevelTheme = new TextBox();
+			wLevelIntP0 = new NumericUpDown();
+			wLevelType = new ComboBox();
+			wLevelName = new TextBox();
+			wLevelIntP3 = new NumericUpDown();
+			label12 = new Label();
+			wLevelIntP1 = new NumericUpDown();
+			label14 = new Label();
+			label15 = new Label();
+			label16 = new Label();
 			wMenuStrip.SuspendLayout();
 			wRailPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).BeginInit();
@@ -116,6 +132,11 @@
 			((System.ComponentModel.ISupportInitialize)wEntityFP4).BeginInit();
 			((System.ComponentModel.ISupportInitialize)wEntityFP2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)wEntityFP0).BeginInit();
+			wMetaPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP2).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP0).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP3).BeginInit();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP1).BeginInit();
 			SuspendLayout();
 			// 
 			// wMenuStrip
@@ -123,7 +144,7 @@
 			wMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, addToolStripMenuItem });
 			wMenuStrip.Location = new Point(0, 0);
 			wMenuStrip.Name = "wMenuStrip";
-			wMenuStrip.Size = new Size(1108, 24);
+			wMenuStrip.Size = new Size(1141, 24);
 			wMenuStrip.TabIndex = 0;
 			wMenuStrip.Text = "menuStrip1";
 			// 
@@ -211,7 +232,7 @@
 			wRailPanel.Controls.Add(wMoveNodeBtn);
 			wRailPanel.Controls.Add(wAddNode);
 			wRailPanel.Controls.Add(wRailLbl);
-			wRailPanel.Location = new Point(602, 27);
+			wRailPanel.Location = new Point(603, 281);
 			wRailPanel.Name = "wRailPanel";
 			wRailPanel.Size = new Size(246, 246);
 			wRailPanel.TabIndex = 2;
@@ -360,7 +381,7 @@
 			wStatusPanel.Controls.Add(wStatusText);
 			wStatusPanel.Location = new Point(12, 611);
 			wStatusPanel.Name = "wStatusPanel";
-			wStatusPanel.Size = new Size(1088, 54);
+			wStatusPanel.Size = new Size(1120, 54);
 			wStatusPanel.TabIndex = 3;
 			// 
 			// wStatusText
@@ -368,7 +389,7 @@
 			wStatusText.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
 			wStatusText.Location = new Point(3, 0);
 			wStatusText.Name = "wStatusText";
-			wStatusText.Size = new Size(1083, 52);
+			wStatusText.Size = new Size(1110, 52);
 			wStatusText.TabIndex = 1;
 			wStatusText.Text = "Status:";
 			wStatusText.TextAlign = ContentAlignment.MiddleCenter;
@@ -383,12 +404,12 @@
 			wSNPCPanel.Controls.Add(label7);
 			wSNPCPanel.Location = new Point(6, 300);
 			wSNPCPanel.Name = "wSNPCPanel";
-			wSNPCPanel.Size = new Size(232, 111);
+			wSNPCPanel.Size = new Size(265, 111);
 			wSNPCPanel.TabIndex = 17;
 			// 
 			// wNPCHeckleTxt
 			// 
-			wNPCHeckleTxt.Location = new Point(49, 65);
+			wNPCHeckleTxt.Location = new Point(70, 71);
 			wNPCHeckleTxt.Name = "wNPCHeckleTxt";
 			wNPCHeckleTxt.Size = new Size(176, 23);
 			wNPCHeckleTxt.TabIndex = 16;
@@ -396,7 +417,7 @@
 			// 
 			// wNPCTalkTxt
 			// 
-			wNPCTalkTxt.Location = new Point(49, 37);
+			wNPCTalkTxt.Location = new Point(70, 43);
 			wNPCTalkTxt.Name = "wNPCTalkTxt";
 			wNPCTalkTxt.Size = new Size(176, 23);
 			wNPCTalkTxt.TabIndex = 15;
@@ -405,7 +426,7 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new Point(13, 40);
+			label3.Location = new Point(24, 46);
 			label3.Name = "label3";
 			label3.Size = new Size(30, 15);
 			label3.TabIndex = 13;
@@ -414,7 +435,7 @@
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new Point(3, 68);
+			label6.Location = new Point(14, 74);
 			label6.Name = "label6";
 			label6.Size = new Size(46, 15);
 			label6.TabIndex = 3;
@@ -423,7 +444,7 @@
 			// label7
 			// 
 			label7.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-			label7.Location = new Point(3, 2);
+			label7.Location = new Point(24, 8);
 			label7.Name = "label7";
 			label7.Size = new Size(222, 32);
 			label7.TabIndex = 0;
@@ -463,119 +484,107 @@
 			wEntityPanel.Controls.Add(label10);
 			wEntityPanel.Location = new Point(854, 27);
 			wEntityPanel.Name = "wEntityPanel";
-			wEntityPanel.Size = new Size(246, 448);
+			wEntityPanel.Size = new Size(278, 422);
 			wEntityPanel.TabIndex = 17;
 			// 
 			// wEntityIP6
 			// 
-			wEntityIP6.Location = new Point(127, 235);
+			wEntityIP6.Location = new Point(145, 235);
 			wEntityIP6.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP6.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP6.Name = "wEntityIP6";
-			wEntityIP6.Size = new Size(50, 23);
+			wEntityIP6.Size = new Size(60, 23);
 			wEntityIP6.TabIndex = 36;
 			// 
 			// wEntityIP4
 			// 
-			wEntityIP4.Location = new Point(127, 206);
+			wEntityIP4.Location = new Point(145, 206);
 			wEntityIP4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP4.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP4.Name = "wEntityIP4";
-			wEntityIP4.Size = new Size(50, 23);
+			wEntityIP4.Size = new Size(60, 23);
 			wEntityIP4.TabIndex = 35;
 			// 
 			// wEntityIP2
 			// 
-			wEntityIP2.Location = new Point(127, 177);
+			wEntityIP2.Location = new Point(145, 177);
 			wEntityIP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP2.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP2.Name = "wEntityIP2";
-			wEntityIP2.Size = new Size(50, 23);
+			wEntityIP2.Size = new Size(60, 23);
 			wEntityIP2.TabIndex = 34;
 			// 
 			// wEntityIP0
 			// 
-			wEntityIP0.Location = new Point(127, 148);
+			wEntityIP0.Location = new Point(145, 148);
 			wEntityIP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP0.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP0.Name = "wEntityIP0";
-			wEntityIP0.Size = new Size(50, 23);
+			wEntityIP0.Size = new Size(60, 23);
 			wEntityIP0.TabIndex = 33;
 			// 
 			// wEntityFP7
 			// 
 			wEntityFP7.DecimalPlaces = 2;
-			wEntityFP7.Location = new Point(63, 235);
+			wEntityFP7.Location = new Point(73, 235);
 			wEntityFP7.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP7.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP7.Name = "wEntityFP7";
-			wEntityFP7.Size = new Size(50, 23);
+			wEntityFP7.Size = new Size(60, 23);
 			wEntityFP7.TabIndex = 32;
 			// 
 			// wEntityFP5
 			// 
 			wEntityFP5.DecimalPlaces = 2;
-			wEntityFP5.Location = new Point(63, 206);
+			wEntityFP5.Location = new Point(73, 206);
 			wEntityFP5.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP5.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP5.Name = "wEntityFP5";
-			wEntityFP5.Size = new Size(50, 23);
+			wEntityFP5.Size = new Size(60, 23);
 			wEntityFP5.TabIndex = 31;
 			// 
 			// wEntityFP3
 			// 
 			wEntityFP3.DecimalPlaces = 2;
-			wEntityFP3.Location = new Point(63, 177);
+			wEntityFP3.Location = new Point(73, 177);
 			wEntityFP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP3.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP3.Name = "wEntityFP3";
-			wEntityFP3.Size = new Size(50, 23);
+			wEntityFP3.Size = new Size(60, 23);
 			wEntityFP3.TabIndex = 30;
 			// 
 			// wEntityFP1
 			// 
 			wEntityFP1.DecimalPlaces = 2;
-			wEntityFP1.Location = new Point(63, 148);
+			wEntityFP1.Location = new Point(73, 148);
 			wEntityFP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP1.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP1.Name = "wEntityFP1";
-			wEntityFP1.Size = new Size(50, 23);
+			wEntityFP1.Size = new Size(60, 23);
 			wEntityFP1.TabIndex = 29;
 			// 
 			// wEntityIP7
 			// 
-			wEntityIP7.Location = new Point(183, 235);
+			wEntityIP7.Location = new Point(211, 235);
 			wEntityIP7.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP7.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP7.Name = "wEntityIP7";
-			wEntityIP7.Size = new Size(50, 23);
+			wEntityIP7.Size = new Size(60, 23);
 			wEntityIP7.TabIndex = 28;
 			// 
 			// wEntityIP5
 			// 
-			wEntityIP5.Location = new Point(183, 206);
+			wEntityIP5.Location = new Point(211, 206);
 			wEntityIP5.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP5.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP5.Name = "wEntityIP5";
-			wEntityIP5.Size = new Size(50, 23);
+			wEntityIP5.Size = new Size(60, 23);
 			wEntityIP5.TabIndex = 27;
 			// 
 			// wEntityIP3
 			// 
-			wEntityIP3.Location = new Point(183, 177);
+			wEntityIP3.Location = new Point(211, 177);
 			wEntityIP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP3.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP3.Name = "wEntityIP3";
-			wEntityIP3.Size = new Size(50, 23);
+			wEntityIP3.Size = new Size(60, 23);
 			wEntityIP3.TabIndex = 26;
 			// 
 			// wEntityIP1
 			// 
-			wEntityIP1.Location = new Point(183, 148);
+			wEntityIP1.Location = new Point(211, 148);
 			wEntityIP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityIP1.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP1.Name = "wEntityIP1";
-			wEntityIP1.Size = new Size(50, 23);
+			wEntityIP1.Size = new Size(60, 23);
 			wEntityIP1.TabIndex = 25;
 			// 
 			// wEntityFP6
@@ -583,9 +592,8 @@
 			wEntityFP6.DecimalPlaces = 2;
 			wEntityFP6.Location = new Point(7, 235);
 			wEntityFP6.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP6.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP6.Name = "wEntityFP6";
-			wEntityFP6.Size = new Size(50, 23);
+			wEntityFP6.Size = new Size(60, 23);
 			wEntityFP6.TabIndex = 24;
 			// 
 			// wEntityFP4
@@ -593,9 +601,8 @@
 			wEntityFP4.DecimalPlaces = 2;
 			wEntityFP4.Location = new Point(7, 206);
 			wEntityFP4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP4.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP4.Name = "wEntityFP4";
-			wEntityFP4.Size = new Size(50, 23);
+			wEntityFP4.Size = new Size(60, 23);
 			wEntityFP4.TabIndex = 23;
 			// 
 			// wEntityFP2
@@ -603,9 +610,8 @@
 			wEntityFP2.DecimalPlaces = 2;
 			wEntityFP2.Location = new Point(7, 177);
 			wEntityFP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP2.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP2.Name = "wEntityFP2";
-			wEntityFP2.Size = new Size(50, 23);
+			wEntityFP2.Size = new Size(60, 23);
 			wEntityFP2.TabIndex = 22;
 			// 
 			// wEntityFP0
@@ -613,15 +619,14 @@
 			wEntityFP0.DecimalPlaces = 2;
 			wEntityFP0.Location = new Point(7, 148);
 			wEntityFP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-			wEntityFP0.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityFP0.Name = "wEntityFP0";
-			wEntityFP0.Size = new Size(50, 23);
+			wEntityFP0.Size = new Size(60, 23);
 			wEntityFP0.TabIndex = 21;
 			// 
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new Point(155, 125);
+			label5.Location = new Point(177, 125);
 			label5.Name = "label5";
 			label5.Size = new Size(63, 15);
 			label5.TabIndex = 20;
@@ -630,7 +635,7 @@
 			// label4
 			// 
 			label4.AutoSize = true;
-			label4.Location = new Point(22, 125);
+			label4.Location = new Point(32, 125);
 			label4.Name = "label4";
 			label4.Size = new Size(75, 15);
 			label4.TabIndex = 19;
@@ -643,7 +648,7 @@
 			wEntityGravityCombo.Items.AddRange(new object[] { "Up", "Right", "Down", "Left" });
 			wEntityGravityCombo.Location = new Point(57, 93);
 			wEntityGravityCombo.Name = "wEntityGravityCombo";
-			wEntityGravityCombo.Size = new Size(176, 23);
+			wEntityGravityCombo.Size = new Size(214, 23);
 			wEntityGravityCombo.TabIndex = 18;
 			wEntityGravityCombo.SelectedIndexChanged += wEntityGravityCombo_SelectedIndexChanged;
 			// 
@@ -663,7 +668,7 @@
 			wEntityFacingCombo.Items.AddRange(new object[] { "Left", "Right", "None" });
 			wEntityFacingCombo.Location = new Point(57, 64);
 			wEntityFacingCombo.Name = "wEntityFacingCombo";
-			wEntityFacingCombo.Size = new Size(176, 23);
+			wEntityFacingCombo.Size = new Size(214, 23);
 			wEntityFacingCombo.TabIndex = 16;
 			wEntityFacingCombo.SelectedIndexChanged += wEntityFacingCombo_SelectedIndexChanged;
 			// 
@@ -683,7 +688,7 @@
 			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent" });
 			wEntityClassCombo.Location = new Point(57, 34);
 			wEntityClassCombo.Name = "wEntityClassCombo";
-			wEntityClassCombo.Size = new Size(176, 23);
+			wEntityClassCombo.Size = new Size(214, 23);
 			wEntityClassCombo.TabIndex = 14;
 			wEntityClassCombo.SelectedIndexChanged += wEntityClassCombo_SelectedIndexChanged;
 			// 
@@ -700,7 +705,7 @@
 			// 
 			wEntityRemoveBtn.Location = new Point(7, 271);
 			wEntityRemoveBtn.Name = "wEntityRemoveBtn";
-			wEntityRemoveBtn.Size = new Size(100, 23);
+			wEntityRemoveBtn.Size = new Size(126, 23);
 			wEntityRemoveBtn.TabIndex = 5;
 			wEntityRemoveBtn.Text = "Remove";
 			wEntityRemoveBtn.UseVisualStyleBackColor = true;
@@ -708,9 +713,9 @@
 			// 
 			// wEntityMoveBtn
 			// 
-			wEntityMoveBtn.Location = new Point(133, 271);
+			wEntityMoveBtn.Location = new Point(145, 271);
 			wEntityMoveBtn.Name = "wEntityMoveBtn";
-			wEntityMoveBtn.Size = new Size(100, 23);
+			wEntityMoveBtn.Size = new Size(125, 23);
 			wEntityMoveBtn.TabIndex = 2;
 			wEntityMoveBtn.Text = "Move";
 			wEntityMoveBtn.UseVisualStyleBackColor = true;
@@ -726,11 +731,169 @@
 			label10.Text = "Entity";
 			label10.TextAlign = ContentAlignment.MiddleCenter;
 			// 
+			// wMetaPanel
+			// 
+			wMetaPanel.BorderStyle = BorderStyle.Fixed3D;
+			wMetaPanel.Controls.Add(wLevelOther);
+			wMetaPanel.Controls.Add(label13);
+			wMetaPanel.Controls.Add(wLevelSubName);
+			wMetaPanel.Controls.Add(label9);
+			wMetaPanel.Controls.Add(wLevelIntP2);
+			wMetaPanel.Controls.Add(wLevelTheme);
+			wMetaPanel.Controls.Add(wLevelIntP0);
+			wMetaPanel.Controls.Add(wLevelType);
+			wMetaPanel.Controls.Add(wLevelName);
+			wMetaPanel.Controls.Add(wLevelIntP3);
+			wMetaPanel.Controls.Add(label12);
+			wMetaPanel.Controls.Add(wLevelIntP1);
+			wMetaPanel.Controls.Add(label14);
+			wMetaPanel.Controls.Add(label15);
+			wMetaPanel.Controls.Add(label16);
+			wMetaPanel.Location = new Point(602, 29);
+			wMetaPanel.Name = "wMetaPanel";
+			wMetaPanel.Size = new Size(246, 246);
+			wMetaPanel.TabIndex = 17;
+			// 
+			// wLevelOther
+			// 
+			wLevelOther.Location = new Point(50, 143);
+			wLevelOther.Name = "wLevelOther";
+			wLevelOther.Size = new Size(189, 23);
+			wLevelOther.TabIndex = 49;
+			wLevelOther.TextChanged += wLevelOther_TextChanged;
+			// 
+			// label13
+			// 
+			label13.AutoSize = true;
+			label13.Location = new Point(6, 146);
+			label13.Name = "label13";
+			label13.Size = new Size(40, 15);
+			label13.TabIndex = 48;
+			label13.Text = "Other:";
+			// 
+			// wLevelSubName
+			// 
+			wLevelSubName.Location = new Point(50, 57);
+			wLevelSubName.Name = "wLevelSubName";
+			wLevelSubName.Size = new Size(189, 23);
+			wLevelSubName.TabIndex = 47;
+			wLevelSubName.TextChanged += wLevelSubName_TextChanged;
+			// 
+			// label9
+			// 
+			label9.AutoSize = true;
+			label9.Location = new Point(28, 204);
+			label9.Name = "label9";
+			label9.Size = new Size(63, 15);
+			label9.TabIndex = 37;
+			label9.Text = "Int Params";
+			// 
+			// wLevelIntP2
+			// 
+			wLevelIntP2.Location = new Point(113, 212);
+			wLevelIntP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wLevelIntP2.Name = "wLevelIntP2";
+			wLevelIntP2.Size = new Size(60, 23);
+			wLevelIntP2.TabIndex = 45;
+			wLevelIntP2.ValueChanged += wLevelIntP2_ValueChanged;
+			// 
+			// wLevelTheme
+			// 
+			wLevelTheme.Location = new Point(50, 116);
+			wLevelTheme.Name = "wLevelTheme";
+			wLevelTheme.Size = new Size(189, 23);
+			wLevelTheme.TabIndex = 19;
+			wLevelTheme.TextChanged += wLevelTheme_TextChanged;
+			// 
+			// wLevelIntP0
+			// 
+			wLevelIntP0.Location = new Point(113, 183);
+			wLevelIntP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wLevelIntP0.Name = "wLevelIntP0";
+			wLevelIntP0.Size = new Size(60, 23);
+			wLevelIntP0.TabIndex = 44;
+			wLevelIntP0.ValueChanged += wLevelIntP0_ValueChanged;
+			// 
+			// wLevelType
+			// 
+			wLevelType.DropDownStyle = ComboBoxStyle.DropDownList;
+			wLevelType.FormattingEnabled = true;
+			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectFlag" });
+			wLevelType.Location = new Point(50, 85);
+			wLevelType.Name = "wLevelType";
+			wLevelType.Size = new Size(189, 23);
+			wLevelType.TabIndex = 18;
+			wLevelType.SelectedIndexChanged += wLevelType_SelectedIndexChanged;
+			// 
+			// wLevelName
+			// 
+			wLevelName.Location = new Point(50, 35);
+			wLevelName.Name = "wLevelName";
+			wLevelName.Size = new Size(189, 23);
+			wLevelName.TabIndex = 17;
+			wLevelName.TextChanged += wLevelName_TextChanged;
+			// 
+			// wLevelIntP3
+			// 
+			wLevelIntP3.Location = new Point(179, 212);
+			wLevelIntP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wLevelIntP3.Name = "wLevelIntP3";
+			wLevelIntP3.Size = new Size(60, 23);
+			wLevelIntP3.TabIndex = 41;
+			wLevelIntP3.ValueChanged += wLevelIntP3_ValueChanged;
+			// 
+			// label12
+			// 
+			label12.AutoSize = true;
+			label12.Location = new Point(12, 88);
+			label12.Name = "label12";
+			label12.Size = new Size(34, 15);
+			label12.TabIndex = 13;
+			label12.Text = "Type:";
+			// 
+			// wLevelIntP1
+			// 
+			wLevelIntP1.Location = new Point(179, 183);
+			wLevelIntP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wLevelIntP1.Name = "wLevelIntP1";
+			wLevelIntP1.Size = new Size(60, 23);
+			wLevelIntP1.TabIndex = 40;
+			wLevelIntP1.ValueChanged += wLevelIntP1_ValueChanged;
+			// 
+			// label14
+			// 
+			label14.AutoSize = true;
+			label14.Location = new Point(6, 43);
+			label14.Name = "label14";
+			label14.Size = new Size(42, 15);
+			label14.TabIndex = 6;
+			label14.Text = "Name:";
+			// 
+			// label15
+			// 
+			label15.AutoSize = true;
+			label15.Location = new Point(2, 116);
+			label15.Name = "label15";
+			label15.Size = new Size(46, 15);
+			label15.TabIndex = 3;
+			label15.Text = "Theme:";
+			// 
+			// label16
+			// 
+			label16.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+			label16.Location = new Point(4, 0);
+			label16.Name = "label16";
+			label16.Size = new Size(237, 32);
+			label16.TabIndex = 0;
+			label16.Text = "Meta";
+			label16.TextAlign = ContentAlignment.MiddleCenter;
+			// 
 			// LevelEditor
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1108, 675);
+			ClientSize = new Size(1141, 675);
+			Controls.Add(wMetaPanel);
 			Controls.Add(wEntityPanel);
 			Controls.Add(wStatusPanel);
 			Controls.Add(wRailPanel);
@@ -772,6 +935,12 @@
 			((System.ComponentModel.ISupportInitialize)wEntityFP4).EndInit();
 			((System.ComponentModel.ISupportInitialize)wEntityFP2).EndInit();
 			((System.ComponentModel.ISupportInitialize)wEntityFP0).EndInit();
+			wMetaPanel.ResumeLayout(false);
+			wMetaPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP2).EndInit();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP0).EndInit();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP3).EndInit();
+			((System.ComponentModel.ISupportInitialize)wLevelIntP1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -840,5 +1009,21 @@
 		private NumericUpDown wEntityFP0;
 		private Label label5;
 		private Label label4;
+		private Panel wMetaPanel;
+		private Label label12;
+		private Label label14;
+		private Label label15;
+		private Label label16;
+		private NumericUpDown wLevelIntP2;
+		private TextBox wLevelTheme;
+		private NumericUpDown wLevelIntP0;
+		private ComboBox wLevelType;
+		private TextBox wLevelName;
+		private NumericUpDown wLevelIntP3;
+		private NumericUpDown wLevelIntP1;
+		private TextBox wLevelOther;
+		private Label label13;
+		private TextBox wLevelSubName;
+		private Label label9;
 	}
 }

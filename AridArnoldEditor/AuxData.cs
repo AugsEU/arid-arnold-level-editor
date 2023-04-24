@@ -10,9 +10,11 @@ namespace AridArnoldEditor
 	{
 		#region rConstants
 
-		const int FILE_VER = 3;
+		const int FILE_VER = 4;
 
 		#endregion rConstants
+
+		public LevelMetaData mMetaData;
 
 		public List<LinearRail> LinearRails { get; set; }
 		public List<Entity> Entities { get; set; }
@@ -21,6 +23,7 @@ namespace AridArnoldEditor
 		{
 			LinearRails = new List<LinearRail>();
 			Entities = new List<Entity>();
+			mMetaData = new LevelMetaData();
 		}
 
 		#region rWrite
@@ -38,7 +41,7 @@ namespace AridArnoldEditor
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Exception: " + ex.ToString());
+				MessageBox.Show("Exception: " + ex.ToString(), "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 				return;
 			}
 
@@ -56,6 +59,8 @@ namespace AridArnoldEditor
 		private void WriteBinary(BinaryWriter bw)
 		{
 			bw.Write(FILE_VER);
+
+			mMetaData.WriteMetaData(bw);
 
 			//Rails
 			bw.Write(LinearRails.Count);
@@ -128,7 +133,7 @@ namespace AridArnoldEditor
 					{
 						Clear();
 						delFile = true;
-						Console.WriteLine("Exception: " + ex.ToString());
+						MessageBox.Show("Exception: " + ex.ToString(), "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 					}
 				}
 			}
@@ -145,6 +150,11 @@ namespace AridArnoldEditor
 			if(fileVersion != FILE_VER)
 			{
 				Console.WriteLine("WARNING: Old file version. Attempting to convert.");
+			}
+
+			if(fileVersion >= 4)
+			{
+				mMetaData = new LevelMetaData(br, fileVersion);
 			}
 
 			//Rails
@@ -175,6 +185,7 @@ namespace AridArnoldEditor
 
 		public void Clear()
 		{
+			mMetaData.Clear();
 			LinearRails.Clear();
 			Entities.Clear();
 		}

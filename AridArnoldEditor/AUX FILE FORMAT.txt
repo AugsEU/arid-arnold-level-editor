@@ -1,6 +1,23 @@
-AUX FILE FORMAT VERSION 3:
+AUX FILE FORMAT VERSION 4:
 
 VERSION - int32
+
+META DATA
+{
+    NAME - string
+    SUB-NAME - string
+    TYPE - uint32
+    THEME - string
+    OTHER - string
+    INT PARAM 0 - int32
+    INT PARAM 1 - int32
+    INT PARAM 2 - int32
+    INT PARAM 3 - int32
+    INT PARAM 4 - int32 (NO UI)
+    INT PARAM 5 - int32 (NO UI)
+    INT PARAM 6 - int32 (NO UI)
+    INT PARAM 7 - int32 (NO UI)
+}
 
 RAIL COUNT - int32
 {
