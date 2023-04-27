@@ -574,6 +574,11 @@ namespace AridArnoldEditor
 				wLevelType.SelectedIndex = (int)mAuxData.mMetaData.mLevelType;
 				wLevelTheme.Text = mAuxData.mMetaData.mTheme;
 				wLevelOther.Text = mAuxData.mMetaData.mOther;
+
+				wLevelIntP0.Value = mAuxData.mMetaData.mIntParams[0];
+				wLevelIntP1.Value = mAuxData.mMetaData.mIntParams[1];
+				wLevelIntP2.Value = mAuxData.mMetaData.mIntParams[2];
+				wLevelIntP3.Value = mAuxData.mMetaData.mIntParams[3];
 			}
 			else
 			{
