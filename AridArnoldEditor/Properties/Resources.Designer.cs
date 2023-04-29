@@ -83,6 +83,16 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arnoldSpawner {
+            get {
+                object obj = ResourceManager.GetObject("arnoldSpawner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barbara {
             get {
                 object obj = ResourceManager.GetObject("barbara", resourceCulture);

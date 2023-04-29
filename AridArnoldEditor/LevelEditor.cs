@@ -520,6 +520,14 @@ namespace AridArnoldEditor
 			idx -= (int)Entity.EntityClass.kEnemyClassEnd - Entity.kEnemyClassStart;
 			idx += Entity.kClassSpacing;
 
+			if (idx < (int)Entity.EntityClass.kNPCClassEnd)
+			{
+				return (Entity.EntityClass)idx;
+			}
+
+			idx -= (int)Entity.EntityClass.kNPCClassEnd - Entity.kNPCClassStart;
+			idx += Entity.kClassSpacing;
+
 			return (Entity.EntityClass)idx;
 		}
 
@@ -542,6 +550,11 @@ namespace AridArnoldEditor
 			if (enumInt > (int)Entity.EntityClass.kNPCClassEnd)
 			{
 				offset += (int)Entity.EntityClass.kNPCClassEnd - Entity.kNPCClassStart;
+			}
+
+			if (enumInt > (int)Entity.EntityClass.kUtilityClassEnd)
+			{
+				offset += (int)Entity.EntityClass.kUtilityClassEnd - Entity.kUtilityClassStart;
 			}
 
 			return offset + subclassIdx;

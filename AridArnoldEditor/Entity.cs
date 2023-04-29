@@ -33,6 +33,7 @@ namespace AridArnoldEditor
 		public const int kPlayerClassStart = 0 * kClassSpacing;
 		public const int kEnemyClassStart  = 1 * kClassSpacing;
 		public const int kNPCClassStart    = 2 * kClassSpacing;
+		public const int kUtilityClassStart = 3 * kClassSpacing;
 
 		public enum EntityClass
 		{
@@ -54,7 +55,11 @@ namespace AridArnoldEditor
 			kDok,
 			kBickDogel,
 			kElectrent,
-			kNPCClassEnd
+			kNPCClassEnd,
+
+			// Utility
+			kArnoldSpawner = kUtilityClassStart,
+			kUtilityClassEnd
 		}
 
 		// UI
@@ -141,6 +146,11 @@ namespace AridArnoldEditor
 				case EntityClass.kElectrent:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.electrent);
 					break;
+
+				// Utility
+				case EntityClass.kArnoldSpawner:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.arnoldSpawner);
+					break;
 				default:
 					mImage = new Bitmap(16, 16);
 					break;
@@ -199,7 +209,7 @@ namespace AridArnoldEditor
 
 		public EntityType GetEntityType()
 		{
-			if((int)mEntityClass >= kNPCClassStart)
+			if((int)mEntityClass >= kNPCClassStart && (int)mEntityClass <= (int)EntityClass.kNPCClassEnd)
 			{
 				if(mEntityClass == EntityClass.kBickDogel)
 				{
