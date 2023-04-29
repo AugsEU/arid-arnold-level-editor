@@ -91,9 +91,10 @@
 			wEntityMoveBtn = new Button();
 			label10 = new Label();
 			wMetaPanel = new Panel();
-			wLevelOther = new TextBox();
+			label11 = new Label();
+			wLevelBG = new TextBox();
 			label13 = new Label();
-			wLevelSubName = new TextBox();
+			wLevelRoot = new TextBox();
 			label9 = new Label();
 			wLevelIntP2 = new NumericUpDown();
 			wLevelTheme = new TextBox();
@@ -734,9 +735,10 @@
 			// wMetaPanel
 			// 
 			wMetaPanel.BorderStyle = BorderStyle.Fixed3D;
-			wMetaPanel.Controls.Add(wLevelOther);
+			wMetaPanel.Controls.Add(label11);
+			wMetaPanel.Controls.Add(wLevelBG);
 			wMetaPanel.Controls.Add(label13);
-			wMetaPanel.Controls.Add(wLevelSubName);
+			wMetaPanel.Controls.Add(wLevelRoot);
 			wMetaPanel.Controls.Add(label9);
 			wMetaPanel.Controls.Add(wLevelIntP2);
 			wMetaPanel.Controls.Add(wLevelTheme);
@@ -754,30 +756,39 @@
 			wMetaPanel.Size = new Size(246, 246);
 			wMetaPanel.TabIndex = 17;
 			// 
-			// wLevelOther
+			// label11
 			// 
-			wLevelOther.Location = new Point(50, 143);
-			wLevelOther.Name = "wLevelOther";
-			wLevelOther.Size = new Size(189, 23);
-			wLevelOther.TabIndex = 49;
-			wLevelOther.TextChanged += wLevelOther_TextChanged;
+			label11.AutoSize = true;
+			label11.Location = new Point(14, 67);
+			label11.Name = "label11";
+			label11.Size = new Size(35, 15);
+			label11.TabIndex = 50;
+			label11.Text = "Root:";
+			// 
+			// wLevelBG
+			// 
+			wLevelBG.Location = new Point(50, 150);
+			wLevelBG.Name = "wLevelBG";
+			wLevelBG.Size = new Size(189, 23);
+			wLevelBG.TabIndex = 49;
+			wLevelBG.TextChanged += wLevelOther_TextChanged;
 			// 
 			// label13
 			// 
 			label13.AutoSize = true;
-			label13.Location = new Point(6, 146);
+			label13.Location = new Point(24, 153);
 			label13.Name = "label13";
-			label13.Size = new Size(40, 15);
+			label13.Size = new Size(25, 15);
 			label13.TabIndex = 48;
-			label13.Text = "Other:";
+			label13.Text = "BG:";
 			// 
-			// wLevelSubName
+			// wLevelRoot
 			// 
-			wLevelSubName.Location = new Point(50, 57);
-			wLevelSubName.Name = "wLevelSubName";
-			wLevelSubName.Size = new Size(189, 23);
-			wLevelSubName.TabIndex = 47;
-			wLevelSubName.TextChanged += wLevelSubName_TextChanged;
+			wLevelRoot.Location = new Point(50, 64);
+			wLevelRoot.Name = "wLevelRoot";
+			wLevelRoot.Size = new Size(189, 23);
+			wLevelRoot.TabIndex = 47;
+			wLevelRoot.TextChanged += wLevelSubName_TextChanged;
 			// 
 			// label9
 			// 
@@ -799,7 +810,7 @@
 			// 
 			// wLevelTheme
 			// 
-			wLevelTheme.Location = new Point(50, 116);
+			wLevelTheme.Location = new Point(50, 123);
 			wLevelTheme.Name = "wLevelTheme";
 			wLevelTheme.Size = new Size(189, 23);
 			wLevelTheme.TabIndex = 19;
@@ -818,8 +829,8 @@
 			// 
 			wLevelType.DropDownStyle = ComboBoxStyle.DropDownList;
 			wLevelType.FormattingEnabled = true;
-			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectFlag" });
-			wLevelType.Location = new Point(50, 85);
+			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectFlag", "Shop", "Hub" });
+			wLevelType.Location = new Point(50, 92);
 			wLevelType.Name = "wLevelType";
 			wLevelType.Size = new Size(189, 23);
 			wLevelType.TabIndex = 18;
@@ -845,7 +856,7 @@
 			// label12
 			// 
 			label12.AutoSize = true;
-			label12.Location = new Point(12, 88);
+			label12.Location = new Point(15, 95);
 			label12.Name = "label12";
 			label12.Size = new Size(34, 15);
 			label12.TabIndex = 13;
@@ -863,7 +874,7 @@
 			// label14
 			// 
 			label14.AutoSize = true;
-			label14.Location = new Point(6, 38);
+			label14.Location = new Point(7, 38);
 			label14.Name = "label14";
 			label14.Size = new Size(42, 15);
 			label14.TabIndex = 6;
@@ -872,7 +883,7 @@
 			// label15
 			// 
 			label15.AutoSize = true;
-			label15.Location = new Point(0, 119);
+			label15.Location = new Point(3, 126);
 			label15.Name = "label15";
 			label15.Size = new Size(46, 15);
 			label15.TabIndex = 3;
@@ -1021,9 +1032,10 @@
 		private TextBox wLevelName;
 		private NumericUpDown wLevelIntP3;
 		private NumericUpDown wLevelIntP1;
-		private TextBox wLevelOther;
+		private TextBox wLevelBG;
 		private Label label13;
-		private TextBox wLevelSubName;
+		private TextBox wLevelRoot;
 		private Label label9;
+		private Label label11;
 	}
 }

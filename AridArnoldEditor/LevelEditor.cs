@@ -570,10 +570,10 @@ namespace AridArnoldEditor
 			if (wMetaPanel.Enabled)
 			{
 				wLevelName.Text = mAuxData.mMetaData.mName;
-				wLevelSubName.Text = mAuxData.mMetaData.mSubName;
+				wLevelRoot.Text = mAuxData.mMetaData.mRoot;
 				wLevelType.SelectedIndex = (int)mAuxData.mMetaData.mLevelType;
 				wLevelTheme.Text = mAuxData.mMetaData.mTheme;
-				wLevelOther.Text = mAuxData.mMetaData.mOther;
+				wLevelBG.Text = mAuxData.mMetaData.mBG;
 
 				wLevelIntP0.Value = mAuxData.mMetaData.mIntParams[0];
 				wLevelIntP1.Value = mAuxData.mMetaData.mIntParams[1];
@@ -583,10 +583,10 @@ namespace AridArnoldEditor
 			else
 			{
 				wLevelName.Text = "";
-				wLevelSubName.Text = "";
+				wLevelRoot.Text = "";
 				wLevelType.SelectedIndex = 0;
 				wLevelTheme.Text = "";
-				wLevelOther.Text = "";
+				wLevelBG.Text = "";
 			}
 		}
 
@@ -597,7 +597,7 @@ namespace AridArnoldEditor
 
 		private void wLevelSubName_TextChanged(object sender, EventArgs e)
 		{
-			mAuxData.mMetaData.mSubName = wLevelSubName.Text;
+			mAuxData.mMetaData.mRoot = wLevelRoot.Text;
 		}
 
 		private void wLevelType_SelectedIndexChanged(object sender, EventArgs e)
@@ -612,7 +612,7 @@ namespace AridArnoldEditor
 
 		private void wLevelOther_TextChanged(object sender, EventArgs e)
 		{
-			mAuxData.mMetaData.mOther = wLevelOther.Text;
+			mAuxData.mMetaData.mBG = wLevelBG.Text;
 		}
 
 		// Yeah I know...

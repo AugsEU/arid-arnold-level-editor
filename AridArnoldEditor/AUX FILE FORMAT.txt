@@ -5,10 +5,10 @@ VERSION - int32
 META DATA
 {
     NAME - string
-    SUB-NAME - string
+    ROOT - string
     TYPE - uint32
     THEME - string
-    OTHER - string
+    BG   - string
     INT PARAM 0 - int32
     INT PARAM 1 - int32
     INT PARAM 2 - int32

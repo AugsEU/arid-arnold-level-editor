@@ -15,10 +15,10 @@ namespace AridArnoldEditor
 		}
 
 		public string mName = "";
-		public string mSubName = "";
+		public string mRoot = "";
 		public LevelType mLevelType = LevelType.CollectWater;
 		public string mTheme = "";
-		public string mOther = "";
+		public string mBG = "";
 		public int[] mIntParams = new int[8];
 
 		public LevelMetaData()
@@ -33,10 +33,10 @@ namespace AridArnoldEditor
 		void ReadMetaData(BinaryReader br, int fileVer)
 		{
 			mName = br.ReadString();
-			mSubName = br.ReadString();
+			mRoot = br.ReadString();
 			mLevelType = (LevelType)br.ReadUInt32();
 			mTheme = br.ReadString();
-			mOther = br.ReadString();
+			mBG = br.ReadString();
 			for(int i = 0; i < mIntParams.Length; i++)
 			{
 				mIntParams[i] = br.ReadInt32();
@@ -46,10 +46,10 @@ namespace AridArnoldEditor
 		public void WriteMetaData(BinaryWriter bw)
 		{
 			bw.Write(mName);
-			bw.Write(mSubName);
+			bw.Write(mRoot);
 			bw.Write((UInt32)mLevelType);
 			bw.Write(mTheme);
-			bw.Write(mOther);
+			bw.Write(mBG);
 
 			for (int i = 0; i < mIntParams.Length; i++)
 			{
@@ -60,10 +60,10 @@ namespace AridArnoldEditor
 		public void Clear()
 		{
 			mName = "";
-			mSubName = "";
+			mRoot = "";
 			mLevelType = LevelType.CollectWater;
 			mTheme = "";
-			mOther = "";
+			mBG = "";
 			mIntParams = new int[8];
 		}
 	}
