@@ -59,6 +59,7 @@ namespace AridArnoldEditor
 
 			// Utility
 			kArnoldSpawner = kUtilityClassStart,
+			kSequenceDoor,
 			kUtilityClassEnd
 		}
 
@@ -150,6 +151,9 @@ namespace AridArnoldEditor
 				// Utility
 				case EntityClass.kArnoldSpawner:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.arnoldSpawner);
+					break;
+				case EntityClass.kSequenceDoor:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Door);
 					break;
 				default:
 					mImage = new Bitmap(16, 16);

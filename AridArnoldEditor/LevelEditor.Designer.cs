@@ -686,7 +686,7 @@
 			// 
 			wEntityClassCombo.DropDownStyle = ComboBoxStyle.DropDownList;
 			wEntityClassCombo.FormattingEnabled = true;
-			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner" });
+			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor" });
 			wEntityClassCombo.Location = new Point(57, 34);
 			wEntityClassCombo.Name = "wEntityClassCombo";
 			wEntityClassCombo.Size = new Size(214, 23);
