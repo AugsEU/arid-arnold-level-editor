@@ -33,6 +33,7 @@
 			openToolStripMenuItem = new ToolStripMenuItem();
 			saveToolStripMenuItem = new ToolStripMenuItem();
 			clearToolStripMenuItem = new ToolStripMenuItem();
+			refreshToolStripMenuItem = new ToolStripMenuItem();
 			addToolStripMenuItem = new ToolStripMenuItem();
 			railToolStripMenuItem = new ToolStripMenuItem();
 			linearToolStripMenuItem = new ToolStripMenuItem();
@@ -151,7 +152,7 @@
 			// 
 			// fileToolStripMenuItem
 			// 
-			fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, saveToolStripMenuItem, clearToolStripMenuItem });
+			fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, saveToolStripMenuItem, clearToolStripMenuItem, refreshToolStripMenuItem });
 			fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			fileToolStripMenuItem.Size = new Size(37, 20);
 			fileToolStripMenuItem.Text = "File";
@@ -178,6 +179,14 @@
 			clearToolStripMenuItem.Size = new Size(138, 22);
 			clearToolStripMenuItem.Text = "Clear";
 			clearToolStripMenuItem.Click += clearToolStripMenuItem_Click;
+			// 
+			// refreshToolStripMenuItem
+			// 
+			refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+			refreshToolStripMenuItem.ShortcutKeys = Keys.F5;
+			refreshToolStripMenuItem.Size = new Size(138, 22);
+			refreshToolStripMenuItem.Text = "Refresh";
+			refreshToolStripMenuItem.Click += refreshToolStripMenuItem_Click;
 			// 
 			// addToolStripMenuItem
 			// 
@@ -686,7 +695,7 @@
 			// 
 			wEntityClassCombo.DropDownStyle = ComboBoxStyle.DropDownList;
 			wEntityClassCombo.FormattingEnabled = true;
-			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor" });
+			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor", "LevelLock" });
 			wEntityClassCombo.Location = new Point(57, 34);
 			wEntityClassCombo.Name = "wEntityClassCombo";
 			wEntityClassCombo.Size = new Size(214, 23);
@@ -829,7 +838,7 @@
 			// 
 			wLevelType.DropDownStyle = ComboBoxStyle.DropDownList;
 			wLevelType.FormattingEnabled = true;
-			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectFlag", "Shop", "Hub" });
+			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectKey", "Shop", "Hub" });
 			wLevelType.Location = new Point(50, 92);
 			wLevelType.Name = "wLevelType";
 			wLevelType.Size = new Size(189, 23);
@@ -1037,5 +1046,6 @@
 		private TextBox wLevelRoot;
 		private Label label9;
 		private Label label11;
+		private ToolStripMenuItem refreshToolStripMenuItem;
 	}
 }

@@ -8,15 +8,9 @@ namespace AridArnoldEditor
 {
 	class LevelMetaData
 	{
-		public enum LevelType
-		{
-			CollectWater,
-			CollectFlag
-		}
-
 		public string mName = "";
 		public string mRoot = "";
-		public LevelType mLevelType = LevelType.CollectWater;
+		public uint mLevelType = 0;
 		public string mTheme = "";
 		public string mBG = "";
 		public int[] mIntParams = new int[8];
@@ -34,7 +28,7 @@ namespace AridArnoldEditor
 		{
 			mName = br.ReadString();
 			mRoot = br.ReadString();
-			mLevelType = (LevelType)br.ReadUInt32();
+			mLevelType = br.ReadUInt32();
 			mTheme = br.ReadString();
 			mBG = br.ReadString();
 			for(int i = 0; i < mIntParams.Length; i++)
@@ -59,11 +53,6 @@ namespace AridArnoldEditor
 
 		public void Clear()
 		{
-			mName = "";
-			mRoot = "";
-			mLevelType = LevelType.CollectWater;
-			mTheme = "";
-			mBG = "";
 			mIntParams = new int[8];
 		}
 	}

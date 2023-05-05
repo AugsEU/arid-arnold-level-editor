@@ -219,6 +219,16 @@ namespace AridArnoldEditor
 			}
 		}
 
+
+		private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (File.Exists(mFilePath))
+			{
+				LoadImage(mFilePath);
+				InvalidateAll();
+			}
+		}
+
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (mFilePath != "")
@@ -574,6 +584,8 @@ namespace AridArnoldEditor
 
 
 
+
+
 		#region rMeta
 
 		private void UpdateMetaPanel()
@@ -615,7 +627,7 @@ namespace AridArnoldEditor
 
 		private void wLevelType_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			mAuxData.mMetaData.mLevelType = (LevelMetaData.LevelType)wLevelType.SelectedIndex;
+			mAuxData.mMetaData.mLevelType = (uint)wLevelType.SelectedIndex;
 		}
 
 		private void wLevelTheme_TextChanged(object sender, EventArgs e)
@@ -646,6 +658,19 @@ namespace AridArnoldEditor
 		{
 			this.Text = "Level Editor - " + Path.GetFileName(filePath);
 
+			LoadImage(filePath);
+
+			mAuxData.LoadFile(filePath);
+
+			UpdateMetaPanel();
+
+			SetAction(FormActionState.None);
+			OnClickTile(mSelectedTileCoord);
+			InvalidateAll();
+		}
+
+		private void LoadImage(string filePath)
+		{
 			using (Bitmap loadedImage = new Bitmap(filePath))
 			{
 				for (int x = 0; x < NUM_TILES; x++)
@@ -656,14 +681,6 @@ namespace AridArnoldEditor
 					}
 				}
 			}
-
-			mAuxData.LoadFile(filePath);
-
-			UpdateMetaPanel();
-
-			SetAction(FormActionState.None);
-			OnClickTile(mSelectedTileCoord);
-			InvalidateAll();
 		}
 
 		public void OnClickTile(Point tileClicked)
@@ -818,6 +835,5 @@ namespace AridArnoldEditor
 		}
 
 		#endregion rUtility
-
 	}
 }
