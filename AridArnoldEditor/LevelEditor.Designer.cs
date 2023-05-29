@@ -40,6 +40,7 @@
 			entityToolStripMenuItem = new ToolStripMenuItem();
 			wImageArea = new Panel();
 			wRailPanel = new Panel();
+			wCopyRailBtn = new Button();
 			wNode = new Label();
 			wNodeFlagsIn = new NumericUpDown();
 			wNodeFlags = new Label();
@@ -227,6 +228,7 @@
 			// wRailPanel
 			// 
 			wRailPanel.BorderStyle = BorderStyle.Fixed3D;
+			wRailPanel.Controls.Add(wCopyRailBtn);
 			wRailPanel.Controls.Add(wNode);
 			wRailPanel.Controls.Add(wNodeFlagsIn);
 			wRailPanel.Controls.Add(wNodeFlags);
@@ -246,6 +248,16 @@
 			wRailPanel.Name = "wRailPanel";
 			wRailPanel.Size = new Size(246, 246);
 			wRailPanel.TabIndex = 2;
+			// 
+			// wCopyRailBtn
+			// 
+			wCopyRailBtn.Location = new Point(163, 6);
+			wCopyRailBtn.Name = "wCopyRailBtn";
+			wCopyRailBtn.Size = new Size(75, 23);
+			wCopyRailBtn.TabIndex = 17;
+			wCopyRailBtn.Text = "Copy";
+			wCopyRailBtn.UseVisualStyleBackColor = true;
+			wCopyRailBtn.Click += wCopyRailBtn_Click;
 			// 
 			// wNode
 			// 
@@ -695,7 +707,7 @@
 			// 
 			wEntityClassCombo.DropDownStyle = ComboBoxStyle.DropDownList;
 			wEntityClassCombo.FormattingEnabled = true;
-			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor", "LevelLock", "ShopDoor" });
+			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor", "LevelLock", "ShopDoor", "ItemStand", "GravityOrb" });
 			wEntityClassCombo.Location = new Point(57, 34);
 			wEntityClassCombo.Name = "wEntityClassCombo";
 			wEntityClassCombo.Size = new Size(214, 23);
@@ -1047,5 +1059,6 @@
 		private Label label9;
 		private Label label11;
 		private ToolStripMenuItem refreshToolStripMenuItem;
+		private Button wCopyRailBtn;
 	}
 }

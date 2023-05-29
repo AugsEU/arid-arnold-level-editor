@@ -62,6 +62,8 @@ namespace AridArnoldEditor
 			kSequenceDoor,
 			kLevelLock,
 			kShopDoor,
+			kItemStand,
+			kGravityOrb,
 			kUtilityClassEnd
 		}
 
@@ -162,6 +164,12 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kShopDoor:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.ShopDoor);
+					break;
+				case EntityClass.kItemStand:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.ItemStand);
+					break;
+				case EntityClass.kGravityOrb:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.OrbBase);
 					break;
 				default:
 					mImage = new Bitmap(16, 16);

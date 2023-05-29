@@ -1,4 +1,6 @@
-﻿namespace AridArnoldEditor
+﻿using System.Windows.Forms.Design;
+
+namespace AridArnoldEditor
 {
 	class RailNode
 	{
@@ -13,6 +15,14 @@
 			Speed = 1;
 			WaitTime = 0;
 			Flags = 0;
+		}
+
+		public RailNode(RailNode other)
+		{
+			Point = other.Point;
+			Speed = other.Speed;
+			WaitTime = other.WaitTime;
+			Flags = other.Flags;
 		}
 	}
 
@@ -29,6 +39,19 @@
 			mNodes = new List<RailNode>();
 			mSize = 1;
 			mFlags = 0;
+		}
+
+		public LinearRail(LinearRail otherRail)
+		{
+			mNodes = new List<RailNode>();
+			for(int i = 0; i < otherRail.mNodes.Count; i++)
+			{
+				RailNode otherNode = new RailNode(otherRail.mNodes[i]);
+				mNodes.Add(otherNode);
+			}
+
+			mSize = otherRail.mSize;
+			mFlags = otherRail.mFlags;
 		}
 
 		public LinearRail(BinaryReader br, int fileVer)
@@ -101,6 +124,17 @@
 					mNodes.RemoveAt(i);
 					break;
 				}
+			}
+		}
+
+		public void MoveRail(Point delta)
+		{
+			for(int i = 0; i < mNodes.Count; i++)
+			{
+				Point oldPos = mNodes[i].Point;
+				oldPos.X += delta.X;
+				oldPos.Y += delta.Y;
+				mNodes[i].Point = oldPos;
 			}
 		}
 

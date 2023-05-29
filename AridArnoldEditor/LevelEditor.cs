@@ -19,6 +19,7 @@ namespace AridArnoldEditor
 		{
 			None,
 			AddingRail,
+			CopyRail,
 			AddingNode,
 			MovingNode,
 			AddingEntity,
@@ -266,6 +267,11 @@ namespace AridArnoldEditor
 		private void wAddNode_Click(object sender, EventArgs e)
 		{
 			SetAction(FormActionState.AddingNode);
+		}
+
+		private void wCopyRailBtn_Click(object sender, EventArgs e)
+		{
+			SetAction(FormActionState.CopyRail);
 		}
 
 		private void wRemoveNodeBtn_Click(object sender, EventArgs e)
@@ -722,6 +728,17 @@ namespace AridArnoldEditor
 						mAuxData.LinearRails.Add(newRail);
 					}
 					break;
+				case FormActionState.CopyRail:
+					if (tileEmpty)
+					{
+						LinearRail newRail = new LinearRail(mAuxData.LinearRails[mSelectedRailIdx]);
+						Point delta = tile;
+						delta.X -= mSelectedTileCoord.X;
+						delta.Y -= mSelectedTileCoord.Y;
+						newRail.MoveRail(delta);
+						mAuxData.LinearRails.Add(newRail);
+					}
+					break;
 				case FormActionState.AddingNode:
 					if (tileEmpty)
 					{
@@ -804,6 +821,8 @@ namespace AridArnoldEditor
 					return "None";
 				case FormActionState.AddingRail:
 					return "Addding Rail...";
+				case FormActionState.CopyRail:
+					return "Copying Rail...";
 				case FormActionState.AddingNode:
 					return "Adding Node...";
 				case FormActionState.MovingNode:
@@ -835,5 +854,6 @@ namespace AridArnoldEditor
 		}
 
 		#endregion rUtility
+
 	}
 }
