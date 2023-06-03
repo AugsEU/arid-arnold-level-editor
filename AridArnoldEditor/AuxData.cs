@@ -185,7 +185,6 @@ namespace AridArnoldEditor
 
 		public void Clear()
 		{
-			mMetaData.Clear();
 			LinearRails.Clear();
 			Entities.Clear();
 		}

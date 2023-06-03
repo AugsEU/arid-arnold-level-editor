@@ -64,6 +64,7 @@ namespace AridArnoldEditor
 			kShopDoor,
 			kItemStand,
 			kGravityOrb,
+			kGravityTile,
 			kUtilityClassEnd
 		}
 
@@ -170,6 +171,9 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kGravityOrb:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.OrbBase);
+					break;
+				case EntityClass.kGravityTile:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.GravityTile);
 					break;
 				default:
 					mImage = new Bitmap(16, 16);
