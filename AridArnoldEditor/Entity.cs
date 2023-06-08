@@ -47,6 +47,7 @@ namespace AridArnoldEditor
 			kRoboto,
 			kFutronGun,
 			kFutronRocket,
+			kFarry,
 			kEnemyClassEnd,
 
 			//NPC
@@ -151,6 +152,9 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kElectrent:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.electrent);
+					break;
+				case EntityClass.kFarry:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Farry);
 					break;
 
 				// Utility

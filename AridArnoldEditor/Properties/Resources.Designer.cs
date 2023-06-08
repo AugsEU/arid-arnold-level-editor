@@ -133,6 +133,16 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Farry {
+            get {
+                object obj = ResourceManager.GetObject("Farry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FutronGun {
             get {
                 object obj = ResourceManager.GetObject("FutronGun", resourceCulture);
