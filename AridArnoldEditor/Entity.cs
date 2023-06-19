@@ -66,6 +66,7 @@ namespace AridArnoldEditor
 			kItemStand,
 			kGravityOrb,
 			kGravityTile,
+			kTimeMachine,
 			kUtilityClassEnd
 		}
 
@@ -178,6 +179,9 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kGravityTile:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.GravityTile);
+					break;
+				case EntityClass.kTimeMachine:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.TimeMachine);
 					break;
 				default:
 					mImage = new Bitmap(16, 16);

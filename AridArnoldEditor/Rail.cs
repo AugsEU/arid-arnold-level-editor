@@ -12,8 +12,8 @@ namespace AridArnoldEditor
 		public RailNode(Point point)
 		{
 			Point = point;
-			Speed = 1;
-			WaitTime = 0;
+			Speed = 4;
+			WaitTime = 4;
 			Flags = 0;
 		}
 
@@ -37,7 +37,7 @@ namespace AridArnoldEditor
 		public LinearRail()
 		{
 			mNodes = new List<RailNode>();
-			mSize = 1;
+			mSize = 2;
 			mFlags = 0;
 		}
 

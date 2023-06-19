@@ -233,6 +233,16 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TimeMachine {
+            get {
+                object obj = ResourceManager.GetObject("TimeMachine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trundle {
             get {
                 object obj = ResourceManager.GetObject("trundle", resourceCulture);
