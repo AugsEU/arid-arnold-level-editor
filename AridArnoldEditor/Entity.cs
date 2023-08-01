@@ -67,6 +67,7 @@ namespace AridArnoldEditor
 			kGravityOrb,
 			kGravityTile,
 			kTimeMachine,
+			kPlantPot,
 			kUtilityClassEnd
 		}
 
@@ -182,6 +183,9 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kTimeMachine:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.TimeMachine);
+					break;
+				case EntityClass.kPlantPot:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.PotWinter);
 					break;
 				default:
 					mImage = new Bitmap(16, 16);
