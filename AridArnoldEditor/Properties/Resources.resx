@@ -160,8 +160,14 @@
   <data name="LevelLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LevelLock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Mamal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mamal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="OrbBase" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OrbBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PillarBase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PillarBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PotWinter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PotWinter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -48,6 +48,7 @@ namespace AridArnoldEditor
 			kFutronGun,
 			kFutronRocket,
 			kFarry,
+			kMamal,
 			kEnemyClassEnd,
 
 			//NPC
@@ -68,6 +69,7 @@ namespace AridArnoldEditor
 			kGravityTile,
 			kTimeMachine,
 			kPlantPot,
+			kPillarPot,
 			kUtilityClassEnd
 		}
 
@@ -138,6 +140,9 @@ namespace AridArnoldEditor
 				case EntityClass.kFutronRocket:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.FutronRocket);
 					break;
+				case EntityClass.kMamal:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Mamal);
+					break;
 
 				// NPC
 				case EntityClass.kBarbara:
@@ -186,6 +191,9 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kPlantPot:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.PotWinter);
+					break;
+				case EntityClass.kPillarPot:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.PillarBase);
 					break;
 				default:
 					mImage = new Bitmap(16, 16);

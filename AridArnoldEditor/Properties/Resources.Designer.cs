@@ -203,9 +203,29 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mamal {
+            get {
+                object obj = ResourceManager.GetObject("Mamal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OrbBase {
             get {
                 object obj = ResourceManager.GetObject("OrbBase", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PillarBase {
+            get {
+                object obj = ResourceManager.GetObject("PillarBase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

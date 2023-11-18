@@ -513,6 +513,7 @@
 			// 
 			wEntityIP6.Location = new Point(145, 235);
 			wEntityIP6.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP6.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP6.Name = "wEntityIP6";
 			wEntityIP6.Size = new Size(60, 23);
 			wEntityIP6.TabIndex = 36;
@@ -521,6 +522,7 @@
 			// 
 			wEntityIP4.Location = new Point(145, 206);
 			wEntityIP4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP4.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP4.Name = "wEntityIP4";
 			wEntityIP4.Size = new Size(60, 23);
 			wEntityIP4.TabIndex = 35;
@@ -529,6 +531,7 @@
 			// 
 			wEntityIP2.Location = new Point(145, 177);
 			wEntityIP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP2.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP2.Name = "wEntityIP2";
 			wEntityIP2.Size = new Size(60, 23);
 			wEntityIP2.TabIndex = 34;
@@ -537,6 +540,7 @@
 			// 
 			wEntityIP0.Location = new Point(145, 148);
 			wEntityIP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP0.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP0.Name = "wEntityIP0";
 			wEntityIP0.Size = new Size(60, 23);
 			wEntityIP0.TabIndex = 33;
@@ -546,6 +550,7 @@
 			wEntityFP7.DecimalPlaces = 2;
 			wEntityFP7.Location = new Point(73, 235);
 			wEntityFP7.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP7.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP7.Name = "wEntityFP7";
 			wEntityFP7.Size = new Size(60, 23);
 			wEntityFP7.TabIndex = 32;
@@ -555,6 +560,7 @@
 			wEntityFP5.DecimalPlaces = 2;
 			wEntityFP5.Location = new Point(73, 206);
 			wEntityFP5.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP5.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP5.Name = "wEntityFP5";
 			wEntityFP5.Size = new Size(60, 23);
 			wEntityFP5.TabIndex = 31;
@@ -564,6 +570,7 @@
 			wEntityFP3.DecimalPlaces = 2;
 			wEntityFP3.Location = new Point(73, 177);
 			wEntityFP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP3.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP3.Name = "wEntityFP3";
 			wEntityFP3.Size = new Size(60, 23);
 			wEntityFP3.TabIndex = 30;
@@ -573,6 +580,7 @@
 			wEntityFP1.DecimalPlaces = 2;
 			wEntityFP1.Location = new Point(73, 148);
 			wEntityFP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP1.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP1.Name = "wEntityFP1";
 			wEntityFP1.Size = new Size(60, 23);
 			wEntityFP1.TabIndex = 29;
@@ -581,6 +589,7 @@
 			// 
 			wEntityIP7.Location = new Point(211, 235);
 			wEntityIP7.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP7.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP7.Name = "wEntityIP7";
 			wEntityIP7.Size = new Size(60, 23);
 			wEntityIP7.TabIndex = 28;
@@ -589,6 +598,7 @@
 			// 
 			wEntityIP5.Location = new Point(211, 206);
 			wEntityIP5.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP5.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP5.Name = "wEntityIP5";
 			wEntityIP5.Size = new Size(60, 23);
 			wEntityIP5.TabIndex = 27;
@@ -597,6 +607,7 @@
 			// 
 			wEntityIP3.Location = new Point(211, 177);
 			wEntityIP3.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP3.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP3.Name = "wEntityIP3";
 			wEntityIP3.Size = new Size(60, 23);
 			wEntityIP3.TabIndex = 26;
@@ -605,6 +616,7 @@
 			// 
 			wEntityIP1.Location = new Point(211, 148);
 			wEntityIP1.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityIP1.Minimum = new decimal(new int[] { 1000000, 0, 0, int.MinValue });
 			wEntityIP1.Name = "wEntityIP1";
 			wEntityIP1.Size = new Size(60, 23);
 			wEntityIP1.TabIndex = 25;
@@ -614,6 +626,7 @@
 			wEntityFP6.DecimalPlaces = 2;
 			wEntityFP6.Location = new Point(7, 235);
 			wEntityFP6.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP6.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP6.Name = "wEntityFP6";
 			wEntityFP6.Size = new Size(60, 23);
 			wEntityFP6.TabIndex = 24;
@@ -623,6 +636,7 @@
 			wEntityFP4.DecimalPlaces = 2;
 			wEntityFP4.Location = new Point(7, 206);
 			wEntityFP4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP4.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP4.Name = "wEntityFP4";
 			wEntityFP4.Size = new Size(60, 23);
 			wEntityFP4.TabIndex = 23;
@@ -632,6 +646,7 @@
 			wEntityFP2.DecimalPlaces = 2;
 			wEntityFP2.Location = new Point(7, 177);
 			wEntityFP2.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP2.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP2.Name = "wEntityFP2";
 			wEntityFP2.Size = new Size(60, 23);
 			wEntityFP2.TabIndex = 22;
@@ -641,6 +656,7 @@
 			wEntityFP0.DecimalPlaces = 2;
 			wEntityFP0.Location = new Point(7, 148);
 			wEntityFP0.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+			wEntityFP0.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
 			wEntityFP0.Name = "wEntityFP0";
 			wEntityFP0.Size = new Size(60, 23);
 			wEntityFP0.TabIndex = 21;
@@ -707,7 +723,7 @@
 			// 
 			wEntityClassCombo.DropDownStyle = ComboBoxStyle.DropDownList;
 			wEntityClassCombo.FormattingEnabled = true;
-			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Farry", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor", "LevelLock", "ShopDoor", "ItemStand", "GravityOrb", "GravityTile", "TimeMachine", "PlantPot" });
+			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Farry", "Mamal", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "ArnoldSpawner", "SequenceDoor", "LevelLock", "ShopDoor", "ItemStand", "GravityOrb", "GravityTile", "TimeMachine", "PlantPot", "PillarPot" });
 			wEntityClassCombo.Location = new Point(57, 34);
 			wEntityClassCombo.Name = "wEntityClassCombo";
 			wEntityClassCombo.Size = new Size(214, 23);
