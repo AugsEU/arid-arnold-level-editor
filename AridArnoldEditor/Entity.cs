@@ -49,6 +49,7 @@ namespace AridArnoldEditor
 			kFutronRocket,
 			kFarry,
 			kMamal,
+			kPapyras,
 			kEnemyClassEnd,
 
 			//NPC
@@ -142,6 +143,9 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kMamal:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Mamal);
+					break;
+				case EntityClass.kPapyras:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Papyras);
 					break;
 
 				// NPC

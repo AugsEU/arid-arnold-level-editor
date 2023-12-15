@@ -166,6 +166,9 @@
   <data name="OrbBase" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OrbBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Papyras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Papyras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PillarBase" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PillarBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
