@@ -50,6 +50,7 @@ namespace AridArnoldEditor
 			kFarry,
 			kMamal,
 			kPapyras,
+			kRanger,
 			kEnemyClassEnd,
 
 			//NPC
@@ -58,6 +59,8 @@ namespace AridArnoldEditor
 			kDok,
 			kBickDogel,
 			kElectrent,
+			kBoilerMan,
+			kBossMan,
 			kNPCClassEnd,
 
 			// Utility
@@ -116,6 +119,24 @@ namespace AridArnoldEditor
 			LoadImage();
 		}
 
+		public Entity(Entity other)
+		{
+			mFloatParams = new float[8];
+			mIntParams = new int[8];
+			Array.Copy(other.mFloatParams, mFloatParams, other.mFloatParams.Length);
+			Array.Copy(other.mIntParams, mIntParams, other.mIntParams.Length);
+
+			mPosition = other.mPosition;
+			mEntityClass = other.mEntityClass;
+			mStartDirection = other.mStartDirection;
+			mGravityDirection = other.mGravityDirection;
+
+			mTalkText = other.mTalkText;
+			mHeckleText = other.mHeckleText;
+
+			mImage = other.mImage;
+		}
+
 		void LoadImage()
 		{
 			switch (mEntityClass)
@@ -147,6 +168,9 @@ namespace AridArnoldEditor
 				case EntityClass.kPapyras:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Papyras);
 					break;
+				case EntityClass.kRanger:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Ranger);
+					break;
 
 				// NPC
 				case EntityClass.kBarbara:
@@ -166,6 +190,12 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kFarry:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Farry);
+					break;
+				case EntityClass.kBoilerMan:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.BoilerMan);
+					break;
+				case EntityClass.kBossMan:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.BossMan);
 					break;
 
 				// Utility
@@ -227,31 +257,14 @@ namespace AridArnoldEditor
 
 		string GetEntityName()
 		{
-			switch (mEntityClass)
+			string entityName = mEntityClass.ToString();
+
+			if (entityName.StartsWith("k"))
 			{
-				case EntityClass.kArnold:
-					return "Arnold";
-				case EntityClass.kAndrold:
-					return "Androld";
-				case EntityClass.kTrundle:
-					return "Trundle";
-				case EntityClass.kRoboto:
-					return "Roboto";
-				case EntityClass.kBarbara:
-					return "Barbara";
-				case EntityClass.kZippy:
-					return "Zippy";
-				case EntityClass.kDok:
-					return "Dok";
-				case EntityClass.kBickDogel:
-					return "BickDogel";
-				case EntityClass.kElectrent:
-					return "Electrent";
-				default:
-					break;
+				entityName = entityName.Substring(1);
 			}
 
-			throw new NotImplementedException();
+			return entityName;
 		}
 
 

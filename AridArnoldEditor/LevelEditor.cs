@@ -23,7 +23,8 @@ namespace AridArnoldEditor
 			AddingNode,
 			MovingNode,
 			AddingEntity,
-			MovingEntity
+			MovingEntity,
+			CopyEntity
 		}
 
 		#endregion rTypes
@@ -272,6 +273,11 @@ namespace AridArnoldEditor
 		private void wCopyRailBtn_Click(object sender, EventArgs e)
 		{
 			SetAction(FormActionState.CopyRail);
+		}
+
+		private void wCopyEntityButton_Click(object sender, EventArgs e)
+		{
+			SetAction(FormActionState.CopyEntity);
 		}
 
 		private void wRemoveNodeBtn_Click(object sender, EventArgs e)
@@ -739,6 +745,14 @@ namespace AridArnoldEditor
 						mAuxData.LinearRails.Add(newRail);
 					}
 					break;
+				case FormActionState.CopyEntity:
+					if (tileEmpty && mSelectedEntityIdx != -1)
+					{
+						Entity newEntity = new Entity(mAuxData.Entities[mSelectedEntityIdx]);
+						newEntity.mPosition = tile;
+						mAuxData.Entities.Add(newEntity);
+					}
+					break;
 				case FormActionState.AddingNode:
 					if (tileEmpty)
 					{
@@ -831,6 +845,8 @@ namespace AridArnoldEditor
 					return "Adding Entity...";
 				case FormActionState.MovingEntity:
 					return "Moving Entity...";
+				case FormActionState.CopyEntity:
+					return "Copying Entity...";
 				default:
 					break;
 			}
@@ -854,6 +870,5 @@ namespace AridArnoldEditor
 		}
 
 		#endregion rUtility
-
 	}
 }

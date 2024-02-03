@@ -130,6 +130,12 @@
   <data name="barbara" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Idle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BoilerMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BoilerMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BossMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BossMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,6 +180,9 @@
   </data>
   <data name="PotWinter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PotWinter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ranger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ranger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="roboto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roboto-walk0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -103,6 +103,26 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BoilerMan {
+            get {
+                object obj = ResourceManager.GetObject("BoilerMan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BossMan {
+            get {
+                object obj = ResourceManager.GetObject("BossMan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dok {
             get {
                 object obj = ResourceManager.GetObject("dok", resourceCulture);
@@ -246,6 +266,16 @@ namespace AridArnoldEditor.Properties {
         internal static System.Drawing.Bitmap PotWinter {
             get {
                 object obj = ResourceManager.GetObject("PotWinter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ranger {
+            get {
+                object obj = ResourceManager.GetObject("Ranger", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
