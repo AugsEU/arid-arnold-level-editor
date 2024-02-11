@@ -61,6 +61,8 @@ namespace AridArnoldEditor
 			kElectrent,
 			kBoilerMan,
 			kBossMan,
+			kBooker,
+			kScholar,
 			kNPCClassEnd,
 
 			// Utility
@@ -196,6 +198,12 @@ namespace AridArnoldEditor
 					break;
 				case EntityClass.kBossMan:
 					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.BossMan);
+					break;
+				case EntityClass.kBooker:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Booker);
+					break;
+				case EntityClass.kScholar:
+					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Scholar);
 					break;
 
 				// Utility
