@@ -63,9 +63,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap androld {
+        internal static System.Drawing.Bitmap Androld {
             get {
-                object obj = ResourceManager.GetObject("androld", resourceCulture);
+                object obj = ResourceManager.GetObject("Androld", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arnold {
+        internal static System.Drawing.Bitmap Arnold {
             get {
-                object obj = ResourceManager.GetObject("arnold", resourceCulture);
+                object obj = ResourceManager.GetObject("Arnold", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arnoldSpawner {
+        internal static System.Drawing.Bitmap ArnoldSpawner {
             get {
-                object obj = ResourceManager.GetObject("arnoldSpawner", resourceCulture);
+                object obj = ResourceManager.GetObject("ArnoldSpawner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,19 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap barbara {
+        internal static System.Drawing.Bitmap Barbara {
             get {
-                object obj = ResourceManager.GetObject("barbara", resourceCulture);
+                object obj = ResourceManager.GetObject("Barbara", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BickDogel {
+            get {
+                object obj = ResourceManager.GetObject("BickDogel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dok {
+        internal static System.Drawing.Bitmap Dok {
             get {
-                object obj = ResourceManager.GetObject("dok", resourceCulture);
+                object obj = ResourceManager.GetObject("Dok", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,19 +153,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Door {
+        internal static System.Drawing.Bitmap Electrent {
             get {
-                object obj = ResourceManager.GetObject("Door", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap electrent {
-            get {
-                object obj = ResourceManager.GetObject("electrent", resourceCulture);
+                object obj = ResourceManager.GetObject("Electrent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GravityTile {
+        internal static System.Drawing.Bitmap GravityOrb {
             get {
-                object obj = ResourceManager.GetObject("GravityTile", resourceCulture);
+                object obj = ResourceManager.GetObject("GravityOrb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap grillvogel {
+        internal static System.Drawing.Bitmap GravityTile {
             get {
-                object obj = ResourceManager.GetObject("grillvogel", resourceCulture);
+                object obj = ResourceManager.GetObject("GravityTile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,16 +243,6 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OrbBase {
-            get {
-                object obj = ResourceManager.GetObject("OrbBase", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Papyras {
             get {
                 object obj = ResourceManager.GetObject("Papyras", resourceCulture);
@@ -263,9 +253,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PillarBase {
+        internal static System.Drawing.Bitmap PillarPot {
             get {
-                object obj = ResourceManager.GetObject("PillarBase", resourceCulture);
+                object obj = ResourceManager.GetObject("PillarPot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +263,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PotWinter {
+        internal static System.Drawing.Bitmap PlantPot {
             get {
-                object obj = ResourceManager.GetObject("PotWinter", resourceCulture);
+                object obj = ResourceManager.GetObject("PlantPot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +283,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap roboto {
+        internal static System.Drawing.Bitmap Roboto {
             get {
-                object obj = ResourceManager.GetObject("roboto", resourceCulture);
+                object obj = ResourceManager.GetObject("Roboto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +296,16 @@ namespace AridArnoldEditor.Properties {
         internal static System.Drawing.Bitmap Scholar {
             get {
                 object obj = ResourceManager.GetObject("Scholar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SequenceDoor {
+            get {
+                object obj = ResourceManager.GetObject("SequenceDoor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap trundle {
+        internal static System.Drawing.Bitmap Treey {
             get {
-                object obj = ResourceManager.GetObject("trundle", resourceCulture);
+                object obj = ResourceManager.GetObject("Treey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +343,19 @@ namespace AridArnoldEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap zippy {
+        internal static System.Drawing.Bitmap Trundle {
             get {
-                object obj = ResourceManager.GetObject("zippy", resourceCulture);
+                object obj = ResourceManager.GetObject("Trundle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zippy {
+            get {
+                object obj = ResourceManager.GetObject("Zippy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

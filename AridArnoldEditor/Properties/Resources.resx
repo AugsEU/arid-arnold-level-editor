@@ -118,17 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="androld" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Androld" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\androld-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arnold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Arnold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arnold-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arnoldSpawner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArnoldSpawner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arnoldSpawner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barbara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Barbara" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Idle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BickDogel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grillvogel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BoilerMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BoilerMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,13 +142,10 @@
   <data name="BossMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BossMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Dok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Door" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="electrent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Electrent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\electrent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Farry" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -157,11 +157,11 @@
   <data name="FutronRocket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FutronRocket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GravityOrb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrbBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GravityTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GravityTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grillvogel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grillvogel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ItemStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ItemStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,26 +172,26 @@
   <data name="Mamal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mamal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OrbBase" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OrbBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Papyras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Papyras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PillarBase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PillarPot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PillarBase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PotWinter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PlantPot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PotWinter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ranger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ranger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="roboto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Roboto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roboto-walk0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Scholar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scholar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SequenceDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShopDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShopDoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,10 +199,13 @@
   <data name="TimeMachine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TimeMachine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Treey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Treey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trundle-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zippy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Zippy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zippy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

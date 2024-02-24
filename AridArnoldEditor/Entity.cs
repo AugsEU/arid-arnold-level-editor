@@ -63,6 +63,7 @@ namespace AridArnoldEditor
 			kBossMan,
 			kBooker,
 			kScholar,
+			kTreey,
 			kNPCClassEnd,
 
 			// Utility
@@ -107,7 +108,7 @@ namespace AridArnoldEditor
 			mTalkText = "";
 			mHeckleText = "";
 
-			LoadImage();
+			mImage = LoadImage();
 		}
 
 		public Entity(BinaryReader br, int fileVer)
@@ -118,7 +119,7 @@ namespace AridArnoldEditor
 			mHeckleText = "";
 
 			ReadEntity(br, fileVer);
-			LoadImage();
+			mImage = LoadImage();
 		}
 
 		public Entity(Entity other)
@@ -139,108 +140,16 @@ namespace AridArnoldEditor
 			mImage = other.mImage;
 		}
 
-		void LoadImage()
+		Image LoadImage()
 		{
-			switch (mEntityClass)
+			string bmpName = Enum.GetName(typeof(EntityClass), mEntityClass);
+			Bitmap bmp = (Bitmap)AridArnoldEditor.Properties.Resources.ResourceManager.GetObject(bmpName.Substring(1));
+
+			if(bmp is null)
 			{
-				// Player
-				case EntityClass.kArnold:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.arnold);
-					break;
-				case EntityClass.kAndrold:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.androld);
-					break;
-
-				// Enemy
-				case EntityClass.kTrundle:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.trundle);
-					break;
-				case EntityClass.kRoboto:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.roboto);
-					break;
-				case EntityClass.kFutronGun:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.FutronGun);
-					break;
-				case EntityClass.kFutronRocket:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.FutronRocket);
-					break;
-				case EntityClass.kMamal:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Mamal);
-					break;
-				case EntityClass.kPapyras:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Papyras);
-					break;
-				case EntityClass.kRanger:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Ranger);
-					break;
-
-				// NPC
-				case EntityClass.kBarbara:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.barbara);
-					break;
-				case EntityClass.kZippy:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.zippy);
-					break;
-				case EntityClass.kDok:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.dok);
-					break;
-				case EntityClass.kBickDogel:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.grillvogel);
-					break;
-				case EntityClass.kElectrent:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.electrent);
-					break;
-				case EntityClass.kFarry:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Farry);
-					break;
-				case EntityClass.kBoilerMan:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.BoilerMan);
-					break;
-				case EntityClass.kBossMan:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.BossMan);
-					break;
-				case EntityClass.kBooker:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Booker);
-					break;
-				case EntityClass.kScholar:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Scholar);
-					break;
-
-				// Utility
-				case EntityClass.kArnoldSpawner:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.arnoldSpawner);
-					break;
-				case EntityClass.kSequenceDoor:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.Door);
-					break;
-				case EntityClass.kLevelLock:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.LevelLock);
-					break;
-				case EntityClass.kShopDoor:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.ShopDoor);
-					break;
-				case EntityClass.kItemStand:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.ItemStand);
-					break;
-				case EntityClass.kGravityOrb:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.OrbBase);
-					break;
-				case EntityClass.kGravityTile:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.GravityTile);
-					break;
-				case EntityClass.kTimeMachine:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.TimeMachine);
-					break;
-				case EntityClass.kPlantPot:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.PotWinter);
-					break;
-				case EntityClass.kPillarPot:
-					mImage = new Bitmap(AridArnoldEditor.Properties.Resources.PillarBase);
-					break;
-				default:
-					mImage = new Bitmap(16, 16);
-					break;
+				throw new Exception("ENTITY IS NULL " + bmpName);
 			}
+			return new Bitmap(bmp);
 		}
 
 		public void SetClass(EntityClass theClass)
@@ -248,7 +157,7 @@ namespace AridArnoldEditor
 			if (theClass != mEntityClass)
 			{
 				mEntityClass = theClass;
-				LoadImage();
+				mImage = LoadImage();
 
 				if (GetEntityType() == EntityType.kSimpleNPC)
 				{
