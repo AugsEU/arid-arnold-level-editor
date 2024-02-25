@@ -10,7 +10,7 @@ namespace AridArnoldEditor
 	{
 		#region rConstants
 
-		const int FILE_VER = 4;
+		const int FILE_VER = 5;
 
 		#endregion rConstants
 

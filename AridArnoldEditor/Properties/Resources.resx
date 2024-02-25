@@ -127,26 +127,8 @@
   <data name="ArnoldSpawner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arnoldSpawner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Barbara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Idle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BickDogel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grillvogel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BoilerMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BoilerMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Booker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Booker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BossMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BossMan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Electrent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\electrent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Farry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Farry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,25 +169,19 @@
   <data name="Roboto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roboto-walk0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Scholar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Scholar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SequenceDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShopDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShopDoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SimpleNPC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Booker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TimeMachine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TimeMachine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Treey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Treey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Trundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trundle-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Zippy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zippy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

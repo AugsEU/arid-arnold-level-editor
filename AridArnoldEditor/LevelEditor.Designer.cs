@@ -59,6 +59,7 @@
 			wStatusPanel = new Panel();
 			wStatusText = new Label();
 			wSNPCPanel = new Panel();
+			wNPCTalkPath = new TextBox();
 			wNPCHeckleTxt = new TextBox();
 			wNPCTalkTxt = new TextBox();
 			label3 = new Label();
@@ -110,6 +111,7 @@
 			label14 = new Label();
 			label15 = new Label();
 			label16 = new Label();
+			label17 = new Label();
 			wMenuStrip.SuspendLayout();
 			wRailPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).BeginInit();
@@ -420,6 +422,8 @@
 			// wSNPCPanel
 			// 
 			wSNPCPanel.BorderStyle = BorderStyle.Fixed3D;
+			wSNPCPanel.Controls.Add(label17);
+			wSNPCPanel.Controls.Add(wNPCTalkPath);
 			wSNPCPanel.Controls.Add(wNPCHeckleTxt);
 			wSNPCPanel.Controls.Add(wNPCTalkTxt);
 			wSNPCPanel.Controls.Add(label3);
@@ -427,12 +431,20 @@
 			wSNPCPanel.Controls.Add(label7);
 			wSNPCPanel.Location = new Point(6, 300);
 			wSNPCPanel.Name = "wSNPCPanel";
-			wSNPCPanel.Size = new Size(265, 111);
+			wSNPCPanel.Size = new Size(265, 154);
 			wSNPCPanel.TabIndex = 17;
+			// 
+			// wNPCTalkPath
+			// 
+			wNPCTalkPath.Location = new Point(70, 56);
+			wNPCTalkPath.Name = "wNPCTalkPath";
+			wNPCTalkPath.Size = new Size(176, 23);
+			wNPCTalkPath.TabIndex = 18;
+			wNPCTalkPath.TextChanged += wNPCTalkPath_TextChanged;
 			// 
 			// wNPCHeckleTxt
 			// 
-			wNPCHeckleTxt.Location = new Point(70, 71);
+			wNPCHeckleTxt.Location = new Point(70, 114);
 			wNPCHeckleTxt.Name = "wNPCHeckleTxt";
 			wNPCHeckleTxt.Size = new Size(176, 23);
 			wNPCHeckleTxt.TabIndex = 16;
@@ -440,7 +452,7 @@
 			// 
 			// wNPCTalkTxt
 			// 
-			wNPCTalkTxt.Location = new Point(70, 43);
+			wNPCTalkTxt.Location = new Point(70, 85);
 			wNPCTalkTxt.Name = "wNPCTalkTxt";
 			wNPCTalkTxt.Size = new Size(176, 23);
 			wNPCTalkTxt.TabIndex = 15;
@@ -449,7 +461,7 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new Point(24, 46);
+			label3.Location = new Point(24, 88);
 			label3.Name = "label3";
 			label3.Size = new Size(30, 15);
 			label3.TabIndex = 13;
@@ -458,7 +470,7 @@
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new Point(14, 74);
+			label6.Location = new Point(13, 114);
 			label6.Name = "label6";
 			label6.Size = new Size(46, 15);
 			label6.TabIndex = 3;
@@ -508,7 +520,7 @@
 			wEntityPanel.Controls.Add(label10);
 			wEntityPanel.Location = new Point(854, 27);
 			wEntityPanel.Name = "wEntityPanel";
-			wEntityPanel.Size = new Size(278, 422);
+			wEntityPanel.Size = new Size(278, 470);
 			wEntityPanel.TabIndex = 17;
 			// 
 			// wCopyEntityButton
@@ -735,7 +747,7 @@
 			// 
 			wEntityClassCombo.DropDownStyle = ComboBoxStyle.DropDownList;
 			wEntityClassCombo.FormattingEnabled = true;
-			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Farry", "Mamal", "Papyras", "Ranger", "Barbara", "Zippy", "Dok", "BickDogel", "Electrent", "BoilerMan", "BossMan", "Booker", "Scholar", "Treey", "ArnoldSpawner", "SequenceDoor", "LevelLock", "ShopDoor", "ItemStand", "GravityOrb", "GravityTile", "TimeMachine", "PlantPot", "PillarPot" });
+			wEntityClassCombo.Items.AddRange(new object[] { "Arnold", "Androld", "Trundle", "Roboto", "FutronGun", "FutronRocket", "Farry", "Mamal", "Papyras", "Ranger", "SimpleTalkNPC", "BickDogel", "ArnoldSpawner", "SequenceDoor", "LevelLock", "ShopDoor", "ItemStand", "GravityOrb", "GravityTile", "TimeMachine", "PlantPot", "PillarPot" });
 			wEntityClassCombo.Location = new Point(57, 34);
 			wEntityClassCombo.Name = "wEntityClassCombo";
 			wEntityClassCombo.Size = new Size(214, 23);
@@ -948,6 +960,15 @@
 			label16.Text = "Meta";
 			label16.TextAlign = ContentAlignment.MiddleCenter;
 			// 
+			// label17
+			// 
+			label17.AutoSize = true;
+			label17.Location = new Point(24, 59);
+			label17.Name = "label17";
+			label17.Size = new Size(34, 15);
+			label17.TabIndex = 19;
+			label17.Text = "Path:";
+			// 
 			// LevelEditor
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1089,5 +1110,7 @@
 		private ToolStripMenuItem refreshToolStripMenuItem;
 		private Button wCopyRailBtn;
 		private Button wCopyEntityButton;
+		private TextBox wNPCTalkPath;
+		private Label label17;
 	}
 }

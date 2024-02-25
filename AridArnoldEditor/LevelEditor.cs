@@ -404,17 +404,19 @@ namespace AridArnoldEditor
 					mIntParamsUpDown[i].Value = (decimal)selectedEntity.mIntParams[i];
 				}
 
-				if (selectedEntity.GetEntityType() == Entity.EntityType.kSimpleNPC)
+				if (selectedEntity.mEntityClass == Entity.EntityClass.kSimpleNPC)
 				{
 					wSNPCPanel.Enabled = true;
 					wNPCHeckleTxt.Text = selectedEntity.mHeckleText;
 					wNPCTalkTxt.Text = selectedEntity.mTalkText;
+					wNPCTalkPath.Text = selectedEntity.mNPCPath;
 				}
 				else
 				{
 					wSNPCPanel.Enabled = false;
 					wNPCHeckleTxt.Text = "";
 					wNPCTalkTxt.Text = "";
+					wNPCTalkPath.Text = "";
 				}
 			}
 			else
@@ -518,6 +520,18 @@ namespace AridArnoldEditor
 			if (selectedEntity != null)
 			{
 				selectedEntity.mHeckleText = wNPCHeckleTxt.Text;
+
+				InvalidateAll();
+				UpdateEntityPanel();
+			}
+		}
+
+		private void wNPCTalkPath_TextChanged(object sender, EventArgs e)
+		{
+			Entity? selectedEntity = GetSelectedEntity();
+			if (selectedEntity != null)
+			{
+				selectedEntity.mNPCPath = wNPCTalkPath.Text;
 
 				InvalidateAll();
 				UpdateEntityPanel();

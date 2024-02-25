@@ -23,12 +23,6 @@ namespace AridArnoldEditor
 
 	class Entity
 	{
-		public enum EntityType
-		{
-			kBasic,
-			kSimpleNPC
-		}
-
 		public const int kClassSpacing = 2048;
 		public const int kPlayerClassStart = 0 * kClassSpacing;
 		public const int kEnemyClassStart  = 1 * kClassSpacing;
@@ -54,16 +48,8 @@ namespace AridArnoldEditor
 			kEnemyClassEnd,
 
 			//NPC
-			kBarbara = kNPCClassStart,
-			kZippy,
-			kDok,
+			kSimpleNPC = kNPCClassStart,
 			kBickDogel,
-			kElectrent,
-			kBoilerMan,
-			kBossMan,
-			kBooker,
-			kScholar,
-			kTreey,
 			kNPCClassEnd,
 
 			// Utility
@@ -92,6 +78,7 @@ namespace AridArnoldEditor
 		public int[] mIntParams;
 
 		// Only NPC data
+		public string mNPCPath;
 		public string mTalkText;
 		public string mHeckleText;
 
@@ -159,7 +146,7 @@ namespace AridArnoldEditor
 				mEntityClass = theClass;
 				mImage = LoadImage();
 
-				if (GetEntityType() == EntityType.kSimpleNPC)
+				if (theClass == EntityClass.kSimpleNPC)
 				{
 					SetDefaultText();
 				}
@@ -168,8 +155,10 @@ namespace AridArnoldEditor
 
 		void SetDefaultText()
 		{
-			mTalkText = "NPC." + GetEntityName() + ".Talk";
-			mHeckleText = "NPC." + GetEntityName() + ".Heckle";
+			string baseID = mNPCPath.Replace("/", ".");
+			baseID = baseID.Replace("\\", ".");
+			mTalkText = baseID + ".Talk";
+			mHeckleText = baseID + ".Heckle";
 		}
 
 		string GetEntityName()
@@ -182,22 +171,6 @@ namespace AridArnoldEditor
 			}
 
 			return entityName;
-		}
-
-
-		public EntityType GetEntityType()
-		{
-			if((int)mEntityClass >= kNPCClassStart && (int)mEntityClass <= (int)EntityClass.kNPCClassEnd)
-			{
-				if(mEntityClass == EntityClass.kBickDogel)
-				{
-					// Special exception
-					return EntityType.kBasic;
-				}
-
-				return EntityType.kSimpleNPC;
-			}
-			return EntityType.kBasic;
 		}
 
 		public bool ValidateEntity()
@@ -244,7 +217,7 @@ namespace AridArnoldEditor
 				bw.Write(mIntParams[i]);
 			}
 
-			if (GetEntityType() == EntityType.kSimpleNPC)
+			if (mEntityClass == EntityClass.kSimpleNPC)
 			{
 				bw.Write(mTalkText);
 				bw.Write(mHeckleText);
@@ -265,6 +238,13 @@ namespace AridArnoldEditor
 			}
 
 			mEntityClass = (EntityClass)br.ReadUInt32();
+			if (fileVer < 5)
+			{
+				if ((int)mEntityClass < kUtilityClassStart && (int)mEntityClass >= (int)EntityClass.kNPCClassEnd)
+				{
+					mEntityClass = EntityClass.kSimpleNPC;
+				}
+			}
 			mStartDirection = (WalkDirection)br.ReadUInt32();
 			mGravityDirection = (CardinalDirection)br.ReadUInt32();
 
@@ -278,8 +258,12 @@ namespace AridArnoldEditor
 				}
 			}
 
-			if (GetEntityType() == EntityType.kSimpleNPC)
+			if (mEntityClass == EntityClass.kSimpleNPC)
 			{
+				if(fileVer >= 5)
+				{
+					mNPCPath = br.ReadString();
+				}
 				mTalkText = br.ReadString();
 				mHeckleText = br.ReadString();
 			}

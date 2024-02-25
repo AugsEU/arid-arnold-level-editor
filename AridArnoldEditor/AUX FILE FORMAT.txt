@@ -1,4 +1,4 @@
-AUX FILE FORMAT VERSION 4:
+AUX FILE FORMAT VERSION 5:
 
 VERSION - int32
 
@@ -65,6 +65,7 @@ ENTITY COUNT - int32
 
     IF(CLASS_IS_SNPC)
     {
+        PATH - String
         TALK_ID - String
         HECKLE - String
     }
