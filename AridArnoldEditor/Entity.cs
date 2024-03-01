@@ -148,6 +148,7 @@ namespace AridArnoldEditor
 
 				if (theClass == EntityClass.kSimpleNPC)
 				{
+					mNPCPath = "NPC/Barbara";
 					SetDefaultText();
 				}
 			}
@@ -159,18 +160,6 @@ namespace AridArnoldEditor
 			baseID = baseID.Replace("\\", ".");
 			mTalkText = baseID + ".Talk";
 			mHeckleText = baseID + ".Heckle";
-		}
-
-		string GetEntityName()
-		{
-			string entityName = mEntityClass.ToString();
-
-			if (entityName.StartsWith("k"))
-			{
-				entityName = entityName.Substring(1);
-			}
-
-			return entityName;
 		}
 
 		public bool ValidateEntity()
@@ -219,6 +208,7 @@ namespace AridArnoldEditor
 
 			if (mEntityClass == EntityClass.kSimpleNPC)
 			{
+				bw.Write(mNPCPath);
 				bw.Write(mTalkText);
 				bw.Write(mHeckleText);
 			}
@@ -240,7 +230,11 @@ namespace AridArnoldEditor
 			mEntityClass = (EntityClass)br.ReadUInt32();
 			if (fileVer < 5)
 			{
-				if ((int)mEntityClass < kUtilityClassStart && (int)mEntityClass >= (int)EntityClass.kNPCClassEnd)
+				if ((int)mEntityClass == 4099) // Old Bick ID
+				{
+					mEntityClass = EntityClass.kBickDogel;
+				}
+				if ((int)EntityClass.kNPCClassEnd <= (int)mEntityClass && (int)mEntityClass < kUtilityClassStart)
 				{
 					mEntityClass = EntityClass.kSimpleNPC;
 				}
@@ -263,6 +257,10 @@ namespace AridArnoldEditor
 				if(fileVer >= 5)
 				{
 					mNPCPath = br.ReadString();
+				}
+				else
+				{
+					mNPCPath = "NPC/Name/Name.mtn";
 				}
 				mTalkText = br.ReadString();
 				mHeckleText = br.ReadString();
