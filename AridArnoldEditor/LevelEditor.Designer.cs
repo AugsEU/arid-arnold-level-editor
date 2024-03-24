@@ -59,6 +59,7 @@
 			wStatusPanel = new Panel();
 			wStatusText = new Label();
 			wSNPCPanel = new Panel();
+			label17 = new Label();
 			wNPCTalkPath = new TextBox();
 			wNPCHeckleTxt = new TextBox();
 			wNPCTalkTxt = new TextBox();
@@ -111,7 +112,6 @@
 			label14 = new Label();
 			label15 = new Label();
 			label16 = new Label();
-			label17 = new Label();
 			wMenuStrip.SuspendLayout();
 			wRailPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).BeginInit();
@@ -433,6 +433,15 @@
 			wSNPCPanel.Name = "wSNPCPanel";
 			wSNPCPanel.Size = new Size(265, 154);
 			wSNPCPanel.TabIndex = 17;
+			// 
+			// label17
+			// 
+			label17.AutoSize = true;
+			label17.Location = new Point(24, 59);
+			label17.Name = "label17";
+			label17.Size = new Size(34, 15);
+			label17.TabIndex = 19;
+			label17.Text = "Path:";
 			// 
 			// wNPCTalkPath
 			// 
@@ -890,7 +899,7 @@
 			// 
 			wLevelType.DropDownStyle = ComboBoxStyle.DropDownList;
 			wLevelType.FormattingEnabled = true;
-			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectKey", "Shop", "Hub" });
+			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectKey", "Shop", "Hub", "Empty" });
 			wLevelType.Location = new Point(50, 92);
 			wLevelType.Name = "wLevelType";
 			wLevelType.Size = new Size(189, 23);
@@ -959,15 +968,6 @@
 			label16.TabIndex = 0;
 			label16.Text = "Meta";
 			label16.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// label17
-			// 
-			label17.AutoSize = true;
-			label17.Location = new Point(24, 59);
-			label17.Name = "label17";
-			label17.Size = new Size(34, 15);
-			label17.TabIndex = 19;
-			label17.Text = "Path:";
 			// 
 			// LevelEditor
 			// 
