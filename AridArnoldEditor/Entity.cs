@@ -50,6 +50,7 @@ namespace AridArnoldEditor
 			//NPC
 			kSimpleNPC = kNPCClassStart,
 			kBickDogel,
+			kFireBarrel,
 			kNPCClassEnd,
 
 			// Utility

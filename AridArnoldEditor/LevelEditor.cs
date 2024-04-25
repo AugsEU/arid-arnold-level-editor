@@ -144,6 +144,17 @@ namespace AridArnoldEditor
 			mSelectionPanel.BringToFront();
 			mDrawLevelArea.BringToFront();
 
+			wEntityClassCombo.Items.Clear();
+			foreach (string enumStr in Enum.GetNames(typeof(Entity.EntityClass)))
+			{
+				string className = enumStr.Substring(1);
+				if(className.EndsWith("ClassEnd"))
+				{
+					continue;
+				}
+				wEntityClassCombo.Items.Add(className);
+			}
+
 			//State
 			SetAction(FormActionState.None);
 
