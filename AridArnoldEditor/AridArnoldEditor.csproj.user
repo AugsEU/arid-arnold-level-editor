@@ -4,6 +4,9 @@
     <Compile Update="LevelEditor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="NPCWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TilePanel.cs">
       <SubType>Component</SubType>
     </Compile>

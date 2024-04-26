@@ -148,7 +148,7 @@ namespace AridArnoldEditor
 			foreach (string enumStr in Enum.GetNames(typeof(Entity.EntityClass)))
 			{
 				string className = enumStr.Substring(1);
-				if(className.EndsWith("ClassEnd"))
+				if (className.EndsWith("ClassEnd"))
 				{
 					continue;
 				}
@@ -262,6 +262,24 @@ namespace AridArnoldEditor
 		private void ClickOnSelectTile(object? sender, MouseEventArgs e)
 		{
 			OnClickTile(mSelectedTileCoord);
+		}
+
+		private void wNPCFill_Click(object sender, EventArgs e)
+		{
+			if(!wSNPCPanel.Enabled)
+			{
+				return;
+			}
+
+			using (NPCWizard form = new NPCWizard())
+			{
+				if (form.ShowDialog() == DialogResult.OK)
+				{
+					wNPCTalkPath.Text = string.Format("NPC/{0}/{0}.mtn", form.NPCName);
+					wNPCTalkTxt.Text = form.TalkID.Length == 0 ? "" : string.Format("NPC.{0}.{1}", form.NPCName, form.TalkID);
+					wNPCHeckleTxt.Text = form.HeckleID.Length == 0 ? "" : string.Format("NPC.{0}.{1}", form.NPCName, form.HeckleID);
+				}
+			}
 		}
 
 		#endregion rWidgets

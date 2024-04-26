@@ -112,6 +112,8 @@
 			label14 = new Label();
 			label15 = new Label();
 			label16 = new Label();
+			wizardToolStripMenuItem = new ToolStripMenuItem();
+			wNPCFill = new ToolStripMenuItem();
 			wMenuStrip.SuspendLayout();
 			wRailPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).BeginInit();
@@ -147,7 +149,7 @@
 			// 
 			// wMenuStrip
 			// 
-			wMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, addToolStripMenuItem });
+			wMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, addToolStripMenuItem, wizardToolStripMenuItem });
 			wMenuStrip.Location = new Point(0, 0);
 			wMenuStrip.Name = "wMenuStrip";
 			wMenuStrip.Size = new Size(1141, 24);
@@ -203,7 +205,7 @@
 			// 
 			railToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { linearToolStripMenuItem });
 			railToolStripMenuItem.Name = "railToolStripMenuItem";
-			railToolStripMenuItem.Size = new Size(104, 22);
+			railToolStripMenuItem.Size = new Size(180, 22);
 			railToolStripMenuItem.Text = "Rail";
 			// 
 			// linearToolStripMenuItem
@@ -216,7 +218,7 @@
 			// entityToolStripMenuItem
 			// 
 			entityToolStripMenuItem.Name = "entityToolStripMenuItem";
-			entityToolStripMenuItem.Size = new Size(104, 22);
+			entityToolStripMenuItem.Size = new Size(180, 22);
 			entityToolStripMenuItem.Text = "Entity";
 			entityToolStripMenuItem.Click += entityToolStripMenuItem_Click;
 			// 
@@ -968,6 +970,20 @@
 			label16.Text = "Meta";
 			label16.TextAlign = ContentAlignment.MiddleCenter;
 			// 
+			// wizardToolStripMenuItem
+			// 
+			wizardToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { wNPCFill });
+			wizardToolStripMenuItem.Name = "wizardToolStripMenuItem";
+			wizardToolStripMenuItem.Size = new Size(55, 20);
+			wizardToolStripMenuItem.Text = "Wizard";
+			// 
+			// wNPCFill
+			// 
+			wNPCFill.Name = "wNPCFill";
+			wNPCFill.Size = new Size(180, 22);
+			wNPCFill.Text = "NPCFill";
+			wNPCFill.Click += wNPCFill_Click;
+			// 
 			// LevelEditor
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1111,5 +1127,7 @@
 		private Button wCopyEntityButton;
 		private TextBox wNPCTalkPath;
 		private Label label17;
+		private ToolStripMenuItem wizardToolStripMenuItem;
+		private ToolStripMenuItem wNPCFill;
 	}
 }
