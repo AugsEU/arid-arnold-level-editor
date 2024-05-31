@@ -121,6 +121,9 @@
   <data name="Androld" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\androld-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ArcadeBuilding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArcadeBuilding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Arnold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arnold-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,6 +132,9 @@
   </data>
   <data name="BickDogel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grillvogel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bouncer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bouncer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Farry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Farry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,5 +192,8 @@
   </data>
   <data name="Trundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trundle-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WorldCabinet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WorldCabinet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

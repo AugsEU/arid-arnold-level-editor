@@ -51,6 +51,7 @@ namespace AridArnoldEditor
 			kSimpleNPC = kNPCClassStart,
 			kBickDogel,
 			kFireBarrel,
+			kBouncer,
 			kNPCClassEnd,
 
 			// Utility
@@ -64,6 +65,8 @@ namespace AridArnoldEditor
 			kTimeMachine,
 			kPlantPot,
 			kPillarPot,
+			kWorldCabinet,
+			kArcadeBuilding,
 			kUtilityClassEnd
 		}
 
