@@ -45,6 +45,7 @@ namespace AridArnoldEditor
 			kMamal,
 			kPapyras,
 			kRanger,
+			kDemonBoss,
 			kEnemyClassEnd,
 
 			//NPC
@@ -52,6 +53,7 @@ namespace AridArnoldEditor
 			kBickDogel,
 			kFireBarrel,
 			kBouncer,
+			kGreatGate,
 			kNPCClassEnd,
 
 			// Utility
@@ -67,6 +69,8 @@ namespace AridArnoldEditor
 			kPillarPot,
 			kWorldCabinet,
 			kArcadeBuilding,
+			kManualReader,
+			kFountain,
 			kUtilityClassEnd
 		}
 

@@ -38,6 +38,8 @@
 			railToolStripMenuItem = new ToolStripMenuItem();
 			linearToolStripMenuItem = new ToolStripMenuItem();
 			entityToolStripMenuItem = new ToolStripMenuItem();
+			wizardToolStripMenuItem = new ToolStripMenuItem();
+			wNPCFill = new ToolStripMenuItem();
 			wImageArea = new Panel();
 			wRailPanel = new Panel();
 			wCopyRailBtn = new Button();
@@ -112,8 +114,6 @@
 			label14 = new Label();
 			label15 = new Label();
 			label16 = new Label();
-			wizardToolStripMenuItem = new ToolStripMenuItem();
-			wNPCFill = new ToolStripMenuItem();
 			wMenuStrip.SuspendLayout();
 			wRailPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)wNodeFlagsIn).BeginInit();
@@ -205,7 +205,7 @@
 			// 
 			railToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { linearToolStripMenuItem });
 			railToolStripMenuItem.Name = "railToolStripMenuItem";
-			railToolStripMenuItem.Size = new Size(180, 22);
+			railToolStripMenuItem.Size = new Size(104, 22);
 			railToolStripMenuItem.Text = "Rail";
 			// 
 			// linearToolStripMenuItem
@@ -218,9 +218,23 @@
 			// entityToolStripMenuItem
 			// 
 			entityToolStripMenuItem.Name = "entityToolStripMenuItem";
-			entityToolStripMenuItem.Size = new Size(180, 22);
+			entityToolStripMenuItem.Size = new Size(104, 22);
 			entityToolStripMenuItem.Text = "Entity";
 			entityToolStripMenuItem.Click += entityToolStripMenuItem_Click;
+			// 
+			// wizardToolStripMenuItem
+			// 
+			wizardToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { wNPCFill });
+			wizardToolStripMenuItem.Name = "wizardToolStripMenuItem";
+			wizardToolStripMenuItem.Size = new Size(55, 20);
+			wizardToolStripMenuItem.Text = "Wizard";
+			// 
+			// wNPCFill
+			// 
+			wNPCFill.Name = "wNPCFill";
+			wNPCFill.Size = new Size(113, 22);
+			wNPCFill.Text = "NPCFill";
+			wNPCFill.Click += wNPCFill_Click;
 			// 
 			// wImageArea
 			// 
@@ -900,7 +914,7 @@
 			// 
 			wLevelType.DropDownStyle = ComboBoxStyle.DropDownList;
 			wLevelType.FormattingEnabled = true;
-			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectKey", "Shop", "Hub", "Empty" });
+			wLevelType.Items.AddRange(new object[] { "CollectWater", "CollectKey", "Shop", "Hub", "Empty", "Fountain" });
 			wLevelType.Location = new Point(50, 92);
 			wLevelType.Name = "wLevelType";
 			wLevelType.Size = new Size(189, 23);
@@ -969,20 +983,6 @@
 			label16.TabIndex = 0;
 			label16.Text = "Meta";
 			label16.TextAlign = ContentAlignment.MiddleCenter;
-			// 
-			// wizardToolStripMenuItem
-			// 
-			wizardToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { wNPCFill });
-			wizardToolStripMenuItem.Name = "wizardToolStripMenuItem";
-			wizardToolStripMenuItem.Size = new Size(55, 20);
-			wizardToolStripMenuItem.Text = "Wizard";
-			// 
-			// wNPCFill
-			// 
-			wNPCFill.Name = "wNPCFill";
-			wNPCFill.Size = new Size(180, 22);
-			wNPCFill.Text = "NPCFill";
-			wNPCFill.Click += wNPCFill_Click;
 			// 
 			// LevelEditor
 			// 

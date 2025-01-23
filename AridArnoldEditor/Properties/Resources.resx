@@ -136,11 +136,17 @@
   <data name="Bouncer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bouncer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DemonBoss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DemonBoss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Farry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Farry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FireBarrel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FireBarrel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fountain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fountain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FutronGun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FutronGun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +160,9 @@
   <data name="GravityTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GravityTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GreatGate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GreatGate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ItemStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ItemStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -162,6 +171,9 @@
   </data>
   <data name="Mamal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mamal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManualReader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ManualReader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Papyras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Papyras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
